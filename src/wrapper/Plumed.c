@@ -25,6 +25,7 @@
 #include <dlfcn.h>
 #endif
 #include <stdio.h>
+#include <string.h>
 #include <assert.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -99,6 +100,10 @@ void plumed_dummy_finalize(void*p) {
 #endif
 
 plumed_plumedmain_function_holder* plumed_kernel_register(const plumed_plumedmain_function_holder* f) {
+  /*
+    Argument f is present for historical reasons but ignored in PLUMED>=2.5
+  */
+  if(f) if(getenv("PLUMED_LOAD_DEBUG")) fprintf(stderr,"+++ Ignoring registration at %p (%p,%p,%p) +++\n",(void*)f,(void*)f->create,(void*)f->cmd,(void*)f->finalize);
 #ifdef __PLUMED_STATIC_KERNEL
   /*
     When __PLUMED_STATIC_KERNEL is defined, the function holder is initialized
@@ -106,24 +111,29 @@ plumed_plumedmain_function_holder* plumed_kernel_register(const plumed_plumedmai
     cannot be changed. This saves from mis-set values for PLUMED_KERNEL
   */
   static plumed_plumedmain_function_holder g= {plumed_plumedmain_create,plumed_plumedmain_cmd,plumed_plumedmain_finalize};
-  (void) f; /* avoid warning on unused parameter */
   return &g;
 #else
   /*
-    On the other hand, for runtime binding, we allow to reset the function holder on the
-    first call to plumed_kernel_register.
-    Notice that in principle plumed_kernel_register is entered *twice*: one for the first
-    plumed usage, and then from the PlumedMainInitializer object of the shared library.
-    This is why we set "first=0" only *after* loading the shared library.
+    On the other hand, for runtime binding, we use dlsym to find the relevant functions.
+    Notice that as of PLUMED 2.5 self registration of the kernel is ignored, so argument f
+    is not used anymore.
     Also notice that we should put some guard here for safe multithread calculations.
   */
   static plumed_plumedmain_function_holder g= {plumed_dummy_create,plumed_dummy_cmd,plumed_dummy_finalize};
   static int first=1;
 #ifdef __PLUMED_HAS_DLOPEN
   char* path;
+  char pathcopy[1024];
   void* p;
+  char* pc;
+  plumed_plumedmain_function_holder* functions;
+  void* p_cre;
+  void* p_cmd;
+  void* p_fin;
+  char* debug;
   if(first && f==NULL) {
     path=getenv("PLUMED_KERNEL");
+    debug=getenv("PLUMED_LOAD_DEBUG");
 #ifdef __PLUMED_DEFAULT_KERNEL
     /*
       This variable allows a default path for the kernel to be hardcoded.
@@ -141,18 +151,90 @@ plumed_plumedmain_function_holder* plumed_kernel_register(const plumed_plumedmai
       fprintf(stderr,"+++ Loading the PLUMED kernel runtime +++\n");
       fprintf(stderr,"+++ PLUMED_KERNEL=\"%s\" +++\n",path);
       p=dlopen(path,RTLD_NOW|RTLD_GLOBAL);
+      if(!p) {
+        /*
+          Something went wrong. We try to remove "Kernel" string from the PLUMED_KERNEL variable
+          and load directly the shared library. Notice that this particular path is only expected
+          to be necessary when using PLUMED<=2.4 and the symbols in the main executable are
+          not visible. All the other cases (either PLUMED>=2.5 or symbols in the main executable visible)
+          should work correctly without entering here.
+        */
+        fprintf(stderr,"+++ An error occurred. Message from dlopen(): %s +++\n",dlerror());
+        strncpy(pathcopy,path,1024);
+        pc=pathcopy+strlen(pathcopy)-6;
+        while(pc>=pathcopy && memcmp(pc,"Kernel",6)) pc--;
+        if(pc>=pathcopy) {
+          memmove(pc, pc+6, strlen(pc)-5);
+          fprintf(stderr,"+++ Trying %s +++\n",pathcopy);
+          p=dlopen(pathcopy,RTLD_NOW|RTLD_GLOBAL);
+          if(!p) fprintf(stderr,"+++ An error occurred. Message from dlopen(): %s +++\n",dlerror());
+        }
+      }
       if(p) {
-        fprintf(stderr,"+++ PLUMED kernel successfully loaded +++\n");
-        installed=1;
-      } else {
-        fprintf(stderr,"+++ PLUMED kernel not found ! +++\n");
-        fprintf(stderr,"+++ error message from dlopen(): %s\n",dlerror());
+        p_cre=NULL;
+        p_cmd=NULL;
+        p_fin=NULL;
+      /*
+        If the library was loaded, use dlsym to initialize pointers.
+        Notice that as of PLUMED 2.5 we ignore self registrations.
+        Pointers are searched in the form of a single pointer to a structure, which
+        is the standard way in PLUMED 2.5, as well as using alternative names used in
+        PLUMED 2.0 to 2.4 (e.g. plumedmain_create) and in some intermediate versions between
+        PLUMED 2.4 and 2.5 (e.g. plumed_plumedmain_create). The last chance is probably
+        unnecessary and might be removed at some point.
+      */
+        functions=(plumed_plumedmain_function_holder*)dlsym(p,"plumed_function_pointers");
+        if(functions) {
+          p_cre=(void*)functions->create;
+          p_cmd=(void*)functions->cmd;
+          p_fin=(void*)functions->finalize;
+        }
+        if(debug && functions) {
+          fprintf(stderr,"+++ plumed_function_pointers found at %p (%p,%p,%p) +++\n",(void*)functions,(void*)functions->create,(void*)functions->cmd,(void*)functions->finalize);
+        }
+
+        if(!p_cre) {
+          p_cre=dlsym(p,"plumedmain_create");
+          if(debug && p_cre) fprintf(stderr,"+++ %s found at %p +++\n","plumedmain_create",p_cre);
+        }
+        if(!p_cre) {
+          p_cre=dlsym(p,"plumed_plumedmain_create");
+          if(debug && p_cre) fprintf(stderr,"+++ %s found at %p +++\n","plumed_plumedmain_create",p_cre);
+        }
+
+        if(!p_cmd) {
+          p_cmd=dlsym(p,"plumedmain_cmd");
+          if(debug && p_cmd) fprintf(stderr,"+++ %s found at %p +++\n","plumedmain_cmd",p_cmd);
+        }
+        if(!p_cmd) {
+          p_cmd=dlsym(p,"plumed_plumedmain_cmd");
+          if(debug && p_cmd) fprintf(stderr,"+++ %s found at %p +++\n","plumed_plumedmain_cmd",p_cmd);
+        }
+
+        if(!p_fin) {
+          p_fin=dlsym(p,"plumedmain_finalize");
+          if(debug && p_fin) fprintf(stderr,"+++ %s found at %p +++\n","plumedmain_finalize",p_fin);
+        }
+        if(!p_fin) {
+          p_fin=dlsym(p,"plumed_plumedmain_finalize");
+          if(debug && p_fin) fprintf(stderr,"+++ %s found at %p +++\n","plumed_plumedmain_finalize",p_fin);
+        }
+
+        if(p_cre && p_cmd && p_fin) {
+          g.create=(void*(*)(void)) p_cre;
+          g.cmd=(void(*)(void*,const char*,const void*)) p_cmd;
+          g.finalize=(void(*)(void*)) p_fin;
+          installed=1;
+        } else {
+          if(!p_cre) fprintf(stderr,"+++ pointer to (plumed_)plumedmain_create not found +++\n");
+          if(!p_cmd) fprintf(stderr,"+++ pointer to (plumed_)plumedmain_cmd not found +++\n");
+          if(!p_fin) fprintf(stderr,"+++ pointer to (plumed_)plumedmain_finalize not found +++\n");
+        }
       }
     }
+    first=0;
   }
 #endif
-  first=0;
-  if(f) g=*f;
   return &g;
 #endif
 }
