@@ -20,7 +20,7 @@ matrix:
   - os: linux
     dist: trusty
     sudo: required
-    env: PLUMED_CC=gcc   PLUMED_CXX=g++    CONFIG_FLAGS="--enable-debug --enable-debug-glibcxx"
+    env: PLUMED_CC=gcc   PLUMED_CXX=g++-4.9    CONFIG_FLAGS="--enable-debug --enable-debug-glibcxx"
   - os: linux
     dist: trusty
     sudo: required
@@ -126,10 +126,17 @@ install:
   - if test "$CPPCHECK" == yes ; then  ./.travis/install.gawk 4.2.1 ; fi
 # for plumedcheck I need astyle
   - if test "$CPPCHECK" == yes ; then make -j 4 -C astyle ; fi
+# gcc-4.9
+  - if test "$PLUMED_CXX" -a "$TRAVIS_OS_NAME" == "linux" ; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test ; fi
+  - if test "$PLUMED_CXX" -a "$TRAVIS_OS_NAME" == "linux" ; then sudo apt-get update -qq ; fi
+  - if test "$PLUMED_CXX" -a "$TRAVIS_OS_NAME" == "linux" ; then sudo apt-get install -y gcc-4.9 g++-4.9 ; fi
+  - if test "$PLUMED_CXX" == "mpic++" -a "$TRAVIS_OS_NAME" == "linux" ; then export OMPI_CXX=g++-4.9 ; fi
 # installation of these packages takes a lot of time
 # we do it only when needed
   - if test "$PLUMED_CXX" == "mpic++" -a "$TRAVIS_OS_NAME" == "linux" ; then sudo apt-get install -y libopenmpi-dev openmpi-bin ; fi
   - if test "$PLUMED_CXX" == "mpic++" -a "$TRAVIS_OS_NAME" == "osx" ;   then brew install openmpi ; fi
+  - if test "$PLUMED_CXX" == "mpic++" -a "$TRAVIS_OS_NAME" == "linux" ; then sudo apt-get install -y libopenmpi-dev openmpi-bin ; fi
+# stuff for manual
   - if test "$MAKEDOC" == yes ; then sudo apt-get install -y graphviz            ; fi
 # install doxygen-latex
   - if test "$MAKEDOC" == yes ; then sudo apt-get install -y doxygen-latex ; fi
