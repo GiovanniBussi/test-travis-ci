@@ -99,7 +99,7 @@ Notice that as of PLUMED 2.5 it is possible to use a slightly modified
 interface that allow for exception safety. In pratice,
 one should replace a pair of calls to Stopwatch::start() and Stopwatch::stop()
 with a single call to Stopwatch::startStop(). This call will return an object
-that, when goes out of scope, will stop the timer. For instance the following 
+that, when goes out of scope, will stop the timer. For instance the following
 code
 \verbatim
   {
@@ -128,7 +128,7 @@ Thus, by using the reset() method you can stop (or pause) the stopwatch as well.
 class Log;
 
 class Stopwatch {
-  static const std::string & emptyString(){
+  static const std::string & emptyString() {
     static std::string s;
     return s;
   }
@@ -153,7 +153,7 @@ class Stopwatch {
   std::ostream& log(std::ostream&)const;
 public:
 // Constructor.
-  Stopwatch(){}
+  Stopwatch() {}
 // Constructor.
 // When destructing, stopwatch is logged.
 // Make sure that log survives stopwatch.
@@ -183,7 +183,7 @@ public:
     virtual ~Handler() {}
   };
   class HandlerStartStop :
-  public Handler {
+    public Handler {
   public:
     using Handler::Handler;
     virtual ~HandlerStartStop() {
@@ -191,7 +191,7 @@ public:
     }
   };
   class HandlerStartPause :
-  public Handler {
+    public Handler {
   public:
     using Handler::Handler;
     virtual ~HandlerStartPause() {
