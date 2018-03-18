@@ -1,5 +1,7 @@
 language: cpp
-cache: ccache
+cache:
+- ccache
+- pip
 matrix:
   include:
 # list of configurations to be attempted:
