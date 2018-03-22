@@ -1096,6 +1096,34 @@ then
   prefix=/usr/local
 fi
 
+pkgconfig_bin=""
+
+AC_PATH_PROGS(pkgconfig_bin,pkg-config)
+
+completionsdir=""
+
+if test -n "$pkgconfig_bin" ; then
+  if test "$prefix" == "$(pkg-config --variable=prefix bash-completion 2>/dev/null)"
+  then
+    AC_MSG_NOTICE([bash completion is installed on the same prefix where plumed will be installed])
+    if pkg-config --variable=completionsdir bash-completion 2>/dev/null >/dev/null ; then
+      completionsdir="$(pkg-config --variable=completionsdir  bash-completion 2>/dev/null)"
+    fi
+  else
+    AC_MSG_NOTICE([bash completion is installed on a different prefix])
+    pkgconfig_bin=""
+  fi
+fi
+
+if test -n "$completionsdir"
+then
+  AC_MSG_NOTICE([bash completion for plumed will be installed in $completionsdir])
+else
+  AC_MSG_NOTICE([bash completion will not be installed])
+fi
+
+AC_SUBST(completionsdir)
+
 AC_ARG_PROGRAM
 
 
@@ -1135,6 +1163,12 @@ AC_MSG_NOTICE([**** htmldir: $htmldir])
 AC_MSG_NOTICE([**** Executable will be named $program_name])
 AC_MSG_NOTICE([**** As of PLUMED 2.5, you cannot change paths anymore during "make install"])
 AC_MSG_NOTICE([**** Please configure and make clean to change the prefix])
+
+if test -z "$completionsdir" ; then
+  AC_MSG_WARN([**** Bash completion will not be installed, please add the following two lines to your bashrc])
+  AC_MSG_WARN([**** _$program_name() { eval "\$($program_name --no-mpi completion 2>/dev/null)";}])
+  AC_MSG_WARN([**** complete -F _$program_name -o default $program_name])
+fi
 
 if test $mpi == true; then
   if test $mpi_found == ok; then

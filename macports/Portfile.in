@@ -79,6 +79,10 @@ if {[mpi_variant_isset]} {
 configure.ldflags-append -lxdrfile -lz -lgsl
 depends_lib-append port:xdrfile port:zlib port:gsl
 
+# This is to install bash autocompletion
+depends_build-append port:pkgconfig
+depends_lib-append path:etc/bash_completion:bash-completion
+
 # This variant enables optional modules in PLUMED.
 # Notice that one of the optional modules (drr) requires boost_serialization
 variant allmodules description {Enable all optional modules} {

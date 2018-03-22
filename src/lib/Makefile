@@ -300,6 +300,10 @@ ifdef python_bin
           $(python_bin) buildPythonInterface.py build_ext -i
 	cp -pr install/python "$(DESTDIR)$(libdir)/$(program_name)/" 
 endif
+ifdef completionsdir
+	mkdir -p "$(DESTDIR)$(completionsdir)"
+	cp bash.completion "$(DESTDIR)$(completionsdir)/$(program_name)"
+endif
 # making everything visible:
 	chmod -R go+rX,go-w "$(DESTDIR)$(libdir)/$(program_name)"
 	chmod -R go+rX,go-w "$(DESTDIR)$(includedir)/$(program_name)"
@@ -338,6 +342,9 @@ endif
 ifdef SOEXT
 	@echo $(libdir)/lib$(program_name).$(SOEXT)
 	@echo $(libdir)/lib$(program_name)Kernel.$(SOEXT)
+endif
+ifdef completionsdir
+	@echo $(completionsdir)/$(program_name)
 endif
 	@if test -d ../../vim/help ; then echo "A vim plugin can be found here: $(libdir)/$(program_name)/vim/" ; fi
 	@if test -d ../../vim/help ; then echo "Copy it to $(HOME)/.vim/ directory" ; fi
