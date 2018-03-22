@@ -96,12 +96,14 @@ dist: DISTANCES ...
 
 \page BashAutocompletion Using bash autocompletion
 
-For the impatients, just add the following to your .bashrc file:
+When possible, PLUMED tries to install bash autocompletion so that
+you do not have to do anything. Just use the `<TAB>` key to complete
+plumed commands (e.g. `plumed dr<TAB>`) or even options (e.g. `plumed driver --i<TAB>`).
+In case this does not work, you might have to add the following lines to your .bashrc file:
 \verbatim
 _plumed() { eval "$(plumed --no-mpi completion 2>/dev/null)";}
 complete -F _plumed -o default plumed
 \endverbatim
-and enjoy bash autocompletion.
 
 \par Effect
 
@@ -136,12 +138,15 @@ in this specific case.
 
 \par Technicalities
 
-The command `plumed completion` just writes on its standard output the body of a bash function.
+Notice that at configure time we look for the presence of the `bash-completion` package. Plumed autocompletion is installed
+only if `bash-completion` is present and installed on the same prefix as PLUMED. In all the other cases (e.g., if you are installing
+PLUMED on a different path within an env module) you might have to change your bashrc file once.
 Now look at these lines:
 \verbatim
 _plumed() { eval "$(plumed --no-mpi completion 2>/dev/null)";}
 complete -F _plumed -o default plumed
 \endverbatim
+The command `plumed completion` just writes on its standard output the body of a bash function.
 The `-o default` options will make sure that if `plumed --no-mpi completion` returns an error the default bash completion
 will be used. This is what will happen if you load an older PLUMED version for which the `completion` command is not available yet.
 In future PLUMED versions the `plumed completion` command might return more sophisticated functions. You should
