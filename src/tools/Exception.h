@@ -209,6 +209,16 @@ public:
   {
   }
 
+/// Assignment.
+/// Needed to make sure stream is not copied
+  Exception & operator=(const Exception & e) {
+    msg=e.msg;
+    stackString=e.stackString;
+    note=e.note;
+    stream.str("");
+    return *this;
+  }
+
 /// Returns the error message.
 /// In case the environment variable PLUMED_STACK_TRACE was defined
 /// when the exception was raised,
