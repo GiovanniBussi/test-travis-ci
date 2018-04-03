@@ -23,6 +23,7 @@
 #include "ActionRegister.h"
 #include "core/PlumedMain.h"
 #include "core/Atoms.h"
+#include <cmath>
 
 using namespace std;
 
@@ -54,13 +55,12 @@ periodic image.
 
 The following input instructs plumed to print the distance between the
 center of mass for atoms 1,2,3,4,5,6,7 and that for atoms 15,20:
-\verbatim
-COM ATOMS=1-7         LABEL=c1
-COM ATOMS=15,20       LABEL=c2
-DISTANCE ATOMS=c1,c2  LABEL=d1
+\plumedfile
+c1: COM ATOMS=1-7
+c2: COM ATOMS=15,20
+d1: DISTANCE ATOMS=c1,c2
 PRINT ARG=d1
-\endverbatim
-(See also \ref DISTANCE and \ref PRINT).
+\endplumedfile
 
 */
 //+ENDPLUMEDOC
@@ -70,6 +70,7 @@ class COM:
   public ActionWithVirtualAtom
 {
   bool nopbc;
+  bool first;
 public:
   explicit COM(const ActionOptions&ao);
   void calculate();
@@ -86,7 +87,8 @@ void COM::registerKeywords(Keywords& keys) {
 COM::COM(const ActionOptions&ao):
   Action(ao),
   ActionWithVirtualAtom(ao),
-  nopbc(false)
+  nopbc(false),
+  first(true)
 {
   vector<AtomNumber> atoms;
   parseAtomList("ATOMS",atoms);
@@ -94,7 +96,10 @@ COM::COM(const ActionOptions&ao):
   parseFlag("NOPBC",nopbc);
   checkRead();
   log.printf("  of atoms");
-  for(unsigned i=0; i<atoms.size(); ++i) log.printf(" %d",atoms[i].serial());
+  for(unsigned i=0; i<atoms.size(); ++i) {
+    if(i%25==0) log<<"\n";
+    log.printf(" %d",atoms[i].serial());
+  }
   log.printf("\n");
   if(nopbc) {
     log<<"  PBC will be ignored\n";
@@ -108,6 +113,17 @@ void COM::calculate() {
   Vector pos;
   if(!nopbc) makeWhole();
   double mass(0.0);
+  if( first ) {
+    for(unsigned i=0; i<getNumberOfAtoms(); i++) {
+      if(std::isnan(getMass(i))) {
+        error(
+          "You are trying to compute a COM but masses are not known.\n"
+          "        If you are using plumed driver, please use the --mc option"
+        );
+      }
+    }
+    first=false;
+  }
   vector<Tensor> deriv(getNumberOfAtoms());
   for(unsigned i=0; i<getNumberOfAtoms(); i++) mass+=getMass(i);
   if( plumed.getAtoms().chargesWereSet() ) {

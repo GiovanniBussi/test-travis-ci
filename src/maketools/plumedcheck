@@ -278,6 +278,10 @@ BEGINFILE{
 # DOC: E.g., use `#include <cstdlib>` instead of `#include <stdlib.h>`. Notice that
 # DOC: using the modern header all the functions are declared inside the `std` namespace.
       if(h in deprecated_headers) error("deprecated_header","including deprecated header " h);
+# DOC: :unsupported_header_regex:
+# DOC: Header `<regex>`, although part of the C++11 standard, is not supported by gcc 4.8.
+# DOC: In order to allow compatibility with old compilers, this header should not be used.
+      if(h == "regex") error("unsupported_header_regex","including unsupported header " h);
 # DOC: :external_header: (style)
 # DOC: Header files should possibly not include other header files from external libraries.
 # DOC: Indeed, once PLUMED is installed, if paths are not set correctly the include files of the other libraries
@@ -363,23 +367,46 @@ BEGINFILE{
 # DOC: way the manual is generated, a cltool cannot have the same name of an action.
       if(doc in plumed_doc) error("multi_doc","doc " doc " already at "plumed_doc[action]);
       plumed_doc[doc]=FILENAME ":" FNR;
-      switch($(NF-1)){
-      case "TOOLS":
-        plumed_doc_cltools[doc]=FILENAME ":" FNR;
-        information("documented_cltool","doc " doc);
-        break;
-      case "INTERNAL":
-        plumed_doc_internal[doc]=FILENAME ":" FNR;
-        information("documented_internal","doc " doc);
-      break;
-      default:
-        plumed_doc_action[doc]=FILENAME ":" FNR;
-        information("documented_action","doc " doc);
+      n=split($(NF-1),array,"_");
+      if(n==1) {
+        switch($(NF-1)){
+        case "TOOLS":
+          plumed_doc_cltools[doc]=FILENAME ":" FNR;
+          information("documented_cltool","doc " doc);
+          break;
+        case "INTERNAL":
+          plumed_doc_internal[doc]=FILENAME ":" FNR;
+          information("documented_internal","doc " doc);
+          break;
+        default:
+          plumed_doc_action[doc]=FILENAME ":" FNR;
+          information("documented_action","doc " doc);
+        }
+      } else {
+        switch(array[2]){
+        case "TOOLS":
+          plumed_doc_cltools[doc]=FILENAME ":" FNR;
+          information("documented_cltool","doc " doc);
+          break;
+        case "INTERNAL":
+          plumed_doc_internal[doc]=FILENAME ":" FNR;
+          information("documented_internal","doc " doc);
+          break;
+        default:
+          plumed_doc_action[doc]=FILENAME ":" FNR;
+          information("documented_action","doc " doc);
+        }
       }
     }
 
 # check if, besides the \par Examples text, there is a verbatim command
     if(in_plumed_doc && (in_plumed_doc in provide_examples) && match($0,"^ *\\\\verbatim *$")){
+      provide_verbatim[in_plumed_doc]=1
+    }
+# check if, besides the \par Examples text, there is a plumedfile command
+# now it is considered equivalent to a verbatim
+# later on we might make plumedfile compulsory instead of verbatim
+    if(in_plumed_doc && (in_plumed_doc in provide_examples) && match($0,"^ *\\\\plumedfile *$")){
       provide_verbatim[in_plumed_doc]=1
     }
 #print match($0,"^ *\\\\verbatim *$"),"X" $0 "X"

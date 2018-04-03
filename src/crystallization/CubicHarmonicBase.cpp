@@ -43,6 +43,7 @@ void CubicHarmonicBase::registerKeywords( Keywords& keys ) {
   keys.add("compulsory","PHI","0.0","The Euler rotational angle phi");
   keys.add("compulsory","THETA","0.0","The Euler rotational angle theta");
   keys.add("compulsory","PSI","0.0","The Euler rotational angle psi");
+  keys.addFlag("UNORMALIZED",false,"calculate the sum of the components of the vector rather than the mean");
   // Use actionWithDistributionKeywords
   keys.use("MEAN"); keys.use("MORE_THAN"); keys.use("LESS_THAN"); keys.use("MAX");
   keys.use("MIN"); keys.use("BETWEEN"); keys.use("HISTOGRAM"); keys.use("MOMENTS");
@@ -83,6 +84,9 @@ CubicHarmonicBase::CubicHarmonicBase(const ActionOptions&ao):
 
 
   log.printf("  measure crystallinity around central atom.  Includes those atoms within %s\n",( switchingFunction.description() ).c_str() );
+  parseFlag("UNORMALIZED",unormalized);
+  if( unormalized ) log.printf("  output sum of vector functions \n");
+  else log.printf("  output mean of vector functions \n");
   // Set the link cell cutoff
   rcut2 = switchingFunction.get_dmax()*switchingFunction.get_dmax();
   setLinkCellCutoff( switchingFunction.get_dmax() );
@@ -96,10 +100,10 @@ double CubicHarmonicBase::compute( const unsigned& tindex, multicolvar::AtomValu
   // Calculate the coordination number
   Vector myder, rotateder, fder; unsigned nat=myatoms.getNumberOfAtoms();
 
-  double d2;
   for(unsigned i=1; i<nat; ++i) {
     Vector& distance=myatoms.getPosition(i);
 
+    double d2;
     if ( (d2=distance[0]*distance[0])<rcut2 &&
          (d2+=distance[1]*distance[1])<rcut2 &&
          (d2+=distance[2]*distance[2])<rcut2 &&
@@ -136,7 +140,8 @@ double CubicHarmonicBase::compute( const unsigned& tindex, multicolvar::AtomValu
     }
   }
   // values -> der of... value [0], weight[1], x coord [2], y, z... [more magic]
-  updateActiveAtoms( myatoms ); myatoms.getUnderlyingMultiValue().quotientRule( 1, 1 );
+  updateActiveAtoms( myatoms );
+  if( !unormalized ) myatoms.getUnderlyingMultiValue().quotientRule( 1, 1 );
   return myatoms.getValue(1); // this is equivalent to getting an "atomic" CV
 }
 

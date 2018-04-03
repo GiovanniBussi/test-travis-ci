@@ -51,10 +51,10 @@ In case it is broken by the host MD code, please use \ref WHOLEMOLECULES to reco
 
 \par Examples
 
-\verbatim
+\plumedfile
 p3: PROPERTYMAP REFERENCE=../../trajectories/path_msd/allv.pdb PROPERTY=X,Y LAMBDA=69087 NEIGH_SIZE=8 NEIGH_STRIDE=4
 PRINT ARG=p3.X,p3.Y,p3.zzz STRIDE=1 FILE=colvar FMT=%8.4f
-\endverbatim
+\endplumedfile
 
 note that NEIGH_STRIDE=4 NEIGH_SIZE=8 control the neighborlist parameter (optional but
 recommended for performance) and states that the neighbor list will be calculated every 4

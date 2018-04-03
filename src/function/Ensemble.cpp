@@ -39,12 +39,11 @@ Each collective variable is averaged separately and stored in a component labell
 
 The following input tells plumed to calculate the distance between atoms 3 and 5
 and the average it over the available replicas.
-\verbatim
+\plumedfile
 dist: DISTANCE ATOMS=3,5
 ens: ENSEMBLE ARG=dist
 PRINT ARG=dist,ens.dist
-\endverbatim
-(See also \ref PRINT and \ref DISTANCE).
+\endplumedfile
 
 */
 //+ENDPLUMEDOC

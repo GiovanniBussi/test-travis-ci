@@ -76,9 +76,10 @@ void Steinhardt::calculateVector( multicolvar::AtomValuePack& myatoms ) const {
   std::complex<double> ii( 0.0, 1.0 ), dp_x, dp_y, dp_z;
 
   unsigned ncomp=2*tmom+1;
-  double sw, poly_ass, d2, dlen; std::complex<double> powered;
+  double sw, poly_ass, dlen; std::complex<double> powered;
   for(unsigned i=1; i<myatoms.getNumberOfAtoms(); ++i) {
     Vector& distance=myatoms.getPosition(i);  // getSeparation( myatoms.getPosition(0), myatoms.getPosition(i) );
+    double d2;
     if ( (d2=distance[0]*distance[0])<rcut2 &&
          (d2+=distance[1]*distance[1])<rcut2 &&
          (d2+=distance[2]*distance[2])<rcut2 &&
@@ -99,13 +100,16 @@ void Steinhardt::calculateVector( multicolvar::AtomValuePack& myatoms ) const {
 
       // The complex number of which we have to take powers
       std::complex<double> com1( distance[0]/dlen,distance[1]/dlen );
+      powered = std::complex<double>(1.0,0.0);
 
       // Do stuff for all other m values
       for(unsigned m=1; m<=tmom; ++m) {
         // Calculate Legendre Polynomial
         poly_ass=deriv_poly( m, distance[2]/dlen, dpoly_ass );
-        // Calculate powe of complex number
-        powered=pow(com1,m-1); md=static_cast<double>(m);
+        // Calculate power of complex number
+        // if(std::abs(com1)>epsilon) powered=pow(com1,m-1);
+        // else if(m==1) powered=std::complex<double>(1.,0);
+        // else powered = std::complex<double>(0.,0.);
         // Real and imaginary parts of z
         real_z = real(com1*powered); imag_z = imag(com1*powered );
 
@@ -114,6 +118,7 @@ void Steinhardt::calculateVector( multicolvar::AtomValuePack& myatoms ) const {
         itq6=poly_ass*imag_z;  // Imaginary part of steinhardt parameter
 
         // Derivatives wrt ( x/r + iy )^m
+        md=static_cast<double>(m);
         dp_x = md*powered*( (1.0/dlen)-(distance[0]*distance[0])/dlen3-ii*(distance[0]*distance[1])/dlen3 );
         dp_y = md*powered*( ii*(1.0/dlen)-(distance[0]*distance[1])/dlen3-ii*(distance[1]*distance[1])/dlen3 );
         dp_z = md*powered*( -(distance[0]*distance[2])/dlen3-ii*(distance[1]*distance[2])/dlen3 );
@@ -138,6 +143,8 @@ void Steinhardt::calculateVector( multicolvar::AtomValuePack& myatoms ) const {
         accumulateSymmetryFunction( 2+tmom-m, i, pref*sw*tq6, pref*myrealvec, pref*Tensor( -myrealvec,distance ), myatoms );
         // Imaginary part
         accumulateSymmetryFunction( 2+ncomp+tmom-m, i, -pref*sw*itq6, -pref*myimagvec, pref*Tensor( myimagvec,distance ), myatoms );
+        // Calculate next power of complex number
+        powered *= com1;
       }
     }
   }

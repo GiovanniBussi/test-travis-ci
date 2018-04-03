@@ -68,11 +68,18 @@ anthing other than TYPE=DRMSD.  For more details as to how to do this see \ref W
 The following input calculates the number of six residue segments of
 protein that are in an alpha helical configuration.
 
-\verbatim
+\plumedfile
 MOLINFO STRUCTURE=helix.pdb
-ALPHARMSD RESIDUES=all TYPE=DRMSD LESS_THAN={RATIONAL R_0=0.08 NN=8 MM=12} LABEL=a
-\endverbatim
-(see also \ref MOLINFO)
+hh: ALPHARMSD RESIDUES=all
+\endplumedfile
+
+Here the same is done use RMSD instead of DRMSD
+
+\plumedfile
+MOLINFO STRUCTURE=helix.pdb
+WHOLEMOLECULES ENTITY0=1-100
+hh: ALPHARMSD RESIDUES=all TYPE=OPTIMAL R_0=0.1
+\endplumedfile
 
 */
 //+ENDPLUMEDOC
@@ -97,10 +104,10 @@ AlphaRMSD::AlphaRMSD(const ActionOptions&ao):
   std::vector<unsigned> chains; readBackboneAtoms( "protein", chains);
 
   // This constructs all conceivable sections of alpha helix in the backbone of the chains
-  unsigned nres, nprevious=0; std::vector<unsigned> nlist(30);
+  unsigned nprevious=0; std::vector<unsigned> nlist(30);
   for(unsigned i=0; i<chains.size(); ++i) {
     if( chains[i]<30 ) error("segment of backbone defined is not long enough to form an alpha helix. Each backbone fragment must contain a minimum of 6 residues");
-    nres=chains[i]/5;
+    unsigned nres=chains[i]/5;
     if( chains[i]%5!=0 ) error("backbone segment received does not contain a multiple of five residues");
     for(unsigned ires=0; ires<nres-5; ires++) {
       unsigned accum=nprevious + 5*ires;

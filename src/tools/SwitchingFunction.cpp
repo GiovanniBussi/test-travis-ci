@@ -33,6 +33,22 @@
 using namespace std;
 namespace PLMD {
 
+static std::map<string, double> leptonConstants= {
+  {"e", std::exp(1.0)},
+  {"log2e", 1.0/std::log(2.0)},
+  {"log10e", 1.0/std::log(10.0)},
+  {"ln2", std::log(2.0)},
+  {"ln10", std::log(10.0)},
+  {"pi", pi},
+  {"pi_2", pi*0.5},
+  {"pi_4", pi*0.25},
+//  {"1_pi", 1.0/pi},
+//  {"2_pi", 2.0/pi},
+//  {"2_sqrtpi", 2.0/std::sqrt(pi)},
+  {"sqrt2", std::sqrt(2.0)},
+  {"sqrt1_2", std::sqrt(0.5)}
+};
+
 //+PLUMEDOC INTERNAL switchingfunction
 /*
 Functions that measure whether values are less than a certain quantity.
@@ -124,8 +140,11 @@ s(r) = FUNC
 
 \attention
 Similarly to the \ref MATHEVAL function, the MATHEVAL switching function
-only works if libmatheval is installed on the system and
-PLUMED has been linked to it
+only works if one of these two conditions is satisfied:
+(a) libmatheval is installed on the system and PLUMED has been linked to it or
+(b) the environment variable `PLUMED_USE_LEPTON` is set equal to `yes` at runtime
+(in this case, the internal lepton library will be used).
+Notice that in version v2.5 the internal lepton library will be used by default.
 Also notice that using MATHEVAL is much slower than using e.g. RATIONAL.
 Thus, the MATHEVAL switching function is useful to perform quick
 tests on switching functions with arbitrary form before proceeding to their
@@ -237,8 +256,20 @@ void SwitchingFunction::set(const std::string & definition,std::string& errormsg
   else if(name=="GAUSSIAN") type=gaussian;
   else if(name=="CUBIC") type=cubic;
   else if(name=="TANH") type=tanh;
+  else if((name=="MATHEVAL" || name=="CUSTOM") && std::getenv("PLUMED_USE_LEPTON")) {
+    type=leptontype;
+    std::string func;
+    Tools::parse(data,"FUNC",func);
+    lepton::ParsedExpression pe=lepton::Parser::parse(func).optimize(leptonConstants);
+    lepton_func=func;
+    expression.resize(OpenMP::getNumThreads());
+    for(auto & e : expression) e=pe.createCompiledExpression();
+    lepton::ParsedExpression ped=lepton::Parser::parse(func).differentiate("x").optimize(leptonConstants);
+    expression_deriv.resize(OpenMP::getNumThreads());
+    for(auto & e : expression_deriv) e=ped.createCompiledExpression();
+  }
 #ifdef __PLUMED_HAS_MATHEVAL
-  else if(name=="MATHEVAL") {
+  else if(name=="MATHEVAL" || name=="CUSTOM") {
     type=matheval;
     std::string func;
     Tools::parse(data,"FUNC",func);
@@ -297,6 +328,8 @@ std::string SwitchingFunction::description() const {
     ostr<<"cubic";
   } else if(type==tanh) {
     ostr<<"tanh";
+  } else if(type==leptontype) {
+    ostr<<"lepton";
 #ifdef __PLUMED_HAS_MATHEVAL
   } else if(type==matheval) {
     ostr<<"matheval";
@@ -313,6 +346,8 @@ std::string SwitchingFunction::description() const {
     ostr<<" a="<<a<<" b="<<b;
   } else if(type==cubic) {
     ostr<<" dmax="<<dmax;
+  } else if(type==leptontype) {
+    ostr<<" func="<<lepton_func;
 #ifdef __PLUMED_HAS_MATHEVAL
   } else if(type==matheval) {
     ostr<<" func="<<evaluator_get_string(evaluator[0]);
@@ -406,6 +441,18 @@ double SwitchingFunction::calculate(double distance,double&dfunc)const {
       double tmp1=std::tanh(rdist);
       result = 1.0 - tmp1;
       dfunc=-(1-tmp1*tmp1);
+    } else if(type==leptontype) {
+      const unsigned t=OpenMP::getThreadNum();
+      plumed_assert(t<expression.size());
+      try {
+        const_cast<lepton::CompiledExpression*>(&expression[t])->getVariableReference("x")=rdist;
+        const_cast<lepton::CompiledExpression*>(&expression_deriv[t])->getVariableReference("x")=rdist;
+      } catch(PLMD::lepton::Exception& exc) {
+// this is necessary since in some cases lepton things a variable is not present even though it is present
+// e.g. func=0*x
+      }
+      result=expression[t].evaluate();
+      dfunc=expression_deriv[t].evaluate();
 #ifdef __PLUMED_HAS_MATHEVAL
     } else if(type==matheval) {
       const unsigned it=OpenMP::getThreadNum();
@@ -529,6 +576,12 @@ void SwitchingFunction::set(int nn,int mm,double r0,double d0) {
   this->d0=d0;
   this->dmax=d0+r0*pow(0.00001,1./(nn-mm));
   this->dmax_2=this->dmax*this->dmax;
+
+  double dummy;
+  double s0=calculate(0.0,dummy);
+  double sd=calculate(dmax,dummy);
+  stretch=1.0/(s0-sd);
+  shift=-sd*stretch;
 }
 
 double SwitchingFunction::get_r0() const {

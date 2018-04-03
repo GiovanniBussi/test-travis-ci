@@ -53,13 +53,13 @@ The following input tells plumed to add both a lower and an upper walls on the d
 between atoms 3 and 5 and the distance between atoms 2 and 4. The lower and upper limits
 are defined at different values. The strength of the walls is the same for the four cases.
 It also tells plumed to print the energy of the walls.
-\verbatim
+\plumedfile
 DISTANCE ATOMS=3,5 LABEL=d1
 DISTANCE ATOMS=2,4 LABEL=d2
 UPPER_WALLS ARG=d1,d2 AT=1.0,1.5 KAPPA=150.0,150.0 EXP=2,2 EPS=1,1 OFFSET=0,0 LABEL=uwall
 LOWER_WALLS ARG=d1,d2 AT=0.0,1.0 KAPPA=150.0,150.0 EXP=2,2 EPS=1,1 OFFSET=0,0 LABEL=lwall
 PRINT ARG=uwall.bias,lwall.bias
-\endverbatim
+\endplumedfile
 (See also \ref DISTANCE and \ref PRINT).
 
 */
@@ -129,14 +129,14 @@ void LWalls::calculate() {
   double ene = 0.0;
   double totf2 = 0.0;
   for(unsigned i=0; i<getNumberOfArguments(); ++i) {
-    const double cv=difference(i,at[i],getArgument(i));
-    const double k=kappa[i];
-    const double exponent=exp[i];
-    const double epsilon=eps[i];
-    const double off=offset[i];
-    const double lscale = (cv-off)/epsilon;
     double f = 0.0;
+    const double cv=difference(i,at[i],getArgument(i));
+    const double off=offset[i];
+    const double epsilon=eps[i];
+    const double lscale = (cv-off)/epsilon;
     if( lscale < 0.) {
+      const double k=kappa[i];
+      const double exponent=exp[i];
       double power = pow( lscale, exponent );
       f = -( k / epsilon ) * exponent * power / lscale;
       ene += k * power;

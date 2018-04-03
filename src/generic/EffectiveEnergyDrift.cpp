@@ -55,18 +55,18 @@ Print the effective energy drift described in Ref \cite Ferrarotti2015
 This is to monitor the effective energy drift for a metadynamics
 simulation on the Debye-Huckel energy. Since this variable is very expensive,
 it could be conveniently computed every second step.
-\verbatim
+\plumedfile
 dh: DHENERGY GROUPA=1-10 GROUPB=11-20 EPSILON=80.0 I=0.1 TEMP=300.0
 METAD ARG=dh HEIGHT=0.5 SIGMA=0.1 PACE=500 STRIDE=2
 EFFECTIVE_ENERGY_DRIFT PRINT_STRIDE=100 FILE=eff
-\endverbatim
+\endplumedfile
 
 This is to monitor if a restraint is too stiff
-\verbatim
+\plumedfile
 d: DISTANCE ATOMS=10,20
 RESTRAINT ARG=d KAPPA=100000 AT=0.6
 EFFECTIVE_ENERGY_DRIFT PRINT_STRIDE=100 FILE=eff
-\endverbatim
+\endplumedfile
 
 */
 //+ENDPLUMEDOC
@@ -76,6 +76,7 @@ class EffectiveEnergyDrift:
   public ActionPilot {
   OFile output;
   long int printStride;
+  string fmt;
 
   double eed;
 
@@ -130,6 +131,7 @@ void EffectiveEnergyDrift::registerKeywords( Keywords& keys ) {
   keys.add("compulsory", "FILE", "file on which to output the effective energy drift.");
   keys.add("compulsory", "PRINT_STRIDE", "frequency to which output the effective energy drift on FILE");
   keys.addFlag("ENSEMBLE",false,"Set to TRUE if you want to average over multiple replicas.");
+  keys.add("optional","FMT","the format that should be used to output real numbers");
   keys.use("RESTART");
   keys.use("UPDATE_FROM");
   keys.use("UPDATE_UNTIL");
@@ -138,6 +140,7 @@ void EffectiveEnergyDrift::registerKeywords( Keywords& keys ) {
 EffectiveEnergyDrift::EffectiveEnergyDrift(const ActionOptions&ao):
   Action(ao),
   ActionPilot(ao),
+  fmt("%f"),
   eed(0.0),
   atoms(plumed.getAtoms()),
   nProc(plumed.comm.Get_size()),
@@ -157,6 +160,12 @@ EffectiveEnergyDrift::EffectiveEnergyDrift(const ActionOptions&ao):
 
   //parse PRINT_STRIDE
   parse("PRINT_STRIDE",printStride);
+
+
+  //parse FMT
+  parse("FMT",fmt);
+  fmt=" "+fmt;
+  log.printf("  with format %s\n",fmt.c_str());
 
   //parse ENSEMBLE
   ensemble=false;
@@ -309,8 +318,9 @@ void EffectiveEnergyDrift::update() {
       else effective=0.;
       plumed.comm.Sum(&effective,1);
     }
-
+    output.fmtField(" %f");
     output.printField("time",getTime());
+    output.fmtField(fmt);
     output.printField("effective-energy",effective);
     output.printField();
   }
