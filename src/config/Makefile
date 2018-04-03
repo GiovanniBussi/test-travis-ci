@@ -24,6 +24,7 @@ obj: all
 config.txt: ../../Makefile.conf
 	@echo "Updating config.txt file"
 	@makefile_conf="$(realpath ../../Makefile.conf)" \
+         python_bin="$(python_bin)" \
          mpiexec="$(mpiexec)" \
          ../maketools/update-config-txt.sh config.txt $(CPPFLAGS)
 

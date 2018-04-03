@@ -25,7 +25,6 @@
 #include <string>
 #include <set>
 #include "tools/Keywords.h"
-#include "Value.h"
 #include "tools/Tools.h"
 #include "tools/Log.h"
 
@@ -34,6 +33,7 @@ namespace PLMD {
 class PDB;
 class PlumedMain;
 class Communicator;
+class ActionWithValue;
 
 /// This class is used to bring the relevant information to the Action constructor.
 /// Only Action and ActionRegister class can access to its content, which is
@@ -168,10 +168,10 @@ public:
 /// Destructor
   virtual ~Action();
 private:
-/// Copy constructor is disabled (private and unimplemented)
-  explicit Action(const Action&a);
-/// Assignment operator is disabled (private and unimplemented)
-  Action& operator=(const Action&a);
+/// Copy constructor is deleted
+  Action(const Action&a) = delete;
+/// Assignment operator is deleted
+  Action& operator=(const Action&a) = delete;
   int replica_index;
 public:
 /// Check if Action was properly read.

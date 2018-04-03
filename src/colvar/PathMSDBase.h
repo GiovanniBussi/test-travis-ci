@@ -27,7 +27,6 @@
 
 #include "tools/PDB.h"
 #include "tools/RMSD.h"
-#include "tools/Tools.h"
 
 namespace PLMD {
 namespace colvar {
@@ -58,6 +57,8 @@ class PathMSDBase : public Colvar {
       return (a).similarity > (b).similarity;
     }
   };
+
+  bool nopbc;
 
   double lambda;
   int neigh_size;

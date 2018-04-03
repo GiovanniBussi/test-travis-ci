@@ -32,6 +32,7 @@
 #include <cstdio>
 #include <iostream>
 #include <algorithm>
+#include <memory>
 #include <unordered_map>
 
 using namespace std;
@@ -53,13 +54,12 @@ const std::unordered_map<std::string, int> & clToolMainWordMap() {
 CLToolMain::CLToolMain():
   argc(0),
   in(stdin),
-  out(stdout),
-  comm(*new Communicator)
+  out(stdout)
 {
 }
 
 CLToolMain::~CLToolMain() {
-  delete &comm;
+// empty destructor to delete unique_ptr
 }
 
 #define CHECK_NULL(val,word) plumed_massert(val,"NULL pointer received in cmd(\"CLTool " + word + "\")");
@@ -158,8 +158,6 @@ int CLToolMain::run(int argc, char **argv,FILE*in,FILE*out,Communicator& pc) {
     } else if(a=="--has-mpi") {
       if(Communicator::initialized()) return 0;
       else return 1;
-    } else if(a=="--has-matheval") {
-      return (config::hasMatheval()?0:1);
     } else if(a=="--has-cregex") {
       return (config::hasCregex()?0:1);
     } else if(a=="--has-dlopen") {
@@ -176,16 +174,10 @@ int CLToolMain::run(int argc, char **argv,FILE*in,FILE*out,Communicator& pc) {
       return (config::isInstalled()?0:1);
     } else if(a=="--no-mpi") {
 // this is ignored, as it is parsed in main
-      if(i>1) {
-        fprintf(stderr,"--no-mpi option can only be used as the first option");
-        return 1;
-      }
+      continue;
     } else if(a=="--mpi") {
 // this is ignored, as it is parsed in main
-      if(i>1) {
-        fprintf(stderr,"--mpi option can only be used as the first option");
-        return 1;
-      }
+      continue;
     } else if(a=="--standalone-executable") {
       standalone_executable=true;
     } else if(Tools::startWith(a,"--load=")) {
@@ -239,17 +231,15 @@ int CLToolMain::run(int argc, char **argv,FILE*in,FILE*out,Communicator& pc) {
       "  [help|-h|--help]          : to print this help\n"
       "  [--is-installed]          : fails if plumed is not installed\n"
       "  [--has-mpi]               : fails if plumed is running without MPI\n"
-      "  [--has-matheval]          : fails if plumed is compiled without matheval\n"
       "  [--has-dlopen]            : fails if plumed is compiled without dlopen\n"
       "  [--load LIB]              : loads a shared object (typically a plugin library)\n"
       "  [--standalone-executable] : tells plumed not to look for commands implemented as scripts\n"
       "Commands:\n";
     fprintf(out,"%s",msg.c_str());
     for(unsigned j=0; j<availableCxx.size(); ++j) {
-      CLTool *cl=cltoolRegister().create(CLToolOptions(availableCxx[j]));
+      std::unique_ptr<CLTool> cl(cltoolRegister().create(CLToolOptions(availableCxx[j])));
       plumed_assert(cl);
       string manual=availableCxx[j]+" : "+cl->description();
-      delete cl;
       fprintf(out,"  plumed %s\n", manual.c_str());
     }
     for(unsigned j=0; j<availableShell.size(); ++j) {
@@ -272,12 +262,11 @@ int CLToolMain::run(int argc, char **argv,FILE*in,FILE*out,Communicator& pc) {
   string command(argv[i]);
 
   if(find(availableCxx.begin(),availableCxx.end(),command)!=availableCxx.end()) {
-    CLTool *cl=cltoolRegister().create(CLToolOptions(command));
+    std::unique_ptr<CLTool> cl(cltoolRegister().create(CLToolOptions(command)));
     plumed_assert(cl);
     // Read the command line options (returns false if we are just printing help)
-    if( !cl->readInput( argc-i,&argv[i],in,out ) ) { delete cl; return 0; }
+    if( !cl->readInput( argc-i,&argv[i],in,out ) ) { return 0; }
     int ret=cl->main(in,out,pc);
-    delete cl;
     return ret;
   }
 

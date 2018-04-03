@@ -1,3 +1,11 @@
+[![Homepage](https://img.shields.io/badge/Home-plumed.org-green.svg)](http://www.plumed.org)
+[![Homepage](https://img.shields.io/badge/Google_group-plumed--users-green.svg)](http://groups.google.com/forum/#!forum/plumed-users)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](http://www.gnu.org/licenses/lgpl-3.0)
+[![Github Releases](https://img.shields.io/github/release/plumed/plumed2.svg)](https://github.com/plumed/plumed2/releases)
+[![Twitter Follow](https://img.shields.io/twitter/follow/plumed_org.svg?style=social&label=Follow)](https://twitter.com/plumed_org)
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/plumed.svg)](https://repology.org/metapackage/plumed)
+
 Branches and releases
 ---------------------
 
@@ -30,14 +38,14 @@ Status
 
 Below you find the status on [Travis-CI](http://travis-ci.org/plumed/plumed2) for the release branches.
 
-| Branch   |      Status   | First stable release | Still supported |
+| Branch   |      Status   | First stable release (year) | Still supported |
 |:--------:|:-------------:|:--------:|:------:|
-| master   | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=master)](https://travis-ci.org/plumed/plumed2) | v2.5.0 is expected late 2018 | / |
-| v2.4     | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=v2.4)](https://travis-ci.org/plumed/plumed2)   | v2.4.0 is expected late 2017 | yes |
-| v2.3     | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=v2.3)](https://travis-ci.org/plumed/plumed2)   | Dec 12, 2016 | yes |
-| v2.2     | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=v2.2)](https://travis-ci.org/plumed/plumed2)   | Oct 13, 2015 |no |
-| v2.1     | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=v2.1)](https://travis-ci.org/plumed/plumed2)   | Sep 9, 2014 | no |
-| v2.0     | Not available | Sep 27, 2013 | no |
+| master   | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=master)](https://travis-ci.org/plumed/plumed2) | 2018 (expected) | / |
+| v2.4     | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=v2.4)](https://travis-ci.org/plumed/plumed2)   | 2017 | yes |
+| v2.3     | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=v2.3)](https://travis-ci.org/plumed/plumed2)   | 2016 | yes |
+| v2.2     | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=v2.2)](https://travis-ci.org/plumed/plumed2)   | 2015 |no |
+| v2.1     | [![Build Status](https://travis-ci.org/plumed/plumed2.svg?branch=v2.1)](https://travis-ci.org/plumed/plumed2)   | 2014 | no |
+| v2.0     | Not available | 2013 | no |
 
 Content
 -------
@@ -84,7 +92,6 @@ Suggested software (libraries are checked by `./configure` and enabled if availa
 * MPI library to run parallel simulations. It should be the same library used by your MD code.
 * Optimized blas and lapack libraries. They are automatically replaced by an internal version if not available.
 * [VMD molfile plugins](http://www.ks.uiuc.edu/Research/vmd/plugins) to read arbitrary file formats. They are automatically replaced by an internal version supporting a few formats if not available.
-* [Matheval library](http://www.gnu.org/software/libmatheval) to use algebraic collective variables.
 * [Zlib library](http://zlib.net/) to use compressed data files.
 * [Xdrfile library](http://www.gromacs.org/Developer_Zone/Programming_Guide/XTC_Library) to have read/write access to gromacs
   trajectory files.

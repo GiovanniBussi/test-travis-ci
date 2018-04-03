@@ -42,6 +42,10 @@ do
     echo "inquire plumed about how it was configure"
     exit 0
     ;;
+  (--options)
+    echo "--help -h --description --options --quiet -q --version -v show has module mpiexec makefile_conf python_bin"
+    exit 0
+    ;;
   (--quiet|-q) quiet=yes ;;
   (--version|-v) action=version ;;
   (show)
@@ -50,6 +54,7 @@ do
     ;;
   (has) action=has ;;
   (module) action=module ;;
+  (python_bin) action=python_bin ;;
   (mpiexec) action=mpiexec ;;
   (makefile_conf)
     echo "$configfile" | awk '{if($1=="makefile_conf") { gsub("^makefile_conf ",""); print} }'
@@ -96,6 +101,17 @@ case $action in
   git=$(echo "$configfile" | grep -v \# | awk '{ if($1=="version" && $2=="git") print $3 }')
   echo "Version: $long (git: $git)"
  ;;
+(python_bin)
+  py=$(echo "$configfile" | grep -v \# | awk '{ if($1=="python_bin") print $2 }')
+  if test -n "$py" ; then
+    retval=0
+    test "$quiet" = no && echo "$py"
+  else
+    retval=1
+    test "$quiet" = no && echo "python not found"
+  fi
+  exit $retval
+;;
 (mpiexec)
   mpi=$(echo "$configfile" | grep -v \# | awk '{ if($1=="mpiexec") print $2 }')
   if test -n "$mpi" ; then

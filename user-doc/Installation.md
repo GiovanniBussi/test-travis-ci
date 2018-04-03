@@ -82,7 +82,7 @@ Notice that some functionalities of PLUMED depend on external
 libraries which are looked for by configure. You can typically
 avoid looking for a library using the "disable" syntax, e.g.
 \verbatim
-> ./configure --disable-mpi --disable-matheval
+> ./configure --disable-mpi --disable-xdrfile
 \endverbatim
 
 Notice that when mpi search is enabled (by default) compilers
@@ -142,34 +142,34 @@ or not the libraries were properly detected.
 
 If a library is not found during configuration, you can try to use options to modify the
 search path.
-For example if your matheval libraries is in /opt/local (this is where MacPorts put it)
+For example if your xdrfile libraries is in /opt/local (this is where MacPorts put it)
 and configure is not able to find it you can try
 \verbatim
 > ./configure LDFLAGS=-L/opt/local/lib CPPFLAGS=-I/opt/local/include
 \endverbatim
-Notice that PLUMED will first try to link a routine from say matheval
+Notice that PLUMED will first try to link a routine from say xdrfile
 without any additional flag, and then in case of failure will retry adding
-"-lmatheval" to the LIBS options.
-If also this does not work, the matheval library will be
+"-lxdrfile" to the LIBS options.
+If also this does not work, the xdrfile library will be
 disabled and some features will not be available.
 This procedure allows you to use libraries
 with custom names. So, if
-your matheval library is called /opt/local/lib/libmymatheval.so you can 
+your xdrfile library is called /opt/local/lib/libmyxdrfile.so you can 
 link it with
 \verbatim
-> ./configure LDFLAGS=-L/opt/local/lib CPPFLAGS=-I/opt/local/include LIBS=-lmymatheval
+> ./configure LDFLAGS=-L/opt/local/lib CPPFLAGS=-I/opt/local/include LIBS=-lmyxdrfile
 \endverbatim
-In this example, the linker will directly try to link `/opt/local/lib/libmymatheval.so`.
+In this example, the linker will directly try to link `/opt/local/lib/libmyxdrfile.so`.
 This rule is true for all the libraries, so that you will always be able to link
 a specific version of a library by specifying it using the LIBS variable.
 
-Since version 2.3.2, the search for the library functions passing to the linker a flag with the standard library name (in the matheval example,
-it would be `-lmatheval`) can be skipped by using the option `--disable-libsearch`.
+Since version 2.3.2, the search for the library functions passing to the linker a flag with the standard library name (in the xdrfile example,
+it would be `-lxdrfile`) can be skipped by using the option `--disable-libsearch`.
 Notice that in this manner only libraries that are explicitly passed using the `LIBS` option will be linked. For instance
 \verbatim
-> ./configure --disable-libsearch LIBS=-lmatheval
+> ./configure --disable-libsearch LIBS=-lxdrfile
 \endverbatim
-will make sure that only matheval is linked and, for instance, blas and lapack libraries are not.
+will make sure that only xdrfile is linked and, for instance, blas and lapack libraries are not.
 This might be useful when installing PLUMED within package managers such as MacPorts to
 make sure that only desired libraries are linked and thus to avoid to introduce spurious
 dependencies. The only exception to this rule is `-ldl`, which is anyway a system library on Linux.
@@ -233,7 +233,7 @@ native lapack libraries have problems.
 As a final resort, you can also edit the resulting Makefile.conf file.
 Notable variables in this file include:
 - DYNAMIC_LIB : these are the libraries needed to compile the PLUMED
-library (e.g. -L/path/to/matheval -lmatheval etc). Notice that for the
+library (e.g. -L/path/to/xdrfile -lxdrfile etc). Notice that for the
 PLUMED shared library to be compiled properly these should be dynamic
 libraries. Also notice that PLUMED preferentially requires BLAS and LAPACK library;
 see \ref BlasAndLapack for further info. Notice that the variables 
@@ -242,7 +242,7 @@ variable. This is a bit misleading but is required to keep the configuration
 files compatible with PLUMED 2.0.
 - LIBS : these are the libraries needed when patching an MD code; typically only "-ldl" (needed to have functions for dynamic loading).
 - CPPFLAGS : add here definition needed to enable specific optional functions;
-e.g. use -D__PLUMED_HAS_MATHEVAL to enable the matheval library
+e.g. use -D__PLUMED_HAS_XDRFILE to enable the xdrfile library
 - SOEXT : this gives the extension for shared libraries in your system, typically
 "so" on unix, "dylib" on mac; If your system does not support dynamic libraries or, for some other reason, you would like only static executables you can
 just set this variable to a blank ("SOEXT=").
@@ -414,22 +414,14 @@ This is done using
 This will allow you to remove the original compilation directory,
 or to recompile a different PLUMED version in the same place.
 
-To install PLUMED one should first decide the location.
-The standard way to do it is during the configure step:
+To install PLUMED one should first decide the location:
 \verbatim
 > ./configure --prefix=$HOME/opt
 > make
 > make install
 \endverbatim
-However, you can also change it after compilation setting
-the variable `prefix`.
-\verbatim
-> ./configure
-> make
-> make install prefix=$HOME/opt
-\endverbatim
-If you didn't specify the `--prefix` option during configure, and you did not set the `prefix`
-variable when installing, PLUMED will be installed in /usr/local.
+As of PLUMED 2.5 you cannot anymore change the location during install.
+If you didn't specify the `--prefix` option during configure PLUMED will be installed in /usr/local.
 The install command should be executed with root permissions (e.g. "sudo make install")
 if you want to install PLUMED on a system directory.
 
@@ -530,9 +522,10 @@ Particularly interesting options include:
   and the MD code, leaving to the user the possibility to combine different versions at will. 
   We also recommend to use the provided modulefile (see above) to properly set the runtime environment.
 
-Notice that it is not currently possible to link PLUMED as a static library (something like 'libplumed.a').
-The reason for this is that PLUMED heavily relies on C++ static constructors that do not behave well in static libraries.
-For this reason, to produce a static executable with an MD code + PLUMED we link PLUMED as a collection of object files.
+Notice that with PLUMED version <2.5 there was no possibility to link PLUMED as a static library (something like 'libplumed.a').
+However, starting with PLUMED 2.5, the `./configure` script will try to set up the system so that a `libplumed.a` file is produced.
+Patching an MD code with `--static` with try to link against this static library.
+Creation of the `libplumed.a` library can be avoided with `./configure --disable-static-archive`.
 
 If your MD code is not supported, you may want to implement an interface for
 it. Refer to the <a href="../../developer-doc/html/index.html"> developer
@@ -642,7 +635,7 @@ First of all, we highly recommend using the module file that PLUMED provides to 
 Just edit it as necessary to make it suitable for your environment.
 
 Notice that PLUMED can take advantage of many additionaly features if specific libraries are available upon
-compiling it. Install libmatheval first and check if PLUMED `./configure` is detecting it. Libmatheval is a must have with PLUMED.
+compiling it.
 If someone uses gromacs, install libxdrfile first and check if PLUMED `./configure` is detecting it.
 PLUMED will be able to write trr/xtc file, simplifying analysis.
 
@@ -650,7 +643,7 @@ Try to patch all MD codes with the `--runtime` option. This will allow independe
   Users will be able to combine any of the installed gromacs/amber/etc versions with any of the installed PLUMED versions.
 Notice that it is sometime claimed that statically linked codes are faster. In our experience, this is not true.
 In case you absolutely need a static executable, be ready to face non trivial linking issues. PLUMED is written in C++,
-thus required the appropriate C++ library to be linked, and might require additional libraries (e.g. libmatheval).
+thus required the appropriate C++ library to be linked, and might require additional libraries (e.g. libxdrfile).
 
 Sometime we make small fixes on the patches. For this reason, keep track of which version of PLUMED you used
 to patch each of the MD code. Perhaps you can call the MD code modules with names such as `gromacs/4.6.7p1`,
@@ -678,9 +671,9 @@ It will take more time to compile but it will allow you to use a single module. 
 PLUMED version with different optimization levels.
 
 Using modules, it is not necessary to make the PLUMED module explicitly dependent on the used library. Imagine a
-scenario where you first installed a module `libmatheval`, then load it while you compile PLUMED. If you
+scenario where you first installed a module `libxdrfile`, then load it while you compile PLUMED. If you
 provide the following option to configure `--enable-rpath`, the PLUMED executable and
-library will remember where libmatheval is, without the need to load libmatheval module at runtime.
+library will remember where libxdrfile is, without the need to load libxdrfile module at runtime.
 Notice that this trick often does not work for fundamental libraries such as C++ and MPI library. As a consequence,
 usually the PLUMED module should load the compiler and MPI modules.
 

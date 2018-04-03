@@ -61,18 +61,18 @@ void CLToolRegister::add(string key,creator_pointer f,keywords_pointer kf) {
   };
 }
 
-bool CLToolRegister::check(string key) {
+bool CLToolRegister::check(string key)const {
   if(m.count(key)>0) return true;
   return false;
 }
 
-CLTool* CLToolRegister::create(const CLToolOptions&ao) {
+std::unique_ptr<CLTool> CLToolRegister::create(const CLToolOptions&ao) {
   if(ao.line.size()<1)return NULL;
-  CLTool* cltool;
+  std::unique_ptr<CLTool> cltool;
   if(check(ao.line[0])) {
     CLToolOptions nao( ao,mk[ao.line[0]] );
     cltool=m[ao.line[0]](nao);
-  } else cltool=NULL;
+  }
   return cltool;
 }
 
@@ -100,6 +100,16 @@ bool CLToolRegister::printManual( const std::string& cltool ) {
     return false;
   }
 }
+
+std::vector<std::string> CLToolRegister::getKeys(const std::string& cltool)const {
+  if ( check(cltool) ) {
+    return mk.find(cltool)->second.getKeys();
+  } else {
+    std::vector<std::string> empty;
+    return empty;
+  }
+}
+
 
 vector<string> CLToolRegister::list()const {
   vector<string> s;
