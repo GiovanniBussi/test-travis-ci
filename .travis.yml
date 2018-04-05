@@ -221,5 +221,9 @@ script:
   - if test "$CPPCHECK" == yes ; then make codecheck ; fi
 after_success:
   - if test "$MAKEDOC" == yes ; then ./.travis/push doc ; fi 
-  - if test "$MAKECOVERAGE" == yes ; then coveralls --gcov-options '\-lp' ; fi 
   - if test "$MAKECOVERAGE" == yes ; then ./.travis/push coverage ; fi 
+  - if test "$MAKECOVERAGE" == yes ; then
+      cd src ;
+      coveralls --gcov-options '\-lp' --exclude lapack --exclude blas --exclude molfile --exclude lepton ; 
+      cd ../ ;
+    fi
