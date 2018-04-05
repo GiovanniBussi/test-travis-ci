@@ -134,6 +134,7 @@ install:
 # install lcov
   - if test "$MAKECOVERAGE" == yes ; then ./.travis/install.lcov v1.13 ; fi
   - if test "$MAKECOVERAGE" == yes ; then pip install --user cpp-coveralls ; fi
+  - if test "$MAKECOVERAGE" == yes ; then sudo pip install codecov ; fi
 # install numpy and cython for python interface
 # only for linux and homebrew (no macports)
   - if test "$PLUMED_CXX" ; then
@@ -222,6 +223,7 @@ script:
 after_success:
   - if test "$MAKEDOC" == yes ; then ./.travis/push doc ; fi 
   - if test "$MAKECOVERAGE" == yes ; then ./.travis/push coverage ; fi 
+  - if test "$MAKECOVERAGE" == yes ; then ./.travis/codecov ; codecov ; fi 
   - if test "$MAKECOVERAGE" == yes ; then
       coveralls --build-root src --gcov-options '\-lp' -E "src/..*/..*/..*h" --exclude src/lapack --exclude src/blas --exclude src/molfile --exclude src/lepton ; 
     fi

@@ -1,0 +1,5 @@
+#! /bin/bash
+for filename in src/*/*.cpp src/*/*.c
+do 
+  gcov -n -o . $filename > /dev/null; 
+done
