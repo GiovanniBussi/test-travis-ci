@@ -223,7 +223,5 @@ after_success:
   - if test "$MAKEDOC" == yes ; then ./.travis/push doc ; fi 
   - if test "$MAKECOVERAGE" == yes ; then ./.travis/push coverage ; fi 
   - if test "$MAKECOVERAGE" == yes ; then
-      cd src ;
-      coveralls --gcov-options '\-lp' --exclude lapack --exclude blas --exclude molfile --exclude lepton ; 
-      cd ../ ;
+      coveralls -r src --gcov-options '\-lp' -E ".*/.*/.*.h" --exclude lapack --exclude blas --exclude molfile --exclude lepton ; 
     fi
