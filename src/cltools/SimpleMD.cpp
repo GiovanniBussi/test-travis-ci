@@ -195,7 +195,11 @@ private:
       fprintf(stderr,"ERROR: file %s not found\n",inputfile.c_str());
       exit(1);
     }
-    fscanf(fp,"%1000d",&natoms);
+    int ret=fscanf(fp,"%1000d",&natoms);
+    if(ret==0) {
+      fclose(fp); // avoid resource leak
+      plumed_error() <<"Error reading number of atoms from file "<<inputfile;
+    }
     fclose(fp);
   }
 
@@ -209,11 +213,23 @@ private:
     }
     char buffer[256];
     char atomname[256];
-    fgets(buffer,256,fp);
-    fscanf(fp,"%1000lf %1000lf %1000lf",&cell[0],&cell[1],&cell[2]);
+    char* cret=fgets(buffer,256,fp);
+    if(cret==nullptr) {
+        fclose(fp); // avoid resource leak
+        plumed_error() <<"Error reading buffer from file "<<inputfile;
+    }
+    int ret=fscanf(fp,"%1000lf %1000lf %1000lf",&cell[0],&cell[1],&cell[2]);
+    if(ret==0) {
+        fclose(fp); // avoid resource leak
+        plumed_error() <<"Error reading cell line from file "<<inputfile;
+    }
     for(int i=0; i<natoms; i++) {
-      fscanf(fp,"%255s %1000lf %1000lf %1000lf",atomname,&positions[i][0],&positions[i][1],&positions[i][2]);
+      ret=fscanf(fp,"%255s %1000lf %1000lf %1000lf",atomname,&positions[i][0],&positions[i][1],&positions[i][2]);
 // note: atomname is read but not used
+      if(ret==0) {
+        fclose(fp); // avoid resource leak
+        plumed_error() <<"Error reading atom line from file "<<inputfile;
+      }
     }
     fclose(fp);
   }
