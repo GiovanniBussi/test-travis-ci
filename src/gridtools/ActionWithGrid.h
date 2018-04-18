@@ -40,7 +40,7 @@ protected:
 /// The grid vessel
   GridVessel* mygrid;
 /// Read in stuff that is specifically for the grid and create it
-  void createGrid( const std::string& type, const std::string& inputstr );
+  std::unique_ptr<GridVessel> createGrid( const std::string& type, const std::string& inputstr );
 public:
   static void registerKeywords( Keywords& keys );
   explicit ActionWithGrid( const ActionOptions& );
