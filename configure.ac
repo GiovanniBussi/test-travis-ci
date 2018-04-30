@@ -694,7 +694,7 @@ if test "$debug_glibcxx" == true ; then
   AC_MSG_NOTICE([Enabling libstdc++ debug options, adding -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_GLIBCXX_ASSERTIONS])
   AC_DEFINE([_GLIBCXX_DEBUG])
   # AC_DEFINE([_GLIBCXX_DEBUG_PEDANTIC])
-  AC_DEFINE([_GLIBCXX_DEBUG_ASSERTIONS])
+  # AC_DEFINE([_GLIBCXX_DEBUG_ASSERTIONS])
 fi
 
 # this is necessary in many MPI implementations
