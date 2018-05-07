@@ -20,9 +20,9 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "GridPrintingBase.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
-#include "vesselbase/ActionWithVessel.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
+#include "../vesselbase/ActionWithVessel.h"
 
 namespace PLMD {
 namespace gridtools {

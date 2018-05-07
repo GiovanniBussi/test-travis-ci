@@ -25,7 +25,7 @@
 #include <string>
 #include <cstring>
 #include <vector>
-#include "vesselbase/AveragingVessel.h"
+#include "../vesselbase/AveragingVessel.h"
 
 namespace PLMD {
 namespace gridtools {

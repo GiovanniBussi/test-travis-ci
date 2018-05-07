@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "TrigonometricPathVessel.h"
-#include "vesselbase/VesselRegister.h"
+#include "../vesselbase/VesselRegister.h"
 
 namespace PLMD {
 namespace mapping {

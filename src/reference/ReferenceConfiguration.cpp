@@ -23,9 +23,9 @@
 #include "ReferenceArguments.h"
 #include "ReferenceAtoms.h"
 #include "Direction.h"
-#include "core/Value.h"
-#include "tools/OFile.h"
-#include "tools/PDB.h"
+#include "../core/Value.h"
+#include "../tools/OFile.h"
+#include "../tools/PDB.h"
 
 namespace PLMD {
 

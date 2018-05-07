@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "PathBase.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 //+PLUMEDOC COLVAR GPROPERTYMAP
 /*

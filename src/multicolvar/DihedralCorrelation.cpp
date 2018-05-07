@@ -21,8 +21,8 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MultiColvarBase.h"
 #include "AtomValuePack.h"
-#include "tools/Torsion.h"
-#include "core/ActionRegister.h"
+#include "../tools/Torsion.h"
+#include "../core/ActionRegister.h"
 
 #include <string>
 #include <cmath>

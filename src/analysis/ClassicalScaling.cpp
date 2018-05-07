@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ClassicalScaling.h"
-#include "reference/PointWiseMapping.h"
+#include "../reference/PointWiseMapping.h"
 
 namespace PLMD {
 namespace analysis {

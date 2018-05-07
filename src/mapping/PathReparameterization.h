@@ -22,8 +22,8 @@
 #ifndef __PLUMED_mapping_PathReparameterization_h
 #define __PLUMED_mapping_PathReparameterization_h
 
-#include "reference/ReferenceConfiguration.h"
-#include "reference/Direction.h"
+#include "../reference/ReferenceConfiguration.h"
+#include "../reference/Direction.h"
 
 
 namespace PLMD {

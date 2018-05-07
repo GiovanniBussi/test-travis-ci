@@ -29,9 +29,9 @@
 #include "TargetDistribution.h"
 
 
-#include "tools/Keywords.h"
-#include "tools/Grid.h"
-#include "tools/Communicator.h"
+#include "../tools/Keywords.h"
+#include "../tools/Grid.h"
+#include "../tools/Communicator.h"
 
 #include "GridProjWeights.h"
 

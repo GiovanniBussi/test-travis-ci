@@ -22,7 +22,7 @@
 
 #include "Grid.h"
 #include "Tools.h"
-#include "core/Value.h"
+#include "../core/Value.h"
 #include "File.h"
 #include "Exception.h"
 #include "KernelFunctions.h"

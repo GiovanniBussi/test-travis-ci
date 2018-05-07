@@ -26,11 +26,11 @@
 */
 
 #include "Colvar.h"
-#include "core/PlumedMain.h"
+#include "../core/PlumedMain.h"
 #include "ActionRegister.h"
-#include "tools/PDB.h"
-#include "tools/ERMSD.h"
-#include "core/Atoms.h"
+#include "../tools/PDB.h"
+#include "../tools/ERMSD.h"
+#include "../core/Atoms.h"
 #include <iostream>
 
 using namespace std;

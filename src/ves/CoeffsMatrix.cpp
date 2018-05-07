@@ -24,12 +24,12 @@
 #include "CoeffsVector.h"
 #include "BasisFunctions.h"
 
-#include "tools/Tools.h"
-#include "core/Value.h"
-#include "tools/File.h"
-#include "tools/Exception.h"
-#include "tools/Random.h"
-#include "tools/Communicator.h"
+#include "../tools/Tools.h"
+#include "../core/Value.h"
+#include "../tools/File.h"
+#include "../tools/Exception.h"
+#include "../tools/Random.h"
+#include "../tools/Communicator.h"
 
 #include <vector>
 #include <cmath>

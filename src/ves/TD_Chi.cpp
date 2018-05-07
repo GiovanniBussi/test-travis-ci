@@ -22,7 +22,7 @@
 
 #include "TargetDistribution.h"
 
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 
 namespace PLMD {

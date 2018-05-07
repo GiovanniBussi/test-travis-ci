@@ -28,7 +28,7 @@
 #include <limits>
 #include <vector>
 
-#include "core/ActionSet.h"
+#include "../core/ActionSet.h"
 
 
 namespace PLMD {

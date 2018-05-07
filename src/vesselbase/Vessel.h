@@ -26,8 +26,8 @@
 #include <cstring>
 #include <vector>
 #include <algorithm>
-#include "tools/Exception.h"
-#include "tools/Keywords.h"
+#include "../tools/Exception.h"
+#include "../tools/Keywords.h"
 #include "ActionWithVessel.h"
 
 namespace PLMD {

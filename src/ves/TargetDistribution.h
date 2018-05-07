@@ -22,7 +22,7 @@
 #ifndef __PLUMED_ves_TargetDistribution_h
 #define __PLUMED_ves_TargetDistribution_h
 
-#include "core/Action.h"
+#include "../core/Action.h"
 
 #include <vector>
 #include <string>

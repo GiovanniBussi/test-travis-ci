@@ -20,9 +20,9 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Colvar.h"
-#include "core/PlumedMain.h"
+#include "../core/PlumedMain.h"
 #include "ActionRegister.h"
-#include "tools/Torsion.h"
+#include "../tools/Torsion.h"
 
 #include <string>
 #include <cmath>

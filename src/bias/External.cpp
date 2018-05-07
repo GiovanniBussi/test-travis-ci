@@ -21,9 +21,9 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Bias.h"
 #include "ActionRegister.h"
-#include "tools/Grid.h"
-#include "tools/Exception.h"
-#include "tools/File.h"
+#include "../tools/Grid.h"
+#include "../tools/Exception.h"
+#include "../tools/File.h"
 #include <memory>
 
 

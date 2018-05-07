@@ -21,19 +21,19 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CLTool.h"
 #include "CLToolRegister.h"
-#include "tools/Tools.h"
-#include "core/Action.h"
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "tools/Communicator.h"
-#include "tools/Random.h"
+#include "../tools/Tools.h"
+#include "../core/Action.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
+#include "../tools/Communicator.h"
+#include "../tools/Random.h"
 #include <cstdio>
 #include <string>
 #include <vector>
 #include <iostream>
-#include "tools/File.h"
-#include "core/Value.h"
-#include "tools/Matrix.h"
+#include "../tools/File.h"
+#include "../core/Value.h"
+#include "../tools/Matrix.h"
 
 using namespace std;
 

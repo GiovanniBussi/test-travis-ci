@@ -22,9 +22,9 @@
 #ifndef __PLUMED_crystallization_VectorMultiColvar_h
 #define __PLUMED_crystallization_VectorMultiColvar_h
 
-#include "tools/Matrix.h"
-#include "multicolvar/MultiColvarBase.h"
-#include "multicolvar/AtomValuePack.h"
+#include "../tools/Matrix.h"
+#include "../multicolvar/MultiColvarBase.h"
+#include "../multicolvar/AtomValuePack.h"
 
 namespace PLMD {
 namespace crystallization {

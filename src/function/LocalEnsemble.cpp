@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Function.h"
 #include "ActionRegister.h"
-#include "tools/OpenMP.h"
+#include "../tools/OpenMP.h"
 
 using namespace std;
 

@@ -36,10 +36,10 @@
 #include <sstream>
 
 #include "MetainferenceBase.h"
-#include "core/ActionRegister.h"
-#include "tools/Pbc.h"
-#include "tools/PDB.h"
-#include "tools/Torsion.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Pbc.h"
+#include "../tools/PDB.h"
+#include "../tools/Torsion.h"
 
 using namespace std;
 

@@ -20,13 +20,13 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Mapping.h"
-#include "vesselbase/Vessel.h"
-#include "reference/MetricRegister.h"
-#include "reference/ReferenceAtoms.h"
-#include "tools/PDB.h"
-#include "tools/Matrix.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
+#include "../vesselbase/Vessel.h"
+#include "../reference/MetricRegister.h"
+#include "../reference/ReferenceAtoms.h"
+#include "../tools/PDB.h"
+#include "../tools/Matrix.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
 
 namespace PLMD {
 namespace mapping {

@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "OrientationSphere.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 //+PLUMEDOC MCOLVARF POLYMER_ANGLES
 /*

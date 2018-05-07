@@ -21,8 +21,8 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ClusterAnalysisBase.h"
 #include "AdjacencyMatrixVessel.h"
-#include "core/ActionRegister.h"
-#include "tools/SwitchingFunction.h"
+#include "../core/ActionRegister.h"
+#include "../tools/SwitchingFunction.h"
 
 //+PLUMEDOC CONCOMP CLUSTER_DISTRIBUTION
 /*

@@ -24,8 +24,8 @@
 #include "CoeffsVector.h"
 #include "CoeffsMatrix.h"
 
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
 
 
 

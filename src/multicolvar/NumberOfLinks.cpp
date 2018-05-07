@@ -21,8 +21,8 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MultiColvarBase.h"
 #include "AtomValuePack.h"
-#include "core/ActionRegister.h"
-#include "tools/SwitchingFunction.h"
+#include "../core/ActionRegister.h"
+#include "../tools/SwitchingFunction.h"
 
 #include <string>
 #include <cmath>

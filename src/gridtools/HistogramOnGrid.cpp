@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "HistogramOnGrid.h"
-#include "tools/KernelFunctions.h"
+#include "../tools/KernelFunctions.h"
 
 namespace PLMD {
 namespace gridtools {

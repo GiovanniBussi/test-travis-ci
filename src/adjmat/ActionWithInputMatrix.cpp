@@ -22,9 +22,9 @@
 #include "ActionWithInputMatrix.h"
 #include "AdjacencyMatrixVessel.h"
 #include "AdjacencyMatrixBase.h"
-#include "vesselbase/ActionWithVessel.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
+#include "../vesselbase/ActionWithVessel.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
 
 namespace PLMD {
 namespace adjmat {

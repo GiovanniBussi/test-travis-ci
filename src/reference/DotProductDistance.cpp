@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MetricRegister.h"
 #include "ArgumentOnlyDistance.h"
-#include "core/Value.h"
+#include "../core/Value.h"
 
 namespace PLMD {
 

@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Colvar.h"
 #include "ActionRegister.h"
-#include "tools/Torsion.h"
+#include "../tools/Torsion.h"
 
 #include <string>
 #include <cmath>

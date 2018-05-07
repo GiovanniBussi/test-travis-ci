@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "HBPammObject.h"
-#include "tools/IFile.h"
+#include "../tools/IFile.h"
 
 namespace PLMD {
 namespace pamm {

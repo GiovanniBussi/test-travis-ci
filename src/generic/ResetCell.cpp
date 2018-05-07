@@ -19,15 +19,15 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "core/ActionAtomistic.h"
-#include "core/ActionPilot.h"
-#include "core/ActionRegister.h"
-#include "tools/Vector.h"
-#include "tools/Matrix.h"
-#include "tools/AtomNumber.h"
-#include "tools/Tools.h"
-#include "core/Atoms.h"
-#include "tools/Pbc.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Vector.h"
+#include "../tools/Matrix.h"
+#include "../tools/AtomNumber.h"
+#include "../tools/Tools.h"
+#include "../core/Atoms.h"
+#include "../tools/Pbc.h"
 
 #include <vector>
 #include <string>

@@ -22,7 +22,7 @@
 
 #include "VesselRegister.h"
 #include "FunctionVessel.h"
-#include "tools/SwitchingFunction.h"
+#include "../tools/SwitchingFunction.h"
 #include "ActionWithVessel.h"
 
 namespace PLMD {

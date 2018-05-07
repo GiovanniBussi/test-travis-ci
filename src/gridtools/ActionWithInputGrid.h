@@ -22,7 +22,7 @@
 #ifndef __PLUMED_gridtools_ActionWithInputGrid_h
 #define __PLUMED_gridtools_ActionWithInputGrid_h
 
-#include "core/ActionPilot.h"
+#include "../core/ActionPilot.h"
 #include "ActionWithGrid.h"
 
 namespace PLMD {

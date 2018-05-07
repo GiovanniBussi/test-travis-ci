@@ -20,11 +20,11 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "AdjacencyMatrixBase.h"
-#include "multicolvar/BridgedMultiColvarFunction.h"
-#include "multicolvar/AtomValuePack.h"
-#include "multicolvar/CatomPack.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
+#include "../multicolvar/BridgedMultiColvarFunction.h"
+#include "../multicolvar/AtomValuePack.h"
+#include "../multicolvar/CatomPack.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
 
 namespace PLMD {
 namespace adjmat {

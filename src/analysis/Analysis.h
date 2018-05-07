@@ -22,7 +22,7 @@
 #ifndef __PLUMED_analysis_Analysis_h
 #define __PLUMED_analysis_Analysis_h
 
-#include "vesselbase/ActionWithAveraging.h"
+#include "../vesselbase/ActionWithAveraging.h"
 
 #define PLUMED_ANALYSIS_INIT(ao) Action(ao),Analysis(ao)
 

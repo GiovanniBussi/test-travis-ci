@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ArgumentOnlyDistance.h"
-#include "core/Value.h"
+#include "../core/Value.h"
 
 namespace PLMD {
 

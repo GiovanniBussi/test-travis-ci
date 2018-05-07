@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "DRMSD.h"
 #include "MetricRegister.h"
-#include "tools/Pbc.h"
+#include "../tools/Pbc.h"
 
 namespace PLMD {
 

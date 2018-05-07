@@ -23,9 +23,9 @@
 #include "BasisFunctions.h"
 #include "VesTools.h"
 
-#include "core/ActionRegister.h"
-#include "core/ActionSet.h"
-#include "core/PlumedMain.h"
+#include "../core/ActionRegister.h"
+#include "../core/ActionSet.h"
+#include "../core/PlumedMain.h"
 
 
 namespace PLMD {

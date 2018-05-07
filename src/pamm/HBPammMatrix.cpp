@@ -19,12 +19,12 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "adjmat/AdjacencyMatrixBase.h"
-#include "multicolvar/AtomValuePack.h"
+#include "../adjmat/AdjacencyMatrixBase.h"
+#include "../multicolvar/AtomValuePack.h"
 #include "HBPammObject.h"
-#include "core/ActionRegister.h"
-#include "tools/KernelFunctions.h"
-#include "tools/IFile.h"
+#include "../core/ActionRegister.h"
+#include "../tools/KernelFunctions.h"
+#include "../tools/IFile.h"
 
 //+PLUMEDOC MATRIX HBPAMM_MATRIX
 /*

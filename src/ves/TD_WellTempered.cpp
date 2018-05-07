@@ -23,9 +23,9 @@
 #include "TargetDistribution.h"
 #include "GridIntegrationWeights.h"
 
-#include "core/ActionRegister.h"
-#include "tools/Grid.h"
-#include "core/PlumedMain.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Grid.h"
+#include "../core/PlumedMain.h"
 
 
 

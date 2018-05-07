@@ -22,8 +22,8 @@
 
 #include "FermiSwitchingFunction.h"
 
-#include "tools/Tools.h"
-#include "tools/Keywords.h"
+#include "../tools/Tools.h"
+#include "../tools/Keywords.h"
 
 #include <vector>
 #include <limits>

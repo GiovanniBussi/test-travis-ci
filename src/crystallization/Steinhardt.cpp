@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Steinhardt.h"
-#include "core/PlumedMain.h"
+#include "../core/PlumedMain.h"
 #include <complex>
 
 namespace PLMD {

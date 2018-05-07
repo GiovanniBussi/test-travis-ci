@@ -22,7 +22,7 @@
 #ifndef __PLUMED_gridtools_ActionWithGrid_h
 #define __PLUMED_gridtools_ActionWithGrid_h
 
-#include "vesselbase/ActionWithAveraging.h"
+#include "../vesselbase/ActionWithAveraging.h"
 #include "AverageOnGrid.h"
 
 namespace PLMD {

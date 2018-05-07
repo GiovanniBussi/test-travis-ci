@@ -24,8 +24,8 @@
 
 #include "VesBias.h"
 
-#include "core/ActionPilot.h"
-#include "core/ActionWithValue.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionWithValue.h"
 
 #include <vector>
 #include <string>

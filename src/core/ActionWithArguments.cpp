@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ActionWithArguments.h"
 #include "ActionWithValue.h"
-#include "tools/PDB.h"
+#include "../tools/PDB.h"
 #include "PlumedMain.h"
 #include "ActionSet.h"
 #include <iostream>

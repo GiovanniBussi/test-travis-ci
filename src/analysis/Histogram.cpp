@@ -19,14 +19,14 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "core/ActionRegister.h"
-#include "tools/KernelFunctions.h"
-#include "gridtools/ActionWithGrid.h"
-#include "vesselbase/ActionWithVessel.h"
-#include "vesselbase/StoreDataVessel.h"
-#include "multicolvar/MultiColvarBase.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
+#include "../core/ActionRegister.h"
+#include "../tools/KernelFunctions.h"
+#include "../gridtools/ActionWithGrid.h"
+#include "../vesselbase/ActionWithVessel.h"
+#include "../vesselbase/StoreDataVessel.h"
+#include "../multicolvar/MultiColvarBase.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
 
 namespace PLMD {
 namespace analysis {

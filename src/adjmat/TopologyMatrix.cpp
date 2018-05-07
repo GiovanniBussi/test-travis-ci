@@ -20,11 +20,11 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "AdjacencyMatrixBase.h"
-#include "multicolvar/AtomValuePack.h"
-#include "core/ActionRegister.h"
-#include "tools/SwitchingFunction.h"
-#include "tools/HistogramBead.h"
-#include "tools/Matrix.h"
+#include "../multicolvar/AtomValuePack.h"
+#include "../core/ActionRegister.h"
+#include "../tools/SwitchingFunction.h"
+#include "../tools/HistogramBead.h"
+#include "../tools/Matrix.h"
 
 //+PLUMEDOC MATRIX TOPOLOGY_MATRIX
 /*

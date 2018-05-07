@@ -22,8 +22,8 @@
 #ifndef __PLUMED_function_Function_h
 #define __PLUMED_function_Function_h
 
-#include "core/ActionWithValue.h"
-#include "core/ActionWithArguments.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionWithArguments.h"
 
 namespace PLMD {
 namespace function {

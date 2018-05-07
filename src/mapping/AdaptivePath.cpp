@@ -22,9 +22,9 @@
 #include "Mapping.h"
 #include "TrigonometricPathVessel.h"
 #include "PathReparameterization.h"
-#include "reference/Direction.h"
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
+#include "../reference/Direction.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
 
 //+PLUMEDOC COLVAR ADAPTIVE_PATH
 /*

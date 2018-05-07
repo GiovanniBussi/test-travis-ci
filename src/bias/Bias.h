@@ -22,9 +22,9 @@
 #ifndef __PLUMED_bias_Bias_h
 #define __PLUMED_bias_Bias_h
 
-#include "core/ActionPilot.h"
-#include "core/ActionWithValue.h"
-#include "core/ActionWithArguments.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionWithArguments.h"
 
 #define PLUMED_BIAS_INIT(ao) Action(ao),Bias(ao)
 

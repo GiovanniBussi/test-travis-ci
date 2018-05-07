@@ -22,8 +22,8 @@
 
 #include "BasisFunctions.h"
 
-#include "core/ActionRegister.h"
-#include "lepton/Lepton.h"
+#include "../core/ActionRegister.h"
+#include "../lepton/Lepton.h"
 
 
 namespace PLMD {

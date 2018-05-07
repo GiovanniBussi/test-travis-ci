@@ -23,7 +23,7 @@
 #define __PLUMED_reference_MultiReferenceBase_h
 
 #include "ReferenceConfiguration.h"
-#include "tools/Matrix.h"
+#include "../tools/Matrix.h"
 
 namespace PLMD {
 

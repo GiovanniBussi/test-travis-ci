@@ -24,10 +24,10 @@
 #include "VesTools.h"
 
 
-#include "core/ActionRegister.h"
-#include "core/ActionSet.h"
-#include "core/PlumedMain.h"
-#include "tools/Grid.h"
+#include "../core/ActionRegister.h"
+#include "../core/ActionSet.h"
+#include "../core/PlumedMain.h"
+#include "../tools/Grid.h"
 
 #include "GridIntegrationWeights.h"
 

@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ManyRestraintsBase.h"
-#include "vesselbase/Vessel.h"
+#include "../vesselbase/Vessel.h"
 
 namespace PLMD {
 namespace manyrestraints {

@@ -22,7 +22,7 @@
 #include "ActionRegister.h"
 #include "Function.h"
 
-#include "lepton/Lepton.h"
+#include "../lepton/Lepton.h"
 
 using namespace std;
 

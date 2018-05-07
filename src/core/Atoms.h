@@ -22,12 +22,12 @@
 #ifndef __PLUMED_core_Atoms_h
 #define __PLUMED_core_Atoms_h
 
-#include "tools/Communicator.h"
-#include "tools/Tensor.h"
-#include "tools/Units.h"
-#include "tools/Exception.h"
-#include "tools/AtomNumber.h"
-#include "tools/ForwardDecl.h"
+#include "../tools/Communicator.h"
+#include "../tools/Tensor.h"
+#include "../tools/Units.h"
+#include "../tools/Exception.h"
+#include "../tools/AtomNumber.h"
+#include "../tools/ForwardDecl.h"
 #include <vector>
 #include <set>
 #include <map>

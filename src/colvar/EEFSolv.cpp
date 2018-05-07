@@ -24,10 +24,10 @@
 
 #include "Colvar.h"
 #include "ActionRegister.h"
-#include "core/ActionSet.h"
-#include "core/PlumedMain.h"
-#include "core/SetupMolInfo.h"
-#include "tools/OpenMP.h"
+#include "../core/ActionSet.h"
+#include "../core/PlumedMain.h"
+#include "../core/SetupMolInfo.h"
+#include "../tools/OpenMP.h"
 #include <initializer_list>
 
 #define INV_PI_SQRT_PI 0.179587122

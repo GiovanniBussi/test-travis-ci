@@ -21,5 +21,5 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #ifndef __PLUMED_cltools_CLToolRegister_h
 #define __PLUMED_cltools_CLToolRegister_h
-#include "core/CLToolRegister.h"
+#include "../core/CLToolRegister.h"
 #endif

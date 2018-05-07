@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MetainferenceBase.h"
-#include "tools/File.h"
+#include "../tools/File.h"
 #include <cmath>
 #include <ctime>
 #include <numeric>

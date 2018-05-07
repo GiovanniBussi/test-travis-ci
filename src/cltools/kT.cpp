@@ -21,10 +21,10 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CLTool.h"
 #include "CLToolRegister.h"
-#include "tools/Tools.h"
-#include "config/Config.h"
-#include "tools/Units.h"
-#include "core/ActionRegister.h"
+#include "../tools/Tools.h"
+#include "../config/Config.h"
+#include "../tools/Units.h"
+#include "../core/ActionRegister.h"
 #include <cstdio>
 #include <string>
 #include <vector>

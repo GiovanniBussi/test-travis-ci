@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "TargetDist.h"
-#include "tools/PDB.h"
+#include "../tools/PDB.h"
 #include "ActionWithValue.h"
 #include "Value.h"
 

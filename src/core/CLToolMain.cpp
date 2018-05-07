@@ -20,13 +20,13 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CLToolMain.h"
-#include "config/Config.h"
-#include "tools/Exception.h"
-#include "tools/Communicator.h"
+#include "../config/Config.h"
+#include "../tools/Exception.h"
+#include "../tools/Communicator.h"
 #include "CLTool.h"
 #include "CLToolRegister.h"
-#include "tools/Tools.h"
-#include "tools/DLLoader.h"
+#include "../tools/Tools.h"
+#include "../tools/DLLoader.h"
 #include <string>
 #include <cstdlib>
 #include <cstdio>

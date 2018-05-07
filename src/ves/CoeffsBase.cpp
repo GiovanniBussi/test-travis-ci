@@ -24,10 +24,10 @@
 #include "BasisFunctions.h"
 #include "VesBias.h"
 
-#include "tools/Tools.h"
-#include "tools/File.h"
-#include "tools/Exception.h"
-#include "core/Value.h"
+#include "../tools/Tools.h"
+#include "../tools/File.h"
+#include "../tools/Exception.h"
+#include "../core/Value.h"
 
 #include <vector>
 #include <string>

@@ -23,7 +23,7 @@
 #define __PLUMED_core_GREX_h
 
 #include "WithCmd.h"
-#include "tools/ForwardDecl.h"
+#include "../tools/ForwardDecl.h"
 #include <string>
 #include <vector>
 

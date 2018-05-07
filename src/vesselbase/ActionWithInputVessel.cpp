@@ -22,8 +22,8 @@
 #include "ActionWithInputVessel.h"
 #include "StoreDataVessel.h"
 #include "BridgeVessel.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
 
 namespace PLMD {
 namespace vesselbase {

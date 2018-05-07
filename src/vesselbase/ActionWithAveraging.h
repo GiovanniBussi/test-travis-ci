@@ -22,11 +22,11 @@
 #ifndef __PLUMED_vesselbase_ActionWithAveraging_h
 #define __PLUMED_vesselbase_ActionWithAveraging_h
 
-#include "core/ActionPilot.h"
-#include "core/ActionWithValue.h"
-#include "core/ActionAtomistic.h"
-#include "core/ActionWithValue.h"
-#include "core/ActionWithArguments.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionWithArguments.h"
 #include "ActionWithVessel.h"
 #include "AveragingVessel.h"
 

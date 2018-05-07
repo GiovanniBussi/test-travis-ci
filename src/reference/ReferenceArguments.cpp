@@ -21,8 +21,8 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ReferenceArguments.h"
 #include "ReferenceAtoms.h"
-#include "tools/OFile.h"
-#include "core/Value.h"
+#include "../tools/OFile.h"
+#include "../core/Value.h"
 
 namespace PLMD {
 

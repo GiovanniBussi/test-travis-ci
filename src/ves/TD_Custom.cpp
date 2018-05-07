@@ -23,10 +23,10 @@
 #include "TargetDistribution.h"
 #include "GridIntegrationWeights.h"
 
-#include "core/ActionRegister.h"
-#include "tools/Grid.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Grid.h"
 
-#include "lepton/Lepton.h"
+#include "../lepton/Lepton.h"
 
 
 namespace PLMD {

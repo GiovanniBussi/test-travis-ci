@@ -21,5 +21,5 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #ifndef __PLUMED_function_ActionRegister_h
 #define __PLUMED_function_ActionRegister_h
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 #endif

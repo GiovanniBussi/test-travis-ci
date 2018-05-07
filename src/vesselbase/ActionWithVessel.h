@@ -22,13 +22,13 @@
 #ifndef __PLUMED_vesselbase_ActionWithVessel_h
 #define __PLUMED_vesselbase_ActionWithVessel_h
 
-#include "core/ActionWithValue.h"
-#include "core/ActionAtomistic.h"
-#include "tools/Exception.h"
-#include "tools/DynamicList.h"
-#include "tools/MultiValue.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionAtomistic.h"
+#include "../tools/Exception.h"
+#include "../tools/DynamicList.h"
+#include "../tools/MultiValue.h"
 #include <vector>
-#include "tools/ForwardDecl.h"
+#include "../tools/ForwardDecl.h"
 
 namespace PLMD {
 class Value;

@@ -23,7 +23,7 @@
 #define __PLUMED_tools_KernelFunctions_h
 
 #include "Matrix.h"
-#include "core/Value.h"
+#include "../core/Value.h"
 #include <vector>
 #include <memory>
 

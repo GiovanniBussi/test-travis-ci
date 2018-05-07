@@ -23,8 +23,8 @@
 #include "TargetDistribution.h"
 #include "GridIntegrationWeights.h"
 
-#include "core/ActionRegister.h"
-#include "tools/Tools.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Tools.h"
 
 #include <iostream>
 

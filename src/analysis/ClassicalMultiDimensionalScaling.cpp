@@ -21,8 +21,8 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "AnalysisWithLandmarks.h"
 #include "ClassicalScaling.h"
-#include "reference/PointWiseMapping.h"
-#include "core/ActionRegister.h"
+#include "../reference/PointWiseMapping.h"
+#include "../core/ActionRegister.h"
 
 namespace PLMD {
 namespace analysis {

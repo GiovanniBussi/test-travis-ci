@@ -23,9 +23,9 @@
 #define __PLUMED_multicolvar_CatomPack_h
 
 #include <vector>
-#include "tools/Exception.h"
-#include "tools/Tensor.h"
-#include "tools/Vector.h"
+#include "../tools/Exception.h"
+#include "../tools/Tensor.h"
+#include "../tools/Vector.h"
 
 namespace PLMD {
 namespace multicolvar {

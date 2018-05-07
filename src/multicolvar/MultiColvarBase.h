@@ -22,12 +22,12 @@
 #ifndef __PLUMED_multicolvar_MultiColvarBase_h
 #define __PLUMED_multicolvar_MultiColvarBase_h
 
-#include "core/ActionAtomistic.h"
-#include "core/ActionWithValue.h"
-#include "tools/DynamicList.h"
-#include "tools/LinkCells.h"
-#include "vesselbase/StoreDataVessel.h"
-#include "vesselbase/ActionWithVessel.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/ActionWithValue.h"
+#include "../tools/DynamicList.h"
+#include "../tools/LinkCells.h"
+#include "../vesselbase/StoreDataVessel.h"
+#include "../vesselbase/ActionWithVessel.h"
 #include "CatomPack.h"
 #include <vector>
 

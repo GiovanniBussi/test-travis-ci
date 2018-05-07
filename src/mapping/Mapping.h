@@ -22,11 +22,11 @@
 #ifndef __PLUMED_mapping_Mapping_h
 #define __PLUMED_mapping_Mapping_h
 
-#include "core/ActionAtomistic.h"
-#include "core/ActionWithValue.h"
-#include "core/ActionWithArguments.h"
-#include "vesselbase/ActionWithVessel.h"
-#include "reference/PointWiseMapping.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionWithArguments.h"
+#include "../vesselbase/ActionWithVessel.h"
+#include "../reference/PointWiseMapping.h"
 #include <vector>
 #include <memory>
 

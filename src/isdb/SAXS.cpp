@@ -26,11 +26,11 @@
 */
 
 #include "MetainferenceBase.h"
-#include "core/ActionRegister.h"
-#include "core/ActionSet.h"
-#include "core/SetupMolInfo.h"
-#include "tools/Communicator.h"
-#include "tools/Pbc.h"
+#include "../core/ActionRegister.h"
+#include "../core/ActionSet.h"
+#include "../core/SetupMolInfo.h"
+#include "../tools/Communicator.h"
+#include "../tools/Pbc.h"
 
 #include <string>
 #include <cmath>

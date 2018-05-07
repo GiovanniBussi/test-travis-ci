@@ -22,9 +22,9 @@
 
 #include "GridIntegrationWeights.h"
 
-#include "tools/Grid.h"
-#include "tools/File.h"
-#include "tools/Exception.h"
+#include "../tools/Grid.h"
+#include "../tools/File.h"
+#include "../tools/Exception.h"
 
 
 namespace PLMD {

@@ -19,15 +19,15 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "core/ActionRegister.h"
-#include "tools/Pbc.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
-#include "tools/Units.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Pbc.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
+#include "../tools/Units.h"
 #include <cstdio>
-#include "core/ActionSet.h"
+#include "../core/ActionSet.h"
 #include "MultiColvarBase.h"
-#include "gridtools/ActionWithGrid.h"
+#include "../gridtools/ActionWithGrid.h"
 
 using namespace std;
 

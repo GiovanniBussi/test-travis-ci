@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Colvar.h"
-#include "tools/OpenMP.h"
+#include "../tools/OpenMP.h"
 #include <vector>
 #include <string>
 

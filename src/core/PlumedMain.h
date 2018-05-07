@@ -23,7 +23,7 @@
 #define __PLUMED_core_PlumedMain_h
 
 #include "WithCmd.h"
-#include "tools/ForwardDecl.h"
+#include "../tools/ForwardDecl.h"
 #include <cstdio>
 #include <string>
 #include <vector>

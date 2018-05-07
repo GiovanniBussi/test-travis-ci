@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #ifndef __PLUMED_cltools_CLTool_h
 #define __PLUMED_cltools_CLTool_h
-#include "core/CLTool.h"
+#include "../core/CLTool.h"
 namespace PLMD {
 namespace cltools {
 // Ideally core/CLTool.h should be moved to this directory and CLTool should stay in namespace PLMD::cltools

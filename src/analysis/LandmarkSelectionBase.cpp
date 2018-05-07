@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "LandmarkSelectionBase.h"
-#include "reference/MultiReferenceBase.h"
+#include "../reference/MultiReferenceBase.h"
 
 namespace PLMD {
 namespace analysis {

@@ -24,7 +24,7 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-#include "tools/Matrix.h"
+#include "../tools/Matrix.h"
 
 using namespace std;
 namespace PLMD {

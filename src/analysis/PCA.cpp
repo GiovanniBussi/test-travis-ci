@@ -20,12 +20,12 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Analysis.h"
-#include "tools/Matrix.h"
-#include "reference/Direction.h"
-#include "reference/MetricRegister.h"
-#include "reference/ReferenceConfiguration.h"
-#include "reference/ReferenceValuePack.h"
-#include "core/ActionRegister.h"
+#include "../tools/Matrix.h"
+#include "../reference/Direction.h"
+#include "../reference/MetricRegister.h"
+#include "../reference/ReferenceConfiguration.h"
+#include "../reference/ReferenceValuePack.h"
+#include "../core/ActionRegister.h"
 
 //+PLUMEDOC DIMRED PCA
 /*

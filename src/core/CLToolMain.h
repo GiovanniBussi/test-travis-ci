@@ -25,7 +25,7 @@
 #include <vector>
 #include <string>
 #include "WithCmd.h"
-#include "tools/ForwardDecl.h"
+#include "../tools/ForwardDecl.h"
 
 
 namespace PLMD {

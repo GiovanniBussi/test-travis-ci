@@ -22,7 +22,7 @@
 #ifndef __PLUMED_adjmat_AlignedMatrixBase_h
 #define __PLUMED_adjmat_AlignedMatrixBase_h
 
-#include "tools/SwitchingFunction.h"
+#include "../tools/SwitchingFunction.h"
 #include "AdjacencyMatrixBase.h"
 
 

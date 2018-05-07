@@ -19,15 +19,15 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "core/ActionWithValue.h"
-#include "core/ActionAtomistic.h"
-#include "core/ActionWithArguments.h"
-#include "reference/MultiReferenceBase.h"
-#include "reference/MetricRegister.h"
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "reference/Direction.h"
-#include "tools/Pbc.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/ActionWithArguments.h"
+#include "../reference/MultiReferenceBase.h"
+#include "../reference/MetricRegister.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
+#include "../reference/Direction.h"
+#include "../tools/Pbc.h"
 
 //+PLUMEDOC COLVAR PCAVARS
 /*

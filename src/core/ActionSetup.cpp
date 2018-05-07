@@ -22,7 +22,7 @@
 #include "ActionSetup.h"
 #include "PlumedMain.h"
 #include "ActionSet.h"
-#include "tools/Exception.h"
+#include "../tools/Exception.h"
 
 namespace PLMD {
 

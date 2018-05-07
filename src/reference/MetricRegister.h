@@ -26,9 +26,9 @@
 #include <cstring>
 #include <vector>
 #include <map>
-#include "tools/Exception.h"
-#include "tools/Tools.h"
-#include "tools/PDB.h"
+#include "../tools/Exception.h"
+#include "../tools/Tools.h"
+#include "../tools/PDB.h"
 #include "ReferenceConfiguration.h"
 
 namespace PLMD {

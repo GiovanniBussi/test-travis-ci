@@ -29,10 +29,10 @@
 #include "TargetDistribution.h"
 #include "VesTools.h"
 
-#include "bias/Bias.h"
-#include "core/ActionRegister.h"
-#include "core/ActionSet.h"
-#include "core/PlumedMain.h"
+#include "../bias/Bias.h"
+#include "../core/ActionRegister.h"
+#include "../core/ActionSet.h"
+#include "../core/PlumedMain.h"
 
 
 namespace PLMD {

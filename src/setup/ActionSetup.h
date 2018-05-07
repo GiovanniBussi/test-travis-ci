@@ -21,5 +21,5 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #ifndef __PLUMED_setup_ActionSetup_h
 #define __PLUMED_setup_ActionSetup_h
-#include "core/ActionSetup.h"
+#include "../core/ActionSetup.h"
 #endif

@@ -20,8 +20,8 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "GridPrintingBase.h"
-#include "core/ActionRegister.h"
-#include "tools/OFile.h"
+#include "../core/ActionRegister.h"
+#include "../tools/OFile.h"
 
 namespace PLMD {
 namespace gridtools {

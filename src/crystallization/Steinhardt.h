@@ -23,7 +23,7 @@
 #define __PLUMED_crystallization_Steinhardt_h
 
 #include <complex>
-#include "tools/SwitchingFunction.h"
+#include "../tools/SwitchingFunction.h"
 #include "VectorMultiColvar.h"
 
 namespace PLMD {

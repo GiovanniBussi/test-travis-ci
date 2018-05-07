@@ -26,8 +26,8 @@
 #include "VesTools.h"
 #include "GridIntegrationWeights.h"
 
-#include "tools/Grid.h"
-#include "tools/Tools.h"
+#include "../tools/Grid.h"
+#include "../tools/Tools.h"
 
 
 namespace PLMD {

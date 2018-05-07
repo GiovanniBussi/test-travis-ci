@@ -20,8 +20,8 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "VolumeGradientBase.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
 #include "CatomPack.h"
 
 namespace PLMD {

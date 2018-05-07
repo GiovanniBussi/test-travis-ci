@@ -25,9 +25,9 @@
 #include "VesBias.h"
 
 
-#include "tools/File.h"
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
+#include "../tools/File.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
 
 
 namespace PLMD {

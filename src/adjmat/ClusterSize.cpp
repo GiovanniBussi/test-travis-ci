@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ClusterAnalysisBase.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 //+PLUMEDOC CONCOMP CLUSTER_NATOMS
 /*

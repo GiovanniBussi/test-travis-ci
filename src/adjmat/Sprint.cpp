@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ActionWithInputMatrix.h"
 #include "AdjacencyMatrixVessel.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 //+PLUMEDOC MATRIXF SPRINT
 /*

@@ -20,8 +20,8 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "AlignedMatrixBase.h"
-#include "core/ActionRegister.h"
-#include "tools/Matrix.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Matrix.h"
 
 //+PLUMEDOC MATRIX ALIGNED_MATRIX
 /*

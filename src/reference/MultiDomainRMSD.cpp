@@ -22,7 +22,7 @@
 #include "MultiDomainRMSD.h"
 #include "SingleDomainRMSD.h"
 #include "MetricRegister.h"
-#include "tools/PDB.h"
+#include "../tools/PDB.h"
 
 namespace PLMD {
 

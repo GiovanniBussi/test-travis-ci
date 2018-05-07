@@ -26,12 +26,12 @@
 #include "VesBias.h"
 #include "VesTools.h"
 
-#include "tools/Exception.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
-#include "tools/Communicator.h"
-#include "tools/File.h"
-#include "tools/FileBase.h"
+#include "../tools/Exception.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
+#include "../tools/Communicator.h"
+#include "../tools/File.h"
+#include "../tools/FileBase.h"
 
 namespace PLMD {
 namespace ves {

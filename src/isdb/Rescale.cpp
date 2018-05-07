@@ -22,13 +22,13 @@
 /*
 
 */
-#include "bias/Bias.h"
-#include "bias/ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
-#include "core/Value.h"
-#include "tools/File.h"
-#include "tools/Random.h"
+#include "../bias/Bias.h"
+#include "../bias/ActionRegister.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
+#include "../core/Value.h"
+#include "../tools/File.h"
+#include "../tools/Random.h"
 #include <cmath>
 #include <ctime>
 

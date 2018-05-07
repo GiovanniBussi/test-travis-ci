@@ -20,11 +20,11 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-#include "core/ActionRegister.h"
-#include "core/ActionAtomistic.h"
-#include "core/Atoms.h"
-#include "tools/IFile.h"
-#include "tools/Tools.h"
+#include "../core/ActionRegister.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/Atoms.h"
+#include "../tools/IFile.h"
+#include "../tools/Tools.h"
 #include <string>
 #include <vector>
 #include <algorithm>

@@ -22,7 +22,7 @@
 #include "ClusteringBase.h"
 #include "AdjacencyMatrixVessel.h"
 #include "AdjacencyMatrixBase.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 //+PLUMEDOC MATRIXF CLUSTER_WITHSURFACE
 /*

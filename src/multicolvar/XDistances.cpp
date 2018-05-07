@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MultiColvarBase.h"
 #include "AtomValuePack.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 #include <string>
 #include <cmath>

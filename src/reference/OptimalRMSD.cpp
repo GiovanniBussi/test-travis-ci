@@ -21,8 +21,8 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MetricRegister.h"
 #include "RMSDBase.h"
-#include "tools/Matrix.h"
-#include "tools/RMSD.h"
+#include "../tools/Matrix.h"
+#include "../tools/RMSD.h"
 
 namespace PLMD {
 

@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CubicHarmonicBase.h"
-#include "tools/SwitchingFunction.h"
+#include "../tools/SwitchingFunction.h"
 
 #include <string>
 #include <cmath>

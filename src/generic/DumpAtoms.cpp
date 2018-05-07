@@ -19,18 +19,18 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "core/ActionAtomistic.h"
-#include "core/ActionPilot.h"
-#include "core/ActionRegister.h"
-#include "tools/Pbc.h"
-#include "tools/File.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
-#include "tools/Units.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Pbc.h"
+#include "../tools/File.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
+#include "../tools/Units.h"
 #include <cstdio>
 #include <memory>
-#include "core/SetupMolInfo.h"
-#include "core/ActionSet.h"
+#include "../core/SetupMolInfo.h"
+#include "../core/ActionSet.h"
 
 #if defined(__PLUMED_HAS_XDRFILE)
 #include <xdrfile/xdrfile_xtc.h>

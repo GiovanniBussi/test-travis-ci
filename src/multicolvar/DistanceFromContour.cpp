@@ -21,10 +21,10 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MultiColvarBase.h"
 #include "AtomValuePack.h"
-#include "core/ActionRegister.h"
-#include "tools/KernelFunctions.h"
-#include "tools/RootFindingBase.h"
-#include "vesselbase/ValueVessel.h"
+#include "../core/ActionRegister.h"
+#include "../tools/KernelFunctions.h"
+#include "../tools/RootFindingBase.h"
+#include "../vesselbase/ValueVessel.h"
 
 //+PLUMEDOC COLVAR DISTANCE_FROM_CONTOUR
 /*

@@ -25,8 +25,8 @@
 #include "Colvar.h"
 #include "ActionRegister.h"
 
-#include "tools/PDB.h"
-#include "tools/RMSD.h"
+#include "../tools/PDB.h"
+#include "../tools/RMSD.h"
 
 namespace PLMD {
 namespace colvar {

@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ActionRegister.h"
-#include "tools/Tools.h"
+#include "../tools/Tools.h"
 #include "Action.h"
 #include <algorithm>
 #include <iostream>

@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ActionWithVessel.h"
-#include "tools/Communicator.h"
+#include "../tools/Communicator.h"
 #include "Vessel.h"
 #include "ShortcutVessel.h"
 #include "StoreDataVessel.h"
@@ -28,8 +28,8 @@
 #include "BridgeVessel.h"
 #include "FunctionVessel.h"
 #include "StoreDataVessel.h"
-#include "tools/OpenMP.h"
-#include "tools/Stopwatch.h"
+#include "../tools/OpenMP.h"
+#include "../tools/Stopwatch.h"
 
 using namespace std;
 namespace PLMD {

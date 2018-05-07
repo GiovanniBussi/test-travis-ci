@@ -23,7 +23,7 @@
 #include "AtomNumber.h"
 #include "Exception.h"
 #include "IFile.h"
-#include "lepton/Lepton.h"
+#include "../lepton/Lepton.h"
 #include <cstring>
 #include <dirent.h>
 #include <iostream>

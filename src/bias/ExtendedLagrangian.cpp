@@ -21,9 +21,9 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Bias.h"
 #include "ActionRegister.h"
-#include "tools/Random.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
+#include "../tools/Random.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
 
 #include <iostream>
 

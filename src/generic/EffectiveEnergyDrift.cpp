@@ -25,16 +25,16 @@
  (marco.ferrarotti@gmail.com) and Giovanni Bussi
 */
 
-#include "core/Action.h"
-#include "core/ActionPilot.h"
-#include "core/ActionWithValue.h"
-#include "core/ActionSet.h"
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
+#include "../core/Action.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionSet.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
 
-#include "tools/File.h"
-#include "tools/Pbc.h"
+#include "../tools/File.h"
+#include "../tools/Pbc.h"
 
 #include <algorithm>
 

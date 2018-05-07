@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Colvar.h"
 #include "ActionRegister.h"
-#include "tools/Pbc.h"
+#include "../tools/Pbc.h"
 
 #include <string>
 #include <cmath>

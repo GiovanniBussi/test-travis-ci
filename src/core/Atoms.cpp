@@ -23,7 +23,7 @@
 #include "ActionAtomistic.h"
 #include "MDAtoms.h"
 #include "PlumedMain.h"
-#include "tools/Pbc.h"
+#include "../tools/Pbc.h"
 #include <algorithm>
 #include <iostream>
 #include <string>

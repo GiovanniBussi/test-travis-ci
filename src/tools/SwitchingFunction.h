@@ -24,7 +24,7 @@
 
 #include <string>
 #include <vector>
-#include "lepton/Lepton.h"
+#include "../lepton/Lepton.h"
 
 namespace PLMD {
 

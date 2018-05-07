@@ -20,9 +20,9 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CoordinationBase.h"
-#include "tools/NeighborList.h"
-#include "tools/Communicator.h"
-#include "tools/OpenMP.h"
+#include "../tools/NeighborList.h"
+#include "../tools/Communicator.h"
+#include "../tools/OpenMP.h"
 
 #include <string>
 

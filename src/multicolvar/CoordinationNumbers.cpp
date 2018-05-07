@@ -21,9 +21,9 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MultiColvarBase.h"
 #include "AtomValuePack.h"
-#include "tools/NeighborList.h"
-#include "core/ActionRegister.h"
-#include "tools/SwitchingFunction.h"
+#include "../tools/NeighborList.h"
+#include "../core/ActionRegister.h"
+#include "../tools/SwitchingFunction.h"
 
 #include <string>
 #include <cmath>

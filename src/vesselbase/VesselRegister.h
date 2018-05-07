@@ -26,8 +26,8 @@
 #include <cstring>
 #include <vector>
 #include <map>
-#include "tools/Exception.h"
-#include "tools/Keywords.h"
+#include "../tools/Exception.h"
+#include "../tools/Keywords.h"
 
 namespace PLMD {
 namespace vesselbase {

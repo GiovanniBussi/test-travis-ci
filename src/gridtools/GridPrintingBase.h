@@ -22,9 +22,9 @@
 #ifndef __PLUMED_gridtools_GridPrintingBase_h
 #define __PLUMED_gridtools_GridPrintingBase_h
 
-#include "core/ActionPilot.h"
+#include "../core/ActionPilot.h"
 #include "GridVessel.h"
-#include "tools/OFile.h"
+#include "../tools/OFile.h"
 
 namespace PLMD {
 namespace gridtools {

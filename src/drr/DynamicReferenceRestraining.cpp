@@ -16,13 +16,13 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #ifdef __PLUMED_HAS_BOOST_SERIALIZATION
-#include "core/ActionRegister.h"
-#include "bias/Bias.h"
-#include "core/Atoms.h"
-#include "core/PlumedMain.h"
+#include "../core/ActionRegister.h"
+#include "../bias/Bias.h"
+#include "../core/Atoms.h"
+#include "../core/PlumedMain.h"
 #include "DRR.h"
-#include "tools/Random.h"
-#include "tools/Tools.h"
+#include "../tools/Random.h"
+#include "../tools/Tools.h"
 #include "colvar_UIestimator.h"
 
 #include <boost/archive/binary_iarchive.hpp>

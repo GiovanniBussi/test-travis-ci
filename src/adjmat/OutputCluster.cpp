@@ -20,11 +20,11 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ClusteringBase.h"
-#include "tools/OFile.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
-#include "core/ActionPilot.h"
-#include "core/ActionRegister.h"
+#include "../tools/OFile.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionRegister.h"
 
 //+PLUMEDOC CONCOMP OUTPUT_CLUSTER
 /*

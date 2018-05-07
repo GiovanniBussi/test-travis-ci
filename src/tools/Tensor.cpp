@@ -22,7 +22,7 @@
 #include "Tensor.h"
 #include "Exception.h"
 
-#include "lapack/lapack.h"
+#include "../lapack/lapack.h"
 
 namespace PLMD {
 

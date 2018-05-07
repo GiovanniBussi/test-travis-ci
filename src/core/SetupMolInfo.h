@@ -24,8 +24,8 @@
 
 #include "ActionSetup.h"
 #include "ActionAtomistic.h"
-#include "tools/Exception.h"
-#include "tools/ForwardDecl.h"
+#include "../tools/Exception.h"
+#include "../tools/ForwardDecl.h"
 
 namespace PLMD {
 

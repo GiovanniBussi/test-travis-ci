@@ -22,9 +22,9 @@
 #ifndef __PLUMED_adjmat_ActionWithInputMatrix_h
 #define __PLUMED_adjmat_ActionWithInputMatrix_h
 
-#include "core/ActionWithValue.h"
-#include "core/ActionAtomistic.h"
-#include "multicolvar/MultiColvarBase.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionAtomistic.h"
+#include "../multicolvar/MultiColvarBase.h"
 
 namespace PLMD {
 namespace adjmat {

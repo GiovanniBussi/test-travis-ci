@@ -21,11 +21,11 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Function.h"
 #include "ActionRegister.h"
-#include "tools/PDB.h"
-#include "reference/MetricRegister.h"
-#include "reference/ArgumentOnlyDistance.h"
-#include "core/Atoms.h"
-#include "core/PlumedMain.h"
+#include "../tools/PDB.h"
+#include "../reference/MetricRegister.h"
+#include "../reference/ArgumentOnlyDistance.h"
+#include "../core/Atoms.h"
+#include "../core/PlumedMain.h"
 #include <memory>
 
 using namespace std;

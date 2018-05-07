@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CLToolRegister.h"
-#include "tools/Tools.h"
+#include "../tools/Tools.h"
 #include "CLTool.h"
 #include <algorithm>
 #include <iostream>

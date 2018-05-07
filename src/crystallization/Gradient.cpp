@@ -20,9 +20,9 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Gradient.h"
-#include "core/PlumedMain.h"
-#include "core/ActionRegister.h"
-#include "tools/HistogramBead.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionRegister.h"
+#include "../tools/HistogramBead.h"
 
 namespace PLMD {
 namespace crystallization {

@@ -22,8 +22,8 @@
 #include "GREX.h"
 #include "PlumedMain.h"
 #include "Atoms.h"
-#include "tools/Tools.h"
-#include "tools/Communicator.h"
+#include "../tools/Tools.h"
+#include "../tools/Communicator.h"
 #include <sstream>
 #include <unordered_map>
 

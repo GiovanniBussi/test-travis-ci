@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "RMSDBase.h"
 #include "MetricRegister.h"
-#include "tools/RMSD.h"
+#include "../tools/RMSD.h"
 
 namespace PLMD {
 

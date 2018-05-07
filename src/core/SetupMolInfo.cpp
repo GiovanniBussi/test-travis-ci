@@ -24,8 +24,8 @@
 #include "ActionRegister.h"
 #include "ActionSet.h"
 #include "PlumedMain.h"
-#include "tools/MolDataClass.h"
-#include "tools/PDB.h"
+#include "../tools/MolDataClass.h"
+#include "../tools/PDB.h"
 
 
 namespace PLMD {

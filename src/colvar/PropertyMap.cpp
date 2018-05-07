@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "PathMSDBase.h"
-#include "core/PlumedMain.h"
+#include "../core/PlumedMain.h"
 
 using namespace std;
 

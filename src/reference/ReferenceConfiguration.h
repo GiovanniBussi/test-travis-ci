@@ -24,12 +24,12 @@
 
 #include <vector>
 #include <string>
-#include "tools/Vector.h"
-#include "tools/Tensor.h"
-#include "tools/Tools.h"
-#include "tools/Exception.h"
+#include "../tools/Vector.h"
+#include "../tools/Tensor.h"
+#include "../tools/Tools.h"
+#include "../tools/Exception.h"
 #include "ReferenceValuePack.h"
-#include "tools/Matrix.h"
+#include "../tools/Matrix.h"
 
 namespace PLMD {
 

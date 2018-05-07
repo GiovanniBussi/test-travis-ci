@@ -21,9 +21,9 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "FileBase.h"
 #include "Exception.h"
-#include "core/Action.h"
-#include "core/PlumedMain.h"
-#include "core/Value.h"
+#include "../core/Action.h"
+#include "../core/PlumedMain.h"
+#include "../core/Value.h"
 #include "Communicator.h"
 #include "Tools.h"
 #include <cstdarg>

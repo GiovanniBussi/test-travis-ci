@@ -20,8 +20,8 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ActionWithGrid.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
 
 namespace PLMD {
 namespace gridtools {

@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #ifndef __PLUMED_colvar_Colvar_h
 #define __PLUMED_colvar_Colvar_h
-#include "core/Colvar.h"
+#include "../core/Colvar.h"
 namespace PLMD {
 namespace colvar {
 // Ideally core/Colvar.h should be moved to this directory and Colvar should stay in namespace PLMD::colvar

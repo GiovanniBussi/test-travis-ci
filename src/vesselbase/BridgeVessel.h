@@ -26,8 +26,8 @@
 #include <cstring>
 #include <vector>
 #include "Vessel.h"
-#include "core/Value.h"
-#include "tools/MultiValue.h"
+#include "../core/Value.h"
+#include "../tools/MultiValue.h"
 
 namespace PLMD {
 namespace vesselbase {

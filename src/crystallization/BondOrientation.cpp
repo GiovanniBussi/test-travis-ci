@@ -19,9 +19,9 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "tools/SwitchingFunction.h"
-#include "core/ActionRegister.h"
-#include "multicolvar/AtomValuePack.h"
+#include "../tools/SwitchingFunction.h"
+#include "../core/ActionRegister.h"
+#include "../multicolvar/AtomValuePack.h"
 #include "VectorMultiColvar.h"
 
 //+PLUMEDOC MCOLVAR BOND_DIRECTIONS

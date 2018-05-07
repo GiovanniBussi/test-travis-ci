@@ -22,7 +22,7 @@
 #ifndef __PLUMED_core_ExchangePatterns_h
 #define __PLUMED_core_ExchangePatterns_h
 
-#include "tools/ForwardDecl.h"
+#include "../tools/ForwardDecl.h"
 
 namespace PLMD {
 class Random;

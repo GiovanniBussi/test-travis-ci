@@ -20,13 +20,13 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "SecondaryStructureRMSD.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
-#include "core/SetupMolInfo.h"
-#include "core/Atoms.h"
-#include "vesselbase/Vessel.h"
-#include "reference/MetricRegister.h"
-#include "reference/SingleDomainRMSD.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
+#include "../core/SetupMolInfo.h"
+#include "../core/Atoms.h"
+#include "../vesselbase/Vessel.h"
+#include "../reference/MetricRegister.h"
+#include "../reference/SingleDomainRMSD.h"
 
 namespace PLMD {
 namespace secondarystructure {

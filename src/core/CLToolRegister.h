@@ -27,7 +27,7 @@
 #include <set>
 #include <vector>
 #include <iosfwd>
-#include "tools/Keywords.h"
+#include "../tools/Keywords.h"
 #include <memory>
 
 namespace PLMD {

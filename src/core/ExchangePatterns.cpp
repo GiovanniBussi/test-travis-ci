@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ExchangePatterns.h"
-#include "tools/Random.h"
+#include "../tools/Random.h"
 
 using namespace std;
 

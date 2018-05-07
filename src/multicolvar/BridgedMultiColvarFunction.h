@@ -22,7 +22,7 @@
 #ifndef __PLUMED_multicolvar_BridgedMultiColvarFunction_h
 #define __PLUMED_multicolvar_BridgedMultiColvarFunction_h
 
-#include "vesselbase/BridgeVessel.h"
+#include "../vesselbase/BridgeVessel.h"
 #include "MultiColvarBase.h"
 
 namespace PLMD {

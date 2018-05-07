@@ -20,9 +20,9 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MetainferenceBase.h"
-#include "core/ActionRegister.h"
-#include "tools/Pbc.h"
-#include "tools/Torsion.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Pbc.h"
+#include "../tools/Torsion.h"
 
 #include <string>
 #include <cmath>

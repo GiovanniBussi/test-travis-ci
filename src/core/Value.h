@@ -25,10 +25,10 @@
 #include <vector>
 #include <string>
 #include <map>
-#include "tools/Exception.h"
-#include "tools/Tools.h"
-#include "tools/AtomNumber.h"
-#include "tools/Vector.h"
+#include "../tools/Exception.h"
+#include "../tools/Tools.h"
+#include "../tools/AtomNumber.h"
+#include "../tools/Vector.h"
 
 namespace PLMD {
 

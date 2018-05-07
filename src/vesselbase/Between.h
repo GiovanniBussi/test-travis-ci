@@ -23,7 +23,7 @@
 #define __PLUMED_vesselbase_Between_h
 
 #include "FunctionVessel.h"
-#include "tools/HistogramBead.h"
+#include "../tools/HistogramBead.h"
 
 namespace PLMD {
 namespace vesselbase {

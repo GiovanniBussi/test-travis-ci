@@ -28,7 +28,7 @@
 #include <memory>
 
 #include "Vessel.h"
-#include "core/Value.h"
+#include "../core/Value.h"
 
 namespace PLMD {
 namespace vesselbase {

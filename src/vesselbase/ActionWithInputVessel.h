@@ -22,7 +22,7 @@
 #ifndef __PLUMED_vesselbase_ActionWithInputVessel_h
 #define __PLUMED_vesselbase_ActionWithInputVessel_h
 
-#include "core/Action.h"
+#include "../core/Action.h"
 #include "Vessel.h"
 #include <vector>
 

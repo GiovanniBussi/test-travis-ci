@@ -20,10 +20,10 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CoordinationBase.h"
-#include "tools/SwitchingFunction.h"
+#include "../tools/SwitchingFunction.h"
 #include "ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
 
 #include <iostream>
 

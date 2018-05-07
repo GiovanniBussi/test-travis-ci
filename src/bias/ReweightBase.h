@@ -22,8 +22,8 @@
 #ifndef __PLUMED_bias_ReweightBase_h
 #define __PLUMED_bias_ReweightBase_h
 
-#include "core/ActionWithValue.h"
-#include "core/ActionWithArguments.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionWithArguments.h"
 
 namespace PLMD {
 namespace bias {

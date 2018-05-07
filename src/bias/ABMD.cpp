@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Bias.h"
-#include "tools/Random.h"
+#include "../tools/Random.h"
 #include "ActionRegister.h"
 #include <ctime>
 

@@ -22,9 +22,9 @@
 #ifndef __PLUMED_secondarystructure_SecondaryStructureRMSD_h
 #define __PLUMED_secondarystructure_SecondaryStructureRMSD_h
 
-#include "core/ActionAtomistic.h"
-#include "core/ActionWithValue.h"
-#include "vesselbase/ActionWithVessel.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/ActionWithValue.h"
+#include "../vesselbase/ActionWithVessel.h"
 #include <vector>
 
 namespace PLMD {

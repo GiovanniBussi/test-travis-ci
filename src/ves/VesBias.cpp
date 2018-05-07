@@ -29,11 +29,11 @@
 #include "VesTools.h"
 #include "TargetDistribution.h"
 
-#include "tools/Communicator.h"
-#include "core/ActionSet.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
-#include "tools/File.h"
+#include "../tools/Communicator.h"
+#include "../core/ActionSet.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
+#include "../tools/File.h"
 
 
 namespace PLMD {

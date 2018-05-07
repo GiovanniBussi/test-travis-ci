@@ -25,17 +25,17 @@
 #include "CoeffsVector.h"
 #include "GridIntegrationWeights.h"
 
-#include "cltools/CLTool.h"
-#include "cltools/CLToolRegister.h"
-#include "tools/Vector.h"
-#include "tools/Random.h"
-#include "tools/Grid.h"
-#include "tools/Communicator.h"
-#include "tools/FileBase.h"
-#include "core/PlumedMain.h"
-#include "core/ActionRegister.h"
-#include "core/ActionSet.h"
-#include "core/Value.h"
+#include "../cltools/CLTool.h"
+#include "../cltools/CLToolRegister.h"
+#include "../tools/Vector.h"
+#include "../tools/Random.h"
+#include "../tools/Grid.h"
+#include "../tools/Communicator.h"
+#include "../tools/FileBase.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionRegister.h"
+#include "../core/ActionSet.h"
+#include "../core/Value.h"
 
 #include <string>
 #include <cstdio>

@@ -25,11 +25,11 @@
 #include "GridIntegrationWeights.h"
 #include "VesTools.h"
 
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "core/Value.h"
-#include "tools/File.h"
-#include "tools/Grid.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
+#include "../core/Value.h"
+#include "../tools/File.h"
+#include "../tools/Grid.h"
 
 
 namespace PLMD {

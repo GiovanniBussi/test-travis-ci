@@ -23,10 +23,10 @@
 #define __PLUMED_core_ActionAtomistic_h
 
 #include "Action.h"
-#include "tools/Tensor.h"
+#include "../tools/Tensor.h"
 #include "Atoms.h"
-#include "tools/Pbc.h"
-#include "tools/ForwardDecl.h"
+#include "../tools/Pbc.h"
+#include "../tools/ForwardDecl.h"
 #include <vector>
 #include <set>
 

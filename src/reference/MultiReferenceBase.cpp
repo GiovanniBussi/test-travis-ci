@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MultiReferenceBase.h"
-#include "tools/Communicator.h"
+#include "../tools/Communicator.h"
 #include "MetricRegister.h"
 
 namespace PLMD {

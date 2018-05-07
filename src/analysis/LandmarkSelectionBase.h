@@ -22,7 +22,7 @@
 #ifndef __PLUMED_analysis_LandmarkSelectionBase_h
 #define __PLUMED_analysis_LandmarkSelectionBase_h
 
-#include "reference/ReferenceConfiguration.h"
+#include "../reference/ReferenceConfiguration.h"
 #include "AnalysisWithLandmarks.h"
 
 namespace PLMD {

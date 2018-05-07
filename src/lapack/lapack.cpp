@@ -24,13 +24,13 @@ Erik Lindahl, 2008-10-07.
 #if ! defined(__PLUMED_HAS_EXTERNAL_LAPACK)
 #include <cctype>
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -304,12 +304,12 @@ L40:
 #include <cctype>
 #include <cmath>
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -865,7 +865,7 @@ L220:
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -952,11 +952,11 @@ PLUMED_BLAS_F77_FUNC(dgebd2,DGEBD2)(int *m,
 }
 }
 #include "lapack.h"
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -1075,7 +1075,7 @@ PLUMED_BLAS_F77_FUNC(dgebrd,DGEBRD)(int *m,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -1147,7 +1147,7 @@ PLUMED_BLAS_F77_FUNC(dgelq2,DGELQ2)(int *m,
 
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -1248,7 +1248,7 @@ PLUMED_BLAS_F77_FUNC(dgelqf,DGELQF)(int *m,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -1288,7 +1288,7 @@ PLUMED_BLAS_F77_FUNC(dgeqr2,DGEQR2)(int *m,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -1391,12 +1391,12 @@ PLUMED_BLAS_F77_FUNC(dgeqrf,DGEQRF)(int *m,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -1814,11 +1814,11 @@ PLUMED_BLAS_F77_FUNC(dgesdd,DGESDD)(const char *jobz,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -1871,11 +1871,11 @@ PLUMED_BLAS_F77_FUNC(dgetf2,DGETF2)(int *m,
 }
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -1955,11 +1955,11 @@ PLUMED_BLAS_F77_FUNC(dgetrf,DGETRF)(int *m,
 }
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -2089,10 +2089,10 @@ PLUMED_BLAS_F77_FUNC(dgetri,DGETRI)(int *n,
 
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -2149,11 +2149,11 @@ PLUMED_BLAS_F77_FUNC(dgetrs,DGETRS)(const char *trans,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -2404,7 +2404,7 @@ PLUMED_BLAS_F77_FUNC(dlabrd,DLABRD)(int *m,
 #include "lapack.h"
 
 /* LAPACK */
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -2444,7 +2444,7 @@ PLUMED_BLAS_F77_FUNC(dlacpy,DLACPY)(const char *uplo,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -2501,7 +2501,7 @@ PLUMED_BLAS_F77_FUNC(dlae2,DLAE2)(double *a,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -2813,7 +2813,7 @@ PLUMED_BLAS_F77_FUNC(dlaebz,DLAEBZ)(int *ijob,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3026,7 +3026,7 @@ L60:
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3123,7 +3123,7 @@ PLUMED_BLAS_F77_FUNC(dlaev2,DLAEV2)(double *   a,
 
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3237,7 +3237,7 @@ PLUMED_BLAS_F77_FUNC(dlagtf,DLAGTF)(int *n,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3476,7 +3476,7 @@ L70:
 /* LAPACK */
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3540,7 +3540,7 @@ PLUMED_BLAS_F77_FUNC(dlamrg,DLAMRG)(int *n1,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3617,7 +3617,7 @@ PLUMED_BLAS_F77_FUNC(dlange,DLANGE)(const char *norm,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3696,7 +3696,7 @@ PLUMED_BLAS_F77_FUNC(dlanst,DLANST)(const char *norm,
 
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3818,7 +3818,7 @@ PLUMED_BLAS_F77_FUNC(dlansy,DLANSY)(const char *norm, const char *uplo, int *n, 
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -3855,7 +3855,7 @@ PLUMED_BLAS_F77_FUNC(dlapy2,DLAPY2)(double * x, double * y)
 
 #include "lapack.h"
 #include "lapack_limits.h"
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -4102,12 +4102,12 @@ L170:
 #include <cctype>
 #include <cmath>
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -4144,11 +4144,11 @@ PLUMED_BLAS_F77_FUNC(dlarf,DLARF)(const char *side,
 }
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -4549,12 +4549,12 @@ PLUMED_BLAS_F77_FUNC(dlarfb,DLARFB)(const char *side,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -4642,10 +4642,10 @@ PLUMED_BLAS_F77_FUNC(dlarfg,DLARFG)(int   *n,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -4776,7 +4776,7 @@ PLUMED_BLAS_F77_FUNC(dlarft,DLARFT)(const char *direct,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -4840,7 +4840,7 @@ PLUMED_BLAS_F77_FUNC(dlarnv,DLARNV)(int *idist,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -5170,13 +5170,13 @@ L80:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -5568,12 +5568,12 @@ L170:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -5663,12 +5663,12 @@ L30:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -6035,7 +6035,7 @@ L90:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -6121,7 +6121,7 @@ PLUMED_BLAS_F77_FUNC(dlartg,DLARTG)(double *f,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -6222,7 +6222,7 @@ PLUMED_BLAS_F77_FUNC(dlaruv,DLARUV)(int *iseed, int *n, double *x)
 
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -6291,7 +6291,7 @@ PLUMED_BLAS_F77_FUNC(dlas2,DLAS2)(double *f,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -6428,7 +6428,7 @@ PLUMED_BLAS_F77_FUNC(dlascl,DLASCL)(const char *type,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -6589,7 +6589,7 @@ PLUMED_BLAS_F77_FUNC(dlasd0,DLASD0)(int *n,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -6702,13 +6702,13 @@ PLUMED_BLAS_F77_FUNC(dlasd1,DLASD1)(int *nl,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -7016,10 +7016,10 @@ L120:
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -7250,7 +7250,7 @@ L100:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -7967,7 +7967,7 @@ L240:
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -8044,10 +8044,10 @@ PLUMED_BLAS_F77_FUNC(dlasd5,DLASD5)(int *i__,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -8168,11 +8168,11 @@ PLUMED_BLAS_F77_FUNC(dlasd6,DLASD6)(int *icompq,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -8435,10 +8435,10 @@ L100:
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -8573,10 +8573,10 @@ PLUMED_BLAS_F77_FUNC(dlasd8,DLASD8)(int *icompq,
 } 
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -8834,11 +8834,11 @@ PLUMED_BLAS_F77_FUNC(dlasda,DLASDA)(int *icompq,
 }
 #include <cctype>
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -9037,7 +9037,7 @@ PLUMED_BLAS_F77_FUNC(dlasdq,DLASDQ)(const char *uplo,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -9089,7 +9089,7 @@ PLUMED_BLAS_F77_FUNC(dlasdt,DLASDT)(int *n,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -9131,13 +9131,13 @@ PLUMED_BLAS_F77_FUNC(dlaset,DLASET)(const char *uplo,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -9227,7 +9227,7 @@ PLUMED_BLAS_F77_FUNC(dlasq1,DLASQ1)(int *n,
 #pragma warning(disable: 4723) /*division by zero - is used on purpose here*/
 #endif
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -9641,7 +9641,7 @@ L170:
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -9853,7 +9853,7 @@ L90:
 
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -10138,7 +10138,7 @@ L80:
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -10301,7 +10301,7 @@ PLUMED_BLAS_F77_FUNC(dlasq5,DLASQ5)(int *i0,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -10442,7 +10442,7 @@ PLUMED_BLAS_F77_FUNC(dlasq6,DLASQ6)(int *i0,
 #include "real.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -10691,7 +10691,7 @@ PLUMED_BLAS_F77_FUNC(dlasr,DLASR)(const char *side,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -10889,7 +10889,7 @@ L110:
 }
 }
 #include "lapack.h"
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11100,7 +11100,7 @@ L110:
 #include "real.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11140,7 +11140,7 @@ PLUMED_BLAS_F77_FUNC(dlassq,DLASSQ)(int *n,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11287,7 +11287,7 @@ PLUMED_BLAS_F77_FUNC(dlasv2,DLASV2)(double *f,
 #include "lapack.h"
 
 /* LAPACK */
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11355,12 +11355,12 @@ PLUMED_BLAS_F77_FUNC(dlaswp,DLASWP)(int *n,
 }
 }
 #include <cctype>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11520,10 +11520,10 @@ PLUMED_BLAS_F77_FUNC(dlatrd,DLATRD)(const char *  uplo,
 }
 #include <cmath>
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11592,7 +11592,7 @@ PLUMED_BLAS_F77_FUNC(dorg2r,DORG2R)(int *m,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11664,10 +11664,10 @@ PLUMED_BLAS_F77_FUNC(dorgbr,DORGBR)(const char *vect,
  
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11758,7 +11758,7 @@ PLUMED_BLAS_F77_FUNC(dorgl2,DORGL2)(int *m,
 #define DORGLQ_CROSSOVER    128
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -11903,7 +11903,7 @@ PLUMED_BLAS_F77_FUNC(dorglq,DORGLQ)(int *m,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12044,7 +12044,7 @@ PLUMED_BLAS_F77_FUNC(dorgqr,DORGQR)(int *m,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12136,7 +12136,7 @@ PLUMED_BLAS_F77_FUNC(dorm2l,DORM2L)(const char *side,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12226,7 +12226,7 @@ PLUMED_BLAS_F77_FUNC(dorm2r,DORM2R)(const char *side,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12362,7 +12362,7 @@ PLUMED_BLAS_F77_FUNC(dormbr,DORMBR)(const char *vect,
 #include "lapack.h"
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12431,7 +12431,7 @@ PLUMED_BLAS_F77_FUNC(dorml2,DORML2)(const char *side,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12581,7 +12581,7 @@ PLUMED_BLAS_F77_FUNC(dormlq,DORMLQ)(const char *side,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12705,7 +12705,7 @@ PLUMED_BLAS_F77_FUNC(dormql,DORMQL)(const char *side, const char *trans, int *m,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12844,7 +12844,7 @@ PLUMED_BLAS_F77_FUNC(dormqr,DORMQR)(const char *side,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -12950,7 +12950,7 @@ PLUMED_BLAS_F77_FUNC(dormtr,DORMTR)(const char *side,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -13430,13 +13430,13 @@ PLUMED_BLAS_F77_FUNC(dstebz,DSTEBZ)(const char *range,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -13656,13 +13656,13 @@ PLUMED_BLAS_F77_FUNC(dstegr,DSTEGR)(const char *jobz,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -13914,11 +13914,11 @@ L120:
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -14350,7 +14350,7 @@ L190:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -14677,7 +14677,7 @@ L150:
  * library we still call the driver routine, but in our own
  * case this is just a wrapper to dstegr.
  */
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -14718,11 +14718,11 @@ PLUMED_BLAS_F77_FUNC(dstevr,DSTEVR)(const char *jobz,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -14979,10 +14979,10 @@ PLUMED_BLAS_F77_FUNC(dsyevr,DSYEVR)(const char *jobz, const char *range, const c
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -15077,11 +15077,11 @@ PLUMED_BLAS_F77_FUNC(dsytd2,DSYTD2)(const char *    uplo,
 }
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -15233,11 +15233,11 @@ PLUMED_BLAS_F77_FUNC(dsytrd,DSYTRD)(const char *uplo, int *n, double *a, int *
 
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -15311,13 +15311,13 @@ PLUMED_BLAS_F77_FUNC(dtrti2,DTRTI2)(const char *uplo,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -15419,7 +15419,7 @@ PLUMED_BLAS_F77_FUNC(dtrtri,DTRTRI)(const char *uplo,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -15626,13 +15626,13 @@ L110:
 }
 #include <cctype>
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -15905,12 +15905,12 @@ L40:
 #include <cctype>
 #include <cmath>
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -16466,7 +16466,7 @@ L220:
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -16554,11 +16554,11 @@ PLUMED_BLAS_F77_FUNC(sgebd2,SGEBD2)(int *m,
 }
 }
 #include "lapack.h"
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -16677,7 +16677,7 @@ PLUMED_BLAS_F77_FUNC(sgebrd,SGEBRD)(int *m,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -16749,7 +16749,7 @@ PLUMED_BLAS_F77_FUNC(sgelq2,SGELQ2)(int *m,
 
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -16850,7 +16850,7 @@ PLUMED_BLAS_F77_FUNC(sgelqf,SGELQF)(int *m,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -16890,7 +16890,7 @@ PLUMED_BLAS_F77_FUNC(sgeqr2,SGEQR2)(int *m,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -16994,11 +16994,11 @@ PLUMED_BLAS_F77_FUNC(sgeqrf,SGEQRF)(int *m,
 #include "real.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -17414,11 +17414,11 @@ PLUMED_BLAS_F77_FUNC(sgesdd,SGESDD)(const char *jobz,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -17471,11 +17471,11 @@ PLUMED_BLAS_F77_FUNC(sgetf2,SGETF2)(int *m,
 }
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -17555,11 +17555,11 @@ PLUMED_BLAS_F77_FUNC(sgetrf,SGETRF)(int *m,
 }
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -17689,10 +17689,10 @@ PLUMED_BLAS_F77_FUNC(sgetri,SGETRI)(int *n,
 
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -17749,11 +17749,11 @@ PLUMED_BLAS_F77_FUNC(sgetrs,SGETRS)(const char *trans,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -18004,7 +18004,7 @@ PLUMED_BLAS_F77_FUNC(slabrd,SLABRD)(int *m,
 #include "lapack.h"
 
 /* LAPACK */
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -18044,7 +18044,7 @@ PLUMED_BLAS_F77_FUNC(slacpy,SLACPY)(const char *uplo,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -18101,7 +18101,7 @@ PLUMED_BLAS_F77_FUNC(slae2,SLAE2)(float *a,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -18413,7 +18413,7 @@ PLUMED_BLAS_F77_FUNC(slaebz,SLAEBZ)(int *ijob,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -18626,7 +18626,7 @@ L60:
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -18723,7 +18723,7 @@ PLUMED_BLAS_F77_FUNC(slaev2,SLAEV2)(float *   a,
 
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -18837,7 +18837,7 @@ PLUMED_BLAS_F77_FUNC(slagtf,SLAGTF)(int *n,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -19076,7 +19076,7 @@ L70:
 /* LAPACK */
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -19141,7 +19141,7 @@ PLUMED_BLAS_F77_FUNC(slamrg,SLAMRG)(int *n1,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -19219,7 +19219,7 @@ PLUMED_BLAS_F77_FUNC(slange,SLANGE)(const char *norm,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -19298,7 +19298,7 @@ PLUMED_BLAS_F77_FUNC(slanst,SLANST)(const char *norm,
 
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -19420,7 +19420,7 @@ PLUMED_BLAS_F77_FUNC(slansy,SLANSY)(const char *norm, const char *uplo, int *n, 
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -19457,7 +19457,7 @@ PLUMED_BLAS_F77_FUNC(slapy2,SLAPY2)(float * x, float * y)
 
 #include "lapack.h"
 #include "lapack_limits.h"
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -19704,12 +19704,12 @@ L170:
 #include <cctype>
 #include <cmath>
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -19746,11 +19746,11 @@ PLUMED_BLAS_F77_FUNC(slarf,SLARF)(const char *side,
 }
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -20151,12 +20151,12 @@ PLUMED_BLAS_F77_FUNC(slarfb,SLARFB)(const char *side,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -20244,10 +20244,10 @@ PLUMED_BLAS_F77_FUNC(slarfg,SLARFG)(int   *n,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -20378,7 +20378,7 @@ PLUMED_BLAS_F77_FUNC(slarft,SLARFT)(const char *direct,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -20442,7 +20442,7 @@ PLUMED_BLAS_F77_FUNC(slarnv,SLARNV)(int *idist,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -20772,13 +20772,13 @@ L80:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -21170,12 +21170,12 @@ L170:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -21265,12 +21265,12 @@ L30:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -21638,7 +21638,7 @@ L90:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -21724,7 +21724,7 @@ PLUMED_BLAS_F77_FUNC(slartg,SLARTG)(float *f,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -21825,7 +21825,7 @@ PLUMED_BLAS_F77_FUNC(slaruv,SLARUV)(int *iseed, int *n, float *x)
 
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -21894,7 +21894,7 @@ PLUMED_BLAS_F77_FUNC(slas2,SLAS2)(float *f,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -22031,7 +22031,7 @@ PLUMED_BLAS_F77_FUNC(slascl,SLASCL)(const char *type,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -22192,7 +22192,7 @@ PLUMED_BLAS_F77_FUNC(slasd0,SLASD0)(int *n,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -22305,13 +22305,13 @@ PLUMED_BLAS_F77_FUNC(slasd1,SLASD1)(int *nl,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -22619,10 +22619,10 @@ L120:
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -22853,7 +22853,7 @@ L100:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -23570,7 +23570,7 @@ L240:
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -23647,10 +23647,10 @@ PLUMED_BLAS_F77_FUNC(slasd5,SLASD5)(int *i__,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -23771,11 +23771,11 @@ PLUMED_BLAS_F77_FUNC(slasd6,SLASD6)(int *icompq,
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -24038,10 +24038,10 @@ L100:
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -24176,10 +24176,10 @@ PLUMED_BLAS_F77_FUNC(slasd8,SLASD8)(int *icompq,
 } 
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -24437,11 +24437,11 @@ PLUMED_BLAS_F77_FUNC(slasda,SLASDA)(int *icompq,
 }
 #include <cctype>
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -24640,7 +24640,7 @@ PLUMED_BLAS_F77_FUNC(slasdq,SLASDQ)(const char *uplo,
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -24692,7 +24692,7 @@ PLUMED_BLAS_F77_FUNC(slasdt,SLASDT)(int *n,
 #include "lapack.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -24734,13 +24734,13 @@ PLUMED_BLAS_F77_FUNC(slaset,SLASET)(const char *uplo,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -24830,7 +24830,7 @@ PLUMED_BLAS_F77_FUNC(slasq1,SLASQ1)(int *n,
 #pragma warning(disable: 4723) /*division by zero - is used on purpose here*/
 #endif
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -25244,7 +25244,7 @@ L170:
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -25456,7 +25456,7 @@ L90:
 
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -25741,7 +25741,7 @@ L80:
 #include <cmath>
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -25904,7 +25904,7 @@ PLUMED_BLAS_F77_FUNC(slasq5,SLASQ5)(int *i0,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -26045,7 +26045,7 @@ PLUMED_BLAS_F77_FUNC(slasq6,SLASQ6)(int *i0,
 #include "real.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -26294,7 +26294,7 @@ PLUMED_BLAS_F77_FUNC(slasr,SLASR)(const char *side,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -26492,7 +26492,7 @@ L110:
 }
 }
 #include "lapack.h"
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -26703,7 +26703,7 @@ L110:
 #include "real.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -26743,7 +26743,7 @@ PLUMED_BLAS_F77_FUNC(slassq,SLASSQ)(int *n,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -26890,7 +26890,7 @@ PLUMED_BLAS_F77_FUNC(slasv2,SLASV2)(float *f,
 #include "lapack.h"
 
 /* LAPACK */
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -26958,12 +26958,12 @@ PLUMED_BLAS_F77_FUNC(slaswp,SLASWP)(int *n,
 }
 }
 #include <cctype>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27123,10 +27123,10 @@ PLUMED_BLAS_F77_FUNC(slatrd,SLATRD)(const char *  uplo,
 }
 #include <cmath>
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27195,7 +27195,7 @@ PLUMED_BLAS_F77_FUNC(sorg2r,SORG2R)(int *m,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27267,10 +27267,10 @@ PLUMED_BLAS_F77_FUNC(sorgbr,SORGBR)(const char *vect,
  
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27361,7 +27361,7 @@ PLUMED_BLAS_F77_FUNC(sorgl2,SORGL2)(int *m,
 #define SORGLQ_CROSSOVER    128
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27506,7 +27506,7 @@ PLUMED_BLAS_F77_FUNC(sorglq,SORGLQ)(int *m,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27647,7 +27647,7 @@ PLUMED_BLAS_F77_FUNC(sorgqr,SORGQR)(int *m,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27739,7 +27739,7 @@ PLUMED_BLAS_F77_FUNC(sorm2l,SORM2L)(const char *side,
 }
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27829,7 +27829,7 @@ PLUMED_BLAS_F77_FUNC(sorm2r,SORM2R)(const char *side,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -27965,7 +27965,7 @@ PLUMED_BLAS_F77_FUNC(sormbr,SORMBR)(const char *vect,
 #include "real.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -28034,7 +28034,7 @@ PLUMED_BLAS_F77_FUNC(sorml2,SORML2)(const char *side,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -28184,7 +28184,7 @@ PLUMED_BLAS_F77_FUNC(sormlq,SORMLQ)(const char *side,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -28308,7 +28308,7 @@ PLUMED_BLAS_F77_FUNC(sormql,SORMQL)(const char *side, const char *trans, int *m,
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -28447,7 +28447,7 @@ PLUMED_BLAS_F77_FUNC(sormqr,SORMQR)(const char *side,
 #include "lapack_limits.h"
 
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -28553,7 +28553,7 @@ PLUMED_BLAS_F77_FUNC(sormtr,SORMTR)(const char *side,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -29033,13 +29033,13 @@ PLUMED_BLAS_F77_FUNC(sstebz,SSTEBZ)(const char *range,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -29259,13 +29259,13 @@ PLUMED_BLAS_F77_FUNC(sstegr,SSTEGR)(const char *jobz,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -29517,11 +29517,11 @@ L120:
 #include <cmath>
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -29953,7 +29953,7 @@ L190:
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -30280,7 +30280,7 @@ L150:
  * library we still call the driver routine, but in our own
  * case this is just a wrapper to sstegr.
  */
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -30321,11 +30321,11 @@ PLUMED_BLAS_F77_FUNC(sstevr,SSTEVR)(const char *jobz,
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -30582,10 +30582,10 @@ PLUMED_BLAS_F77_FUNC(ssyevr,SSYEVR)(const char *jobz, const char *range, const c
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -30680,11 +30680,11 @@ PLUMED_BLAS_F77_FUNC(ssytd2,SSYTD2)(const char *    uplo,
 }
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -30836,11 +30836,11 @@ PLUMED_BLAS_F77_FUNC(ssytrd,SSYTRD)(const char *uplo, int *n, float *a, int *
 
 }
 }
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;
@@ -30914,13 +30914,13 @@ PLUMED_BLAS_F77_FUNC(strti2,STRTI2)(const char *uplo,
 }
 }
 #include <cmath>
-#include "blas/blas.h"
+#include "../blas/blas.h"
 #include "lapack.h"
 #include "lapack_limits.h"
 
 #include "real.h"
 
-#include "blas/blas.h"
+#include "../blas/blas.h"
 namespace PLMD{
 namespace lapack{
 using namespace blas;

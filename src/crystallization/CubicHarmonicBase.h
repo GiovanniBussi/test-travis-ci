@@ -22,9 +22,9 @@
 #ifndef __PLUMED_crystallization_CubicHarmonicBase_h
 #define __PLUMED_crystallization_CubicHarmonicBase_h
 
-#include "multicolvar/MultiColvarBase.h"
-#include "multicolvar/AtomValuePack.h"
-#include "tools/SwitchingFunction.h"
+#include "../multicolvar/MultiColvarBase.h"
+#include "../multicolvar/AtomValuePack.h"
+#include "../tools/SwitchingFunction.h"
 
 namespace PLMD {
 namespace crystallization {

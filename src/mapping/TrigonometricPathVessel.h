@@ -22,10 +22,10 @@
 #ifndef __PLUMED_mapping_TrigonometricPathVessel_h
 #define __PLUMED_mapping_TrigonometricPathVessel_h
 
-#include "vesselbase/StoreDataVessel.h"
-#include "reference/ReferenceValuePack.h"
-#include "reference/Direction.h"
-#include "core/Value.h"
+#include "../vesselbase/StoreDataVessel.h"
+#include "../reference/ReferenceValuePack.h"
+#include "../reference/Direction.h"
+#include "../core/Value.h"
 #include "Mapping.h"
 
 namespace PLMD {

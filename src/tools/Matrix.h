@@ -29,7 +29,7 @@
 #include "MatrixSquareBracketsAccess.h"
 #include "Tools.h"
 #include "Log.h"
-#include "lapack/lapack.h"
+#include "../lapack/lapack.h"
 
 namespace PLMD {
 

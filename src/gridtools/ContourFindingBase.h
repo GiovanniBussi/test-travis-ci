@@ -23,7 +23,7 @@
 #define __PLUMED_gridtools_ContourFindingBase_h
 
 #include "ActionWithInputGrid.h"
-#include "tools/RootFindingBase.h"
+#include "../tools/RootFindingBase.h"
 
 namespace PLMD {
 namespace gridtools {

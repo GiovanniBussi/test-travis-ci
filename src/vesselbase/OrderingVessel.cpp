@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "OrderingVessel.h"
-#include "core/ActionWithValue.h"
+#include "../core/ActionWithValue.h"
 
 namespace PLMD {
 namespace vesselbase {

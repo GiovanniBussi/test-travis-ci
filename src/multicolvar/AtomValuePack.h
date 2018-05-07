@@ -22,7 +22,7 @@
 #ifndef __PLUMED_multicolvar_AtomValuePack_h
 #define __PLUMED_multicolvar_AtomValuePack_h
 
-#include "tools/MultiValue.h"
+#include "../tools/MultiValue.h"
 #include "MultiColvarBase.h"
 
 namespace PLMD {

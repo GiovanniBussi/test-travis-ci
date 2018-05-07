@@ -20,14 +20,14 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-#include "bias/Bias.h"
-#include "bias/ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
-#include "core/Value.h"
-#include "tools/File.h"
-#include "tools/OpenMP.h"
-#include "tools/Random.h"
+#include "../bias/Bias.h"
+#include "../bias/ActionRegister.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
+#include "../core/Value.h"
+#include "../tools/File.h"
+#include "../tools/OpenMP.h"
+#include "../tools/Random.h"
 #include <cmath>
 #include <ctime>
 #include <numeric>

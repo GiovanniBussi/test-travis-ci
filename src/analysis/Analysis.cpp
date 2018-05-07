@@ -21,15 +21,15 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 #include "Analysis.h"
-#include "core/ActionSet.h"
-#include "core/ActionWithValue.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
-#include "tools/IFile.h"
-#include "reference/ReferenceConfiguration.h"
-#include "reference/ReferenceArguments.h"
-#include "reference/ReferenceAtoms.h"
-#include "reference/MetricRegister.h"
+#include "../core/ActionSet.h"
+#include "../core/ActionWithValue.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
+#include "../tools/IFile.h"
+#include "../reference/ReferenceConfiguration.h"
+#include "../reference/ReferenceArguments.h"
+#include "../reference/ReferenceAtoms.h"
+#include "../reference/MetricRegister.h"
 
 namespace PLMD {
 namespace analysis {

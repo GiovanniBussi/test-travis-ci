@@ -23,8 +23,8 @@
 #define __PLUMED_pamm_PammObject_h
 
 #include <vector>
-#include "core/Value.h"
-#include "tools/KernelFunctions.h"
+#include "../core/Value.h"
+#include "../tools/KernelFunctions.h"
 
 namespace PLMD {
 namespace pamm {

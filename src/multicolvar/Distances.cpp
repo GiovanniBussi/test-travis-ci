@@ -21,9 +21,9 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MultiColvarBase.h"
 #include "AtomValuePack.h"
-#include "core/ActionRegister.h"
-#include "vesselbase/LessThan.h"
-#include "vesselbase/Between.h"
+#include "../core/ActionRegister.h"
+#include "../vesselbase/LessThan.h"
+#include "../vesselbase/Between.h"
 
 #include <string>
 #include <cmath>

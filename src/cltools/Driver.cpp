@@ -21,20 +21,20 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CLTool.h"
 #include "CLToolRegister.h"
-#include "tools/Tools.h"
-#include "wrapper/Plumed.h"
-#include "tools/Communicator.h"
-#include "tools/Random.h"
-#include "tools/Pbc.h"
+#include "../tools/Tools.h"
+#include "../wrapper/Plumed.h"
+#include "../tools/Communicator.h"
+#include "../tools/Random.h"
+#include "../tools/Pbc.h"
 #include <cstdio>
 #include <cstring>
 #include <vector>
 #include <map>
 #include <memory>
-#include "tools/Units.h"
-#include "tools/PDB.h"
-#include "tools/FileBase.h"
-#include "tools/IFile.h"
+#include "../tools/Units.h"
+#include "../tools/PDB.h"
+#include "../tools/FileBase.h"
+#include "../tools/IFile.h"
 
 // when using molfile plugin
 #ifdef __PLUMED_HAS_MOLFILE_PLUGINS
@@ -43,8 +43,8 @@
  *    ifeq (,$(findstring __PLUMED_HAS_EXTERNAL_MOLFILE_PLUGINS,$(CPPFLAGS)))
  *    CPPFLAGS+=-I../molfile
  */
-#include "molfile/libmolfile_plugin.h"
-#include "molfile/molfile_plugin.h"
+#include "../molfile/libmolfile_plugin.h"
+#include "../molfile/molfile_plugin.h"
 using namespace PLMD::molfile;
 #else
 #include <libmolfile_plugin.h>

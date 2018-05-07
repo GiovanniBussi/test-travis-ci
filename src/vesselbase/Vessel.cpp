@@ -21,9 +21,9 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Vessel.h"
 #include "ActionWithVessel.h"
-#include "tools/Exception.h"
-#include "tools/Communicator.h"
-#include "tools/Log.h"
+#include "../tools/Exception.h"
+#include "../tools/Communicator.h"
+#include "../tools/Log.h"
 
 namespace PLMD {
 namespace vesselbase {

@@ -20,10 +20,10 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-#include "core/ActionPilot.h"
-#include "core/ActionWithArguments.h"
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionWithArguments.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
 
 namespace PLMD {
 namespace analysis {

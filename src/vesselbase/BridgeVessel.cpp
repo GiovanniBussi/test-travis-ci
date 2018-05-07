@@ -20,8 +20,8 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "BridgeVessel.h"
-#include "tools/Matrix.h"
-#include "core/ActionWithArguments.h"
+#include "../tools/Matrix.h"
+#include "../core/ActionWithArguments.h"
 #include "StoreDataVessel.h"
 
 namespace PLMD {

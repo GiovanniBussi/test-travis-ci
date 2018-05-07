@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "AtomValuePack.h"
 #include "CatomPack.h"
-#include "tools/LinkCells.h"
+#include "../tools/LinkCells.h"
 
 namespace PLMD {
 namespace multicolvar {

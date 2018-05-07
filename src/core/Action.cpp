@@ -22,8 +22,8 @@
 #include "Action.h"
 #include "ActionWithValue.h"
 #include "PlumedMain.h"
-#include "tools/Log.h"
-#include "tools/Exception.h"
+#include "../tools/Log.h"
+#include "../tools/Exception.h"
 #include "Atoms.h"
 #include "ActionSet.h"
 #include <iostream>

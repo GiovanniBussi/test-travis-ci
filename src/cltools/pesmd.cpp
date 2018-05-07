@@ -21,10 +21,10 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CLTool.h"
 #include "CLToolRegister.h"
-#include "wrapper/Plumed.h"
-#include "tools/Vector.h"
-#include "tools/Random.h"
-#include "tools/Communicator.h"
+#include "../wrapper/Plumed.h"
+#include "../tools/Vector.h"
+#include "../tools/Random.h"
+#include "../tools/Communicator.h"
 #include <string>
 #include <cstdio>
 #include <cmath>

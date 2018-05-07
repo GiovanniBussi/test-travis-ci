@@ -22,11 +22,11 @@
 #include "MultiColvarBase.h"
 #include "ActionVolume.h"
 #include "MultiColvarFilter.h"
-#include "vesselbase/Vessel.h"
-#include "vesselbase/BridgeVessel.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
-#include "tools/Pbc.h"
+#include "../vesselbase/Vessel.h"
+#include "../vesselbase/BridgeVessel.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
+#include "../tools/Pbc.h"
 #include "AtomValuePack.h"
 #include <vector>
 #include <string>

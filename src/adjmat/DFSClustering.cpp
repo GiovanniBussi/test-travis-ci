@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ClusteringBase.h"
 #include "AdjacencyMatrixVessel.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 #ifdef __PLUMED_HAS_BOOST_GRAPH
 #include <boost/graph/adjacency_list.hpp>

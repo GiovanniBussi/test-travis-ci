@@ -20,10 +20,10 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MDAtoms.h"
-#include "tools/Tools.h"
-#include "tools/OpenMP.h"
-#include "tools/Exception.h"
-#include "tools/Units.h"
+#include "../tools/Tools.h"
+#include "../tools/OpenMP.h"
+#include "../tools/Exception.h"
+#include "../tools/Units.h"
 #include <algorithm>
 #include <string>
 

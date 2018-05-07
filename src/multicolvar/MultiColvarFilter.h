@@ -22,7 +22,7 @@
 #ifndef __PLUMED_multicolvar_MultiColvarFilter_h
 #define __PLUMED_multicolvar_MultiColvarFilter_h
 
-#include "tools/HistogramBead.h"
+#include "../tools/HistogramBead.h"
 #include "BridgedMultiColvarFunction.h"
 
 namespace PLMD {

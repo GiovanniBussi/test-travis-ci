@@ -21,11 +21,11 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "MultiColvarBase.h"
 #include "AtomValuePack.h"
-#include "tools/SwitchingFunction.h"
-#include "core/ActionRegister.h"
-#include "vesselbase/LessThan.h"
-#include "vesselbase/Between.h"
-#include "tools/Angle.h"
+#include "../tools/SwitchingFunction.h"
+#include "../core/ActionRegister.h"
+#include "../vesselbase/LessThan.h"
+#include "../vesselbase/Between.h"
+#include "../tools/Angle.h"
 
 #include <string>
 #include <cmath>

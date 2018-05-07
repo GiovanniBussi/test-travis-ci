@@ -21,7 +21,7 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "AdjacencyMatrixVessel.h"
 #include "AdjacencyMatrixBase.h"
-#include "vesselbase/ActionWithVessel.h"
+#include "../vesselbase/ActionWithVessel.h"
 
 namespace PLMD {
 namespace adjmat {

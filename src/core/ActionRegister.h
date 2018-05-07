@@ -26,7 +26,7 @@
 #include <map>
 #include <set>
 #include <iosfwd>
-#include "tools/Keywords.h"
+#include "../tools/Keywords.h"
 #include <memory>
 
 namespace PLMD {

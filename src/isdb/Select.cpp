@@ -22,9 +22,9 @@
 /*
 
 */
-#include "function/Function.h"
-#include "function/ActionRegister.h"
-#include "core/PlumedMain.h"
+#include "../function/Function.h"
+#include "../function/ActionRegister.h"
+#include "../core/PlumedMain.h"
 #include <string>
 
 using namespace std;

@@ -23,7 +23,7 @@
 #include "Optimizer.h"
 #include "CoeffsVector.h"
 
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 
 
 namespace PLMD {

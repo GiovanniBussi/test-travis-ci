@@ -20,9 +20,9 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "GridVessel.h"
-#include "vesselbase/ActionWithVessel.h"
-#include "tools/Random.h"
-#include "tools/Tools.h"
+#include "../vesselbase/ActionWithVessel.h"
+#include "../tools/Random.h"
+#include "../tools/Tools.h"
 
 namespace PLMD {
 namespace gridtools {

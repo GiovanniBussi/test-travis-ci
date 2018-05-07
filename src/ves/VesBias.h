@@ -25,10 +25,10 @@
 #include "CoeffsVector.h"
 #include "CoeffsMatrix.h"
 
-#include "core/ActionPilot.h"
-#include "core/ActionWithValue.h"
-#include "core/ActionWithArguments.h"
-#include "bias/Bias.h"
+#include "../core/ActionPilot.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionWithArguments.h"
+#include "../bias/Bias.h"
 
 #include <vector>
 #include <string>

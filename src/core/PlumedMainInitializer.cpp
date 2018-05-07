@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "PlumedMain.h"
-#include "tools/Exception.h"
+#include "../tools/Exception.h"
 #include <cstdlib>
 
 using namespace std;

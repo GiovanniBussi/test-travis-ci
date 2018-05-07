@@ -22,9 +22,9 @@
 
 #include "GridLinearInterpolation.h"
 
-#include "tools/Grid.h"
-#include "tools/Exception.h"
-#include "tools/Tools.h"
+#include "../tools/Grid.h"
+#include "../tools/Exception.h"
+#include "../tools/Tools.h"
 
 
 namespace PLMD {

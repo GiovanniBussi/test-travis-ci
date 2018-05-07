@@ -20,8 +20,8 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Function.h"
-#include "tools/OpenMP.h"
-#include "tools/Communicator.h"
+#include "../tools/OpenMP.h"
+#include "../tools/Communicator.h"
 
 using namespace std;
 namespace PLMD {

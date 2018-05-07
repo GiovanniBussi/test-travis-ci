@@ -22,11 +22,11 @@
 #ifndef __PLUMED_manyrestraints_ManyRestraintsBase_h
 #define __PLUMED_manyrestraints_ManyRestraintsBase_h
 
-#include "core/ActionAtomistic.h"
-#include "core/ActionWithValue.h"
-#include "core/ActionPilot.h"
-#include "vesselbase/ActionWithVessel.h"
-#include "vesselbase/ActionWithInputVessel.h"
+#include "../core/ActionAtomistic.h"
+#include "../core/ActionWithValue.h"
+#include "../core/ActionPilot.h"
+#include "../vesselbase/ActionWithVessel.h"
+#include "../vesselbase/ActionWithInputVessel.h"
 
 namespace PLMD {
 namespace manyrestraints {

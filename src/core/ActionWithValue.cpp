@@ -20,8 +20,8 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ActionWithValue.h"
-#include "tools/Exception.h"
-#include "tools/OpenMP.h"
+#include "../tools/Exception.h"
+#include "../tools/OpenMP.h"
 
 using namespace std;
 namespace PLMD {

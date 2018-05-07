@@ -25,8 +25,8 @@
 #include <vector>
 #include <string>
 #include <cstdio>
-#include "tools/Tools.h"
-#include "tools/Keywords.h"
+#include "../tools/Tools.h"
+#include "../tools/Keywords.h"
 
 namespace PLMD {
 

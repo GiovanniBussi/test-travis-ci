@@ -20,12 +20,12 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ActionWithInputMatrix.h"
-#include "multicolvar/AtomValuePack.h"
+#include "../multicolvar/AtomValuePack.h"
 #include "AdjacencyMatrixVessel.h"
 #include "AdjacencyMatrixBase.h"
-#include "core/ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "core/ActionSet.h"
+#include "../core/ActionRegister.h"
+#include "../core/PlumedMain.h"
+#include "../core/ActionSet.h"
 
 //+PLUMEDOC MATRIXF ROWSUMS
 /*

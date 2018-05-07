@@ -25,10 +25,10 @@
 #include "VesTools.h"
 #include "GridLinearInterpolation.h"
 
-#include "core/ActionRegister.h"
-#include "tools/Grid.h"
-#include "core/Value.h"
-#include "tools/File.h"
+#include "../core/ActionRegister.h"
+#include "../tools/Grid.h"
+#include "../core/Value.h"
+#include "../tools/File.h"
 
 
 namespace PLMD {

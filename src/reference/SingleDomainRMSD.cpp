@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "SingleDomainRMSD.h"
-#include "tools/PDB.h"
+#include "../tools/PDB.h"
 #include "DRMSD.h"
 
 namespace PLMD {

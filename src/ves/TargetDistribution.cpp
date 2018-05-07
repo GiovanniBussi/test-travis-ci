@@ -27,10 +27,10 @@
 #include "GridIntegrationWeights.h"
 #include "VesTools.h"
 
-#include "core/Value.h"
-#include "tools/Grid.h"
-#include "tools/File.h"
-#include "tools/Keywords.h"
+#include "../core/Value.h"
+#include "../tools/Grid.h"
+#include "../tools/File.h"
+#include "../tools/Keywords.h"
 
 #include "GridProjWeights.h"
 

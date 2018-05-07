@@ -19,11 +19,11 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "core/ActionRegister.h"
-#include "vesselbase/StoreDataVessel.h"
+#include "../core/ActionRegister.h"
+#include "../vesselbase/StoreDataVessel.h"
 #include "ContourFindingBase.h"
-#include "core/PlumedMain.h"
-#include "core/Atoms.h"
+#include "../core/PlumedMain.h"
+#include "../core/Atoms.h"
 
 //+PLUMEDOC GRIDANALYSIS FIND_CONTOUR
 /*

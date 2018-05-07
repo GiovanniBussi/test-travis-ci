@@ -22,7 +22,7 @@
 #include <iostream>
 #include <complex>
 #include "ActionWithInputGrid.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 #ifdef __PLUMED_HAS_FFTW
 #include <fftw3.h> // FFTW interface
 #endif

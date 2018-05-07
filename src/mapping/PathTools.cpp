@@ -19,14 +19,14 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "cltools/CLTool.h"
-#include "cltools/CLToolRegister.h"
-#include "tools/Tools.h"
-#include "tools/Pbc.h"
-#include "core/Value.h"
-#include "reference/ReferenceConfiguration.h"
+#include "../cltools/CLTool.h"
+#include "../cltools/CLToolRegister.h"
+#include "../tools/Tools.h"
+#include "../tools/Pbc.h"
+#include "../core/Value.h"
+#include "../reference/ReferenceConfiguration.h"
 #include "PathReparameterization.h"
-#include "reference/MetricRegister.h"
+#include "../reference/MetricRegister.h"
 #include <cstdio>
 #include <string>
 #include <vector>

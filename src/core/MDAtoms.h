@@ -22,9 +22,9 @@
 #ifndef __PLUMED_core_MDAtoms_h
 #define __PLUMED_core_MDAtoms_h
 
-#include "tools/Tensor.h"
-#include "tools/Vector.h"
-#include "tools/AtomNumber.h"
+#include "../tools/Tensor.h"
+#include "../tools/Vector.h"
+#include "../tools/AtomNumber.h"
 #include <vector>
 #include <set>
 #include <memory>

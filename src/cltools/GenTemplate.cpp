@@ -21,9 +21,9 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "CLTool.h"
 #include "CLToolRegister.h"
-#include "tools/Tools.h"
+#include "../tools/Tools.h"
 //#include "PlumedConfig.h"
-#include "core/ActionRegister.h"
+#include "../core/ActionRegister.h"
 #include <cstdio>
 #include <string>
 #include <vector>

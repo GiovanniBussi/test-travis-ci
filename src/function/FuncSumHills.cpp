@@ -21,14 +21,14 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "ActionRegister.h"
 #include "Function.h"
-#include "tools/Exception.h"
-#include "tools/Communicator.h"
-#include "tools/BiasRepresentation.h"
-#include "tools/KernelFunctions.h"
-#include "tools/File.h"
-#include "tools/Tools.h"
-#include "tools/Stopwatch.h"
-#include "tools/Grid.h"
+#include "../tools/Exception.h"
+#include "../tools/Communicator.h"
+#include "../tools/BiasRepresentation.h"
+#include "../tools/KernelFunctions.h"
+#include "../tools/File.h"
+#include "../tools/Tools.h"
+#include "../tools/Stopwatch.h"
+#include "../tools/Grid.h"
 #include <iostream>
 #include <memory>
 

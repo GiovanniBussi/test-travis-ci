@@ -20,7 +20,7 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "PathBase.h"
-#include "tools/SwitchingFunction.h"
+#include "../tools/SwitchingFunction.h"
 
 namespace PLMD {
 namespace mapping {

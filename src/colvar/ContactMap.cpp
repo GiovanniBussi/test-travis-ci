@@ -20,9 +20,9 @@
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #include "Colvar.h"
-#include "tools/NeighborList.h"
+#include "../tools/NeighborList.h"
 #include "ActionRegister.h"
-#include "tools/SwitchingFunction.h"
+#include "../tools/SwitchingFunction.h"
 
 #include <string>
 #include <cmath>

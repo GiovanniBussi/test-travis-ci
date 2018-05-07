@@ -19,10 +19,10 @@
    You should have received a copy of the GNU Lesser General Public License
    along with plumed.  If not, see <http://www.gnu.org/licenses/>.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#include "colvar/Colvar.h"
-#include "colvar/ActionRegister.h"
-#include "core/PlumedMain.h"
-#include "tools/Pbc.h"
+#include "../colvar/Colvar.h"
+#include "../colvar/ActionRegister.h"
+#include "../core/PlumedMain.h"
+#include "../tools/Pbc.h"
 
 #include <string>
 #include <cmath>

@@ -22,7 +22,7 @@
 #ifndef __PLUMED_analysis_AverageVessel_h
 #define __PLUMED_analysis_AverageVessel_h
 
-#include "vesselbase/AveragingVessel.h"
+#include "../vesselbase/AveragingVessel.h"
 
 namespace PLMD {
 namespace analysis {

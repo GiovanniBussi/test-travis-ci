@@ -22,7 +22,7 @@
 #ifndef __PLUMED_reference_ReferenceValuePack_h
 #define __PLUMED_reference_ReferenceValuePack_h
 
-#include "tools/MultiValue.h"
+#include "../tools/MultiValue.h"
 
 namespace PLMD {
 
