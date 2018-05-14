@@ -25,6 +25,7 @@
 #include "ActionRegister.h"
 #include "ActionSet.h"
 #include "ActionWithValue.h"
+#include "ActionWithArguments.h"
 #include "ActionWithVirtualAtom.h"
 #include "Atoms.h"
 #include "CLToolMain.h"
@@ -565,6 +566,10 @@ void PlumedMain::readInputWords(const std::vector<std::string> & words) {
       plumed_merror(msg);
     };
     action->checkRead();
+    if(auto ptr=dynamic_cast<ActionWithArguments*>(action.get()))
+      if(ptr->getNumberOfArguments()==0) {
+        plumed_error() << "Action "<<ptr->getLabel()<<" is expected to have arguments but has none";
+      }
     actionSet.emplace_back(std::move(action));
   };
 
