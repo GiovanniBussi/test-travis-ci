@@ -250,8 +250,6 @@ ActionWithArguments::ActionWithArguments(const ActionOptions&ao):
       log.printf("  with arguments");
       for(unsigned i=0; i<arg.size(); i++) log.printf(" %s",arg[i]->getName().c_str());
       log.printf("\n");
-    } else {
-      plumed_error()<<"you did not specify any argument";
     }
     requestArguments(arg);
   }
