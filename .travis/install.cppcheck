@@ -5,9 +5,9 @@ set -x
 
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 sudo apt-get update -q
-sudo apt-get install gcc-8 g++-8 -y
-CC=gcc-8
-CXX=g++-8
+sudo apt-get install gcc-7 g++-7 -y
+CC=gcc-7
+CXX=g++-7
 
 cd "$(mktemp -dt plumed.XXXXXX)"
 
