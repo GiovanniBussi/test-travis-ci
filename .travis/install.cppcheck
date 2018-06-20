@@ -3,12 +3,6 @@
 set -e
 set -x
 
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-sudo apt-get update -q
-sudo apt-get install gcc-7 g++-7 -y
-CC=gcc-7
-CXX=g++-7
-
 cd "$(mktemp -dt plumed.XXXXXX)"
 
 git clone https://github.com/danmar/cppcheck.git
