@@ -162,7 +162,8 @@ void AdjacencyMatrixBase::finishMatrixSetup( const bool& symmetric, const std::v
   vesselbase::VesselOptions da("","",0,param,this);
   Keywords keys; AdjacencyMatrixVessel::registerKeywords( keys );
   vesselbase::VesselOptions da2(da,keys); 
-  addVessel( std::move( new AdjacencyMatrixVessel(da2) ) );
+  std::unique_ptr<AdjacencyMatrixVessel> ves( new AdjacencyMatrixVessel(da2) );
+  addVessel( std::move( ves ) );
   setupMultiColvarBase( all_atoms );
 }
 

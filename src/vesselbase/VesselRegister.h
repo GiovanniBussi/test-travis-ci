@@ -26,6 +26,7 @@
 #include <cstring>
 #include <vector>
 #include <map>
+#include <memory>
 #include "tools/Exception.h"
 #include "tools/Keywords.h"
 
