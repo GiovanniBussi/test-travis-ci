@@ -141,7 +141,9 @@ FindSphericalContour::FindSphericalContour(const ActionOptions&ao):
   // Set this here so the same set of grid points are used on every turn
   std::string vstring = "TYPE=fibonacci COMPONENTS=" + getLabel() + " COORDINATES=x,y,z PBC=F,F,F";
   auto grid=createGrid( "grid", vstring ); grid->setNoDerivatives();
-  setAveragingAction( std::move(grid), true ); grid->setupFibonacciGrid( npoints );
+  setAveragingAction( std::move(grid), true );
+  // use mygrid, since at this point grid has been moved
+  mygrid->setupFibonacciGrid( npoints );
 
   checkRead();
   // Create a task list
