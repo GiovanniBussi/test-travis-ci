@@ -401,9 +401,9 @@ Tools::DirectoryChanger::~DirectoryChanger() {
 #ifdef __PLUMED_HAS_CHDIR
   if(strlen(cwd)==0) return;
   int ret=chdir(cwd);
-  plumed_assert(ret==0) <<"Cannot cd back to directory "<<cwd;
-#else
-  plumed_error()<<"You are trying to use DirectoryChanger but your system does not support chdir";
+// we cannot put an assertion here (in a destructor) otherwise cppcheck complains
+// we thus just report the problem
+  if(ret!=0) fprintf(stderr,"+++ WARNING: cannot cd back to directory %s\n",cwd);
 #endif
 }
 
