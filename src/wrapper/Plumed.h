@@ -1680,8 +1680,8 @@ plumed plumed_create_reference(plumed p) {
 plumed plumed_create_invalid() {
   plumed p;
   plumed_implementation* pimpl;
-  assert(pimpl);
   pimpl=plumed_malloc_pimpl();
+  assert(pimpl);
   p.p=pimpl;
   return p;
 }
