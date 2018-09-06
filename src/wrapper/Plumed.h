@@ -1646,9 +1646,10 @@ plumed plumed_create_dlopen(const char*path) {
   /* allocate space for implementation object. this is free-ed in plumed_finalize(). */
   pimpl=plumed_malloc_pimpl();
 #ifdef __PLUMED_HAS_DLOPEN
-  dlopenmode=RTLD_LOCAL;
 #ifdef RTLD_DEEPBIND
-  dlopenmode=dlopenmode|RTLD_DEEPBIND;
+  dlopenmode=RTLD_DEEPBIND;
+#else
+  dlopenmode=RTLD_LOCAL;
 #endif
   if(path) pimpl->dlhandle=plumed_attempt_dlopen(path,dlopenmode);
   if(pimpl->dlhandle) plumed_search_symbols(pimpl->dlhandle,&pimpl->functions,&pimpl->table);
