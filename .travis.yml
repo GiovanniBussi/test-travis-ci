@@ -98,7 +98,7 @@ install:
   - export LIBRARY_PATH="$HOME/opt/lib:$LIBRARY_PATH"
   - export LD_LIBRARY_PATH="$HOME/opt/lib:$LD_LIBRARY_PATH"
 # better check ccache when setting OMPI_CXX
-  - export CCACHE_COMPILERCHECK="%compiler% -dumpversion"
+  - export CCACHE_COMPILERCHECK="%compiler% -v"
 # Setting the TMPDIR in this way allegedly prevents problems with the compilation of 
 # PLUMED + Python on macos
   - export TMPDIR="/tmp" 
@@ -116,8 +116,6 @@ install:
 # install some package - these are fast, we install them anyway
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y libfftw3-dev gsl-bin libgsl0-dev  libboost-serialization-dev ; fi
   - if test "$PLUMED_CXX" ; then ./.travis/install.xdrfile ; fi
-# a specific old version of asmjit is required:
-  - if test -n "$ASMJIT" ; then ./.travis/install.asmjit $ASMJIT ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
       ./.travis/install.ccache v3.4.3 ;
     fi
@@ -151,6 +149,8 @@ install:
       sudo pip install numpy ;
       sudo pip install Cython ;
     fi
+# a specific old version of asmjit is required:
+  - if test -n "$ASMJIT" ; then CXX=g++-4.9 ./.travis/install.asmjit $ASMJIT ; fi
 # then replace doxygen with the desided version
 # I use 1.8.10 instead of 1.8.11 since it looks like 1.8.11 have troubles with
 # non case sensitive files (it writes capitalized filenames)
