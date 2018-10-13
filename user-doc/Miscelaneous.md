@@ -655,7 +655,7 @@ yet to integer numbers (e.g.: the PACE argument of \ref METAD).
 <TABLE ALIGN="center" FRAME="void" WIDTH="95%%" CELLPADDING="5%%">
 <TR>
 <TD WIDTH="5%"> 
-\subpage Regex </TD><TD> </TD><TD> POSIX regular expressions can be used to select multiple actions when using ARG (i.e. \ref PRINT).
+\subpage Regex </TD><TD> </TD><TD> Regular expressions can be used to select multiple actions when using ARG (i.e. \ref PRINT).
 </TD>
 </TR>
 <TR>

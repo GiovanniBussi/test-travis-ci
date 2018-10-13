@@ -99,8 +99,6 @@ bool hasDlopen();
 
 bool isInstalled();
 
-bool hasCregex();
-
 bool hasMolfile();
 
 bool hasExternalMolfile();
