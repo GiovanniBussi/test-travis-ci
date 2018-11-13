@@ -39,7 +39,7 @@ plumedversion = subprocess.check_output(['grep','-v','#','../VERSION']).decode("
 print( "Module name " + plumedname )
 print( "Version number " + plumedversion )
 
-extra_compile_args=['-D__PLUMED_HAS_DLOPEN','-D__PLUMED_WRAPPER_LINK_RUNTIME=1','-D__PLUMED_WRAPPER_CXX=1','-D__PLUMED_WRAPPER_IMPLEMENTATION=1','-D__PLUMED_WRAPPER_EXTERN=0'] 
+extra_compile_args=['-D__PLUMED_HAS_DLOPEN','-D__PLUMED_WRAPPER_LINK_RUNTIME=1','-D__PLUMED_WRAPPER_CXX=1','-D__PLUMED_WRAPPER_IMPLEMENTATION=1','-D__PLUMED_WRAPPER_EXTERN=0','-D__PLUMED_WRAPPER_CXX_DEFAULT_INVALID=1'] 
 
 try:
     extra_compile_args.append("-D__PLUMED_DEFAULT_KERNEL=" + os.path.abspath(os.environ["plumed_default_kernel"]))
