@@ -21,7 +21,7 @@ all:
 	program_name=plumed \
           include_dir=../src/wrapper \
           default_kernel="$$PWD/../src/lib/libplumedKernel.$(SOEXT)" \
-          $(python_bin) buildPythonInterface.py build_ext -i
+          $(python_bin) setup.py build_ext -i
 
 else
 

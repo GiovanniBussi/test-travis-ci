@@ -315,7 +315,7 @@ ifdef python_bin
           program_name="$(program_name)" \
           include_dir=../../../wrapper \
           default_kernel="$(libdir)/lib$(program_name)Kernel.$(SOEXT)" \
-          $(python_bin) buildPythonInterface.py build_ext -i
+          $(python_bin) setup.py build_ext -i
 	cp -pr install/python "$(DESTDIR)$(libdir)/$(program_name)/" 
 endif
 ifdef BASH_COMPLETION_DIR
