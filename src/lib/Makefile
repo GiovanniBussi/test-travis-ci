@@ -312,9 +312,9 @@ endif
 ifdef python_bin
 	cp -pr ../../python install 
 	cd install/python && rm -fr *.so plumed.cpp build && \
-          program_name="$(program_name)" \
-          include_dir=../../../wrapper \
-          default_kernel="$(libdir)/lib$(program_name)Kernel.$(SOEXT)" \
+          plumed_program_name="$(program_name)" \
+          plumed_include_dir=../../../wrapper \
+          plumed_default_kernel="$(libdir)/lib$(program_name)Kernel.$(SOEXT)" \
           $(python_bin) setup.py build_ext -i
 	cp -pr install/python "$(DESTDIR)$(libdir)/$(program_name)/" 
 endif

@@ -18,9 +18,9 @@ ifdef python_bin
 
 all:
 	@echo Building python interface for PLUMED 
-	program_name=plumed \
-          include_dir=../src/wrapper \
-          default_kernel="$$PWD/../src/lib/libplumedKernel.$(SOEXT)" \
+	plumed_program_name=plumed \
+          plumed_include_dir=../src/wrapper \
+          plumed_default_kernel="$$PWD/../src/lib/libplumedKernel.$(SOEXT)" \
           $(python_bin) setup.py build_ext -i
 
 else
@@ -31,5 +31,9 @@ endif
 
 endif
 
+pip:
+	cp ../src/wrapper/Plumed.h .
+	cp ../VERSION .
+
 clean:
-	rm -fr *.so plumed.cpp build
+	rm -fr *.so plumed.cpp build Plumed.h VERSION
