@@ -16,6 +16,11 @@ else
 
 ifdef python_bin
 
+unexport CXX
+unexport CC
+unexport CFLAGS
+unexport CXXFLAGS
+
 all:
 	@echo Building python interface for PLUMED 
 	plumed_program_name=plumed \
