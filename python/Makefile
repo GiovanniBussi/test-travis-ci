@@ -3,6 +3,8 @@ ifneq ($(MAKECMDGOALS),clean)
   -include ../Makefile.conf
 endif
 
+VERSION = $(shell if test -f ../VERSION ; then grep -v \\\# ../VERSION ; else echo "Unknown" ; fi )
+
 .PHONY: all clean install
 
 plumed_compiled := $(wildcard ../src/lib/plumed)
@@ -24,6 +26,7 @@ unexport CXXFLAGS
 all:
 	@echo Building python interface for PLUMED 
 	plumed_program_name=plumed \
+          plumed_version=$(VERSION) \
           plumed_include_dir=../src/wrapper \
           plumed_default_kernel="$$PWD/../src/lib/libplumedKernel.$(SOEXT)" \
           $(python_bin) setup.py build_ext -i

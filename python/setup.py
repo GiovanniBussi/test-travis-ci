@@ -34,9 +34,9 @@ except:
     plumedname = "plumed"
 
 try:
-    plumedversion = subprocess.check_output(['grep','-v','#','./VERSION']).decode("utf-8")
+    plumedversion = os.environ["plumed_version"]
 except:
-    plumedversion = subprocess.check_output(['grep','-v','#','../VERSION']).decode("utf-8")
+    plumedversion = subprocess.check_output(['grep','-v','#','./VERSION']).decode("utf-8")
 
 print( "Module name " + plumedname )
 print( "Version number " + plumedversion )
