@@ -18,13 +18,9 @@ else
 
 ifdef python_bin
 
-unexport CXX
-unexport CC
-unexport CFLAGS
-unexport CXXFLAGS
-
 all:
 	@echo Building python interface for PLUMED 
+	unset CXX && unset CC && unset CFLAGS && unset CXXFLAGS && \
 	plumed_program_name=plumed \
           plumed_version=$(VERSION) \
           plumed_include_dir=../src/wrapper \

@@ -22,10 +22,7 @@
 #
 # This python routine builds an interface between plumed and python using cython
 #
-try:
-        from setuptools import setup
-    except ImportError:
-        from distutils.core import setup
+from distutils.core import setup
 from distutils.extension import Extension
 import subprocess
 import os
