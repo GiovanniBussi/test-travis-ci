@@ -64,7 +64,7 @@ matrix:
   - os: osx
     if: branch =~ ^test- OR type IN(pull_request)
     osx_image: xcode7.3
-    env: PLUMED_MACPORTS="plumed" PLUMED_PYTHON=3.7
+    env: PLUMED_MACPORTS="plumed" PLUMED_PYTHON="2.7 3.6 3.7"
     cache:
       directories:
       - $HOME/.macports-ci-ccache
@@ -72,14 +72,14 @@ matrix:
   - os: osx
     if: branch =~ ^test- OR type IN(pull_request)
     osx_image: xcode7.3
-    env: PLUMED_MACPORTS="plumed +allmodules"
+    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="2.7 3.6 3.7"
     cache:
       directories:
       - $HOME/.macports-ci-ccache
 # osx serial macports debug variant
   - os: osx
     osx_image: xcode8.3
-    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON=2.7
+    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="2.7 3.6 3.7"
     cache:
       directories:
       - $HOME/.macports-ci-ccache
@@ -199,9 +199,9 @@ script:
       sudo port -N -k install $PLUMED_MACPORTS ;
       plumed config show ;
       ./macports-ci ccache --save ;
-      if test -n "$PLUMED_PYTHON" ; then
-        sudo port -N install py${PLUMED_PYTHON//./}-plumed ;
-      fi
+      for p in $PLUMED_PYTHON ; do
+        sudo port -N install py${p//./}-plumed ;
+      done
     fi
 
 # build docker container
@@ -222,10 +222,10 @@ script:
   - if test "$PLUMED_CXX" ; then make -C regtest checkfail ; fi
   - if test -n "$PLUMED_MACPORTS" ; then
       sudo port -N -d test $PLUMED_MACPORTS ;
-      if test -n "$PLUMED_PYTHON" ; then
-        sudo port intall py${PLUMED_PYTHON//./}-nose ;
-        nosetests-$PLUMED_PYTHON -w python ;
-      fi
+      for p in $PLUMED_PYTHON ; do
+        sudo port install py${p//./}-nose ;
+        nosetests-$p -v -w python ;
+      done
     fi
 
 # CPPCHECK:
