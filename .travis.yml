@@ -8,32 +8,32 @@ matrix:
 # Variable PLUMED_ALL_TESTS=yes ensures that all the regtests can be run.
 # If some of them is not enabled, the whole suite will fail.
   - os: linux
-    dist: trusty
+    dist: xenial
     sudo: required
     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ MAKEDOC=yes PLUMED_ALL_TESTS=yes LAPACK=yes ASMJIT=673dcefa
 # coverage scan
   - os: linux
-    dist: trusty
+    dist: xenial
     sudo: required
     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ MAKECOVERAGE=yes PLUMED_ALL_TESTS=yes
 # the following are with debug flags
   - os: linux
-    dist: trusty
+    dist: xenial
     sudo: required
     env: PLUMED_CC=gcc   PLUMED_CXX=g++    CONFIG_FLAGS="--enable-debug --enable-debug-glibcxx"
   - os: linux
-    dist: trusty
+    dist: xenial
     sudo: required
     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ CONFIG_FLAGS="--enable-debug --enable-debug-glibcxx"
 # cppcheck
   - os: linux
-    dist: trusty
+    dist: xenial
     sudo: required
     env: CPPCHECK=yes CPPCHECK_VERSION=1.86
 # test using external blas with internal lapack
   - os: linux
     if: branch =~ ^test- OR type IN(pull_request)
-    dist: trusty
+    dist: xenial
     sudo: required
     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++  PLUMED_CXXFLAGS=-O3 LAPACK=yes CONFIG_FLAGS="--disable-external-lapack"
 # test using docker image.
@@ -139,6 +139,7 @@ install:
 # we do it only when needed
   - if test "$PLUMED_CXX" == "mpic++" -a "$TRAVIS_OS_NAME" == "linux" ; then sudo apt-get install -y libopenmpi-dev openmpi-bin ; fi
   - if test "$PLUMED_CXX" == "mpic++" -a "$TRAVIS_OS_NAME" == "osx" ;   then brew install openmpi ; fi
+  - export OMPI_MCA_btl="^openib"
   - if test "$MAKEDOC" == yes ; then sudo apt-get install -y graphviz            ; fi
 # install doxygen-latex
   - if test "$MAKEDOC" == yes ; then sudo apt-get install -y doxygen-latex ; fi
