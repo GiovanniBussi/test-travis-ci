@@ -273,9 +273,6 @@ void ContactMap::calculate() {
     // when using components the parallelisation do not work
     stride=1;
     rank=0;
-  } else {
-    stride=comm.Get_size();
-    rank=comm.Get_rank();
   }
 
 // sum over close pairs
