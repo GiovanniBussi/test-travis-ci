@@ -145,9 +145,6 @@ void CoordinationBase::calculate()
   if(serial) {
     stride=1;
     rank=0;
-  } else {
-    stride=comm.Get_size();
-    rank=comm.Get_rank();
   }
 
   unsigned nt=OpenMP::getNumThreads();
