@@ -239,6 +239,9 @@ public:
 // - if we use RTLD_DEFAULT
 // - on Linux if we don't use RTLD_DEFAULT, since dlopen(NULL,RTLD_LOCAL) returns a null pointer.
     if(handle) dlclose(handle);
+// I think this is a bug in cppcheck 1.87
+// Notice that if handle is NULL there's no point in dlclosing it.
+// cppcheck-suppress resourceLeak
 #endif
   }
   ~PlumedMainInitializer() {
