@@ -6,7 +6,7 @@ PortGroup           python 1.0
 version             @_VERSION_@
 revision            @_REVISION_@
 name                py-plumed
-categories          science
+categories          python
 
 platforms           darwin
 categories-append   science
@@ -16,21 +16,19 @@ maintainers         {gmail.com:giovanni.bussi @GiovanniBussi} openmaintainer
 description         Python wrappers for plumed.
 long_description    ${description} They allow the plumed library to be directly used from python.
 
+homepage            http://www.plumed.org
 @_FETCH_@
+
+
 
 python.versions     27 36 37
 
-
-pre-configure {
-    worksrcdir ${distname}/python
-}
-
-pre-test {
-    worksrcdir ${distname}/python
-}
+# python setup is located in python subdir of plumed repository
+worksrcdir ${distname}/python
 
 if {${name} ne ${subport}} {
 
+# setup the wrappers so that by default they load MacPorts plumed library
     build.env-append plumed_default_kernel=${prefix}/lib/libplumedKernel.dylib \
                      plumed_macports=yes
 
@@ -40,6 +38,8 @@ if {${name} ne ${subport}} {
                          path:${prefix}/lib/libplumedKernel.dylib:plumed
 
     depends_test-append port:py${python.version}-nose
+    test.cmd            nosetests-${python.branch}
+    test.target
     test.run            yes
 }
 
