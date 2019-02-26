@@ -202,7 +202,7 @@ script:
       plumed config show ;
       ./macports-ci ccache --save ;
       for p in $PLUMED_PYTHON ; do
-        sudo port -N install py${p//./}-plumed ;
+        sudo port -d -N install py${p//./}-plumed ;
       done
     fi
 
