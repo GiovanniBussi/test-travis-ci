@@ -18,6 +18,7 @@ sed "s|/base/|/|" |
 sed "s|/x86/|/|" |
 sed "s/::asmjit/::PLMD::asmjit/" |
 sed "s/defined(ASMJIT_EMBED)/1/" |
+grep -v "bool-operation" | # this is giving too many warnings on travis-ci
 cat > $move
 done
 
@@ -32,6 +33,7 @@ sed 's|/base/string.h|/moved_string.h|' $file |
 sed 's|\.\./[a-z0-9A-Z_]*/|./|' |
 sed 's|\.\./|./|' |
 sed "s/::asmjit/::PLMD::asmjit/" |
+grep -v "bool-operation" | # this is giving too many warnings on travis-ci
 awk '
 BEGIN{
 print "#ifdef __PLUMED_HAS_ASMJIT"
