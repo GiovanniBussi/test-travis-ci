@@ -143,13 +143,14 @@ install:
 # install cython for python interface
 # nose and other packages are needed for running tests
 # only for linux and homebrew (no macports)
+# pandas: needed by mdtraj
   - if test "$PLUMED_CXX" ; then
       sudo pip install --upgrade pip ;
       sudo pip install Cython ;
       sudo pip install nose ;
       sudo pip install numpy ;
       sudo pip install six ;
-      sudo pip install pandas ; # needed by mdtraj
+      sudo pip install pandas ;
       sudo pip install mdtraj ;
       sudo pip install MDAnalysis ;
       python -c "import MDAnalysis" ;
