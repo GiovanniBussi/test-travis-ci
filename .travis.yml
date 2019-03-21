@@ -151,6 +151,8 @@ install:
       sudo pip install six ;
       sudo pip install mdtraj ;
       sudo pip install MDAnalysis ;
+      python -c "import MDAnalysis" ;
+      python -c "import mdtraj" ;
     fi
 # then replace doxygen with the desided version
 # I use 1.8.10 instead of 1.8.11 since it looks like 1.8.11 have troubles with
