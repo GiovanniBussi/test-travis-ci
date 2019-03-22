@@ -113,6 +113,7 @@ SetupMolInfo::SetupMolInfo( const ActionOptions&ao ):
         log<<"  PDB is not sorted, python interpreter will be disabled\n";
       } else {
         if(Subprocess::available()) {
+          log<<"  starting python interpreter\n";
           selector.reset(new Subprocess(cmd+" \""+config::getPlumedRoot()+"\"/scripts/selector.sh --pdb " + reference));
         } else {
           log<<"  subprocessing not suppored, python interpreter will be disabled\n";
