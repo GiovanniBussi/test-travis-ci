@@ -209,7 +209,7 @@ void SetupMolInfo::interpretSymbol( const std::string& symbol, std::vector<AtomN
     (*selector) << symbol << "\n";
     selector->flush();
     std::string res;
-    selector->getC2P().getline(res);
+    selector->getline(res);
     auto words=Tools::getWords(res);
     if(!words.empty() && words[0]=="Error") plumed_error()<<res;
     atoms.resize(0);
