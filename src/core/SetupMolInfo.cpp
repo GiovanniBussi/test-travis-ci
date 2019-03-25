@@ -115,6 +115,7 @@ SetupMolInfo::SetupMolInfo( const ActionOptions&ao ):
         if(Subprocess::available()) {
           log<<"  starting python interpreter\n";
           selector.reset(new Subprocess(cmd+" \""+config::getPlumedRoot()+"\"/scripts/selector.sh --pdb " + reference));
+          selector->stop();
         } else {
           log<<"  subprocessing not suppored, python interpreter will be disabled\n";
         }
@@ -207,6 +208,7 @@ void SetupMolInfo::interpretSymbol( const std::string& symbol, std::vector<AtomN
     log<<"  symbol " + symbol + " will be sent to python interpreter\n";
 
     plumed_assert(selector) << "Python interpreter is disabled, selection " + symbol + " cannot be interpreted";
+    auto h=selector->contStop(); // stops again when it goes out of scope
     (*selector) << symbol << "\n";
     selector->flush();
     std::string res;
