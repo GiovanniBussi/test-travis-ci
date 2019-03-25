@@ -673,7 +673,7 @@ if test $subprocess == true ; then
 /* random program calling all the functions needed to manage a subprocess */
 #include <cstdio>
 #include <unistd.h>
-#include <signal.h>
+#include <csignal>
 
 int
 main ()

@@ -7489,7 +7489,7 @@ $as_echo_n "checking subprocess without extra libs... " >&6; }
 /* random program calling all the functions needed to manage a subprocess */
 #include <cstdio>
 #include <unistd.h>
-#include <signal.h>
+#include <csignal>
 
 int
 main ()

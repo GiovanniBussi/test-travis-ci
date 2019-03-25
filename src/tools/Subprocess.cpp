@@ -24,7 +24,7 @@
 #include "Tools.h"
 #ifdef __PLUMED_HAS_SUBPROCESS
 #include <unistd.h>
-#include <signal.h>
+#include <csignal>
 #endif
 
 using namespace std;
