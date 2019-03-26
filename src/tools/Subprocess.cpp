@@ -47,7 +47,7 @@ public:
     //if(pid!=0 && pid!=-1) kill(pid,SIGCONT);
   }
   ~SubprocessPid() {
-    if(pid!=0 && pid!=-1) kill(pid,SIGINT);
+    //if(pid!=0 && pid!=-1) kill(pid,SIGINT);
   }
 #endif
 };
