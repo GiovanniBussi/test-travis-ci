@@ -283,24 +283,24 @@ void EEFSolv::setupConstants(const vector<AtomNumber> &atoms, vector<vector<doub
   map<string, map<string, string> > typemap;
   valuemap = setupValueMap();
   typemap  = setupTypeMap();
-  vector<SetupMolInfo*> moldat = plumed.getActionSet().select<SetupMolInfo*>();
+  auto * moldat = plumed.getActionSet().selectLatest<SetupMolInfo*>(this);
   bool cter=false;
-  if (moldat.size() == 1) {
-    log << "  MOLINFO DATA found, using proper atom names\n";
+  if (moldat) {
+    log<<"  MOLINFO DATA found with label " <<moldat->getLabel()<<", using proper atom names\n";
     for(unsigned i=0; i<atoms.size(); ++i) {
 
       // Get atom and residue names
-      string Aname = moldat[0]->getAtomName(atoms[i]);
-      string Rname = moldat[0]->getResidueName(atoms[i]);
+      string Aname = moldat->getAtomName(atoms[i]);
+      string Rname = moldat->getResidueName(atoms[i]);
       string Atype = typemap[Rname][Aname];
 
       // Check for terminal COOH or COO- (different atomtypes & parameters!)
-      if (moldat[0]->getAtomName(atoms[i]) == "OT1" || moldat[0]->getAtomName(atoms[i]) == "OXT") {
+      if (moldat->getAtomName(atoms[i]) == "OT1" || moldat->getAtomName(atoms[i]) == "OXT") {
         // We create a temporary AtomNumber object to access future atoms
         unsigned ai = atoms[i].index();
         AtomNumber tmp_an;
         tmp_an.setIndex(ai + 2);
-        if (moldat[0]->getAtomName(tmp_an) == "HT2") {
+        if (moldat->getAtomName(tmp_an) == "HT2") {
           // COOH
           Atype = "OB";
         } else {
@@ -309,11 +309,11 @@ void EEFSolv::setupConstants(const vector<AtomNumber> &atoms, vector<vector<doub
         }
         cter = true;
       }
-      if (moldat[0]->getAtomName(atoms[i]) == "OT2" || (cter == true && moldat[0]->getAtomName(atoms[i]) == "O")) {
+      if (moldat->getAtomName(atoms[i]) == "OT2" || (cter == true && moldat->getAtomName(atoms[i]) == "O")) {
         unsigned ai = atoms[i].index();
         AtomNumber tmp_an;
         tmp_an.setIndex(ai + 1);
-        if (moldat[0]->getAtomName(tmp_an) == "HT2") {
+        if (moldat->getAtomName(tmp_an) == "HT2") {
           // COOH
           Atype = "OH1";
         } else {

@@ -820,12 +820,12 @@ void SAXS::cal_coeff() {
 
 void SAXS::getMartiniSFparam(const vector<AtomNumber> &atoms, vector<vector<long double> > &parameter)
 {
-  vector<SetupMolInfo*> moldat=plumed.getActionSet().select<SetupMolInfo*>();
-  if( moldat.size()==1 ) {
-    log<<"  MOLINFO DATA found, using proper atom names\n";
+  auto* moldat=plumed.getActionSet().selectLatest<SetupMolInfo*>(this);
+  if( moldat ) {
+    log<<"  MOLINFO DATA found with label " <<moldat->getLabel()<<", using proper atom names\n";
     for(unsigned i=0; i<atoms.size(); ++i) {
-      string Aname = moldat[0]->getAtomName(atoms[i]);
-      string Rname = moldat[0]->getResidueName(atoms[i]);
+      string Aname = moldat->getAtomName(atoms[i]);
+      string Rname = moldat->getResidueName(atoms[i]);
       if(Rname=="ALA") {
         if(Aname=="BB") {
           parameter[i].push_back(9.045);
@@ -2010,14 +2010,14 @@ double SAXS::calculateASF(const vector<AtomNumber> &atoms, vector<vector<long do
   param_a[S][3] = 1.58630; param_b[S][3] = 56.1720;
   param_a[S][4] = 0.0;     param_b[S][4] = 1.0;
 
-  vector<SetupMolInfo*> moldat=plumed.getActionSet().select<SetupMolInfo*>();
+  auto* moldat=plumed.getActionSet().selectLatest<SetupMolInfo*>(this);
 
   double Iq0=0.;
-  if( moldat.size()==1 ) {
-    log<<"  MOLINFO DATA found, using proper atom names\n";
+  if( moldat ) {
+    log<<"  MOLINFO DATA found with label " <<moldat->getLabel()<<", using proper atom names\n";
     for(unsigned i=0; i<atoms.size(); ++i) {
       // get atom name
-      string name = moldat[0]->getAtomName(atoms[i]);
+      string name = moldat->getAtomName(atoms[i]);
       char type;
       // get atom type
       char first = name.at(0);
