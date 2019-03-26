@@ -41,10 +41,10 @@ public:
     plumed_assert(pid!=0 && pid!=-1);
   }
   void stop() noexcept {
-    if(pid!=0 && pid!=-1) kill(pid,SIGSTOP);
+    //if(pid!=0 && pid!=-1) kill(pid,SIGSTOP);
   }
   void cont() noexcept {
-    if(pid!=0 && pid!=-1) kill(pid,SIGCONT);
+    //if(pid!=0 && pid!=-1) kill(pid,SIGCONT);
   }
   ~SubprocessPid() {
     if(pid!=0 && pid!=-1) kill(pid,SIGINT);
