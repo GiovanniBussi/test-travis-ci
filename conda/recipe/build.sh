@@ -19,6 +19,6 @@ export LIBS="-lgsl -lgslcblas -llapack -lblas -lxdrfile -lz $LIBS"
 # --disable-static-patch avoid tests that are only required for static patches
 ./configure --prefix=$PREFIX --disable-python --disable-libsearch --disable-static-patch
 
-make -j4
+make -j${CPU_COUNT}
 make install
 
