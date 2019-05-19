@@ -23,8 +23,8 @@ conda update -q conda
 conda info -a
 conda install conda-build conda-verify anaconda-client
 
-conda-build recipe
-conda-build py-plumed
+conda-build -c conda-forge recipe
+conda-build -c conda-forge py-plumed
 
 ls -l $CONDA_HOME/conda-bld/
 ls -l $CONDA_HOME/conda-bld/$TRAVIS_OS_NAME-64

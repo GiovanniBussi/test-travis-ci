@@ -16,28 +16,35 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+# this is required to install xxd, a command line tool used during build
+    - vim  # [linux]
   host:
+    - gsl
+    - libblas
+    - liblapack
+    - xdrfile
     - zlib
-# cannot link gsl on MacOS
-    - gsl # [linux]
-  run:
-    - zlib
-    - gsl # [linux]
 
 test:
-  # TODO. In principle these could be the official regtests.
   commands:
     - plumed info --root
-    - plumed info --version
     - plumed info --long-version
+    - plumed-patch -h
+    - plumed config has external_blas external_lapack gsl xdrfile zlib
     - $PREFIX/lib/plumed/plumed-runtime -h
+    - test -f $PREFIX/lib/libplumed.a
+    - test -f $PREFIX/lib/libplumed$SHLIB_EXT
+    - test -f $PREFIX/lib/libplumedWrapper.a
+    - test -f $PREFIX/lib/libplumedKernel$SHLIB_EXT
+    - conda inspect linkages -p $PREFIX $PKG_NAME
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://www.plumed.org/
-  license: LGPL
+  license: LGPL-3.0
   license_file: COPYING.LESSER
   summary: 'Free energy calculations in molecular systems'
-  description: >
+  description: |
     PLUMED is an open source library for free energy calculations in
     molecular systems which works together with some of the most
     popular molecular dynamics engines.
