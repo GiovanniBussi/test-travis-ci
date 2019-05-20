@@ -25,7 +25,7 @@ conda install conda-build conda-verify anaconda-client
 
 export CPU_COUNT=4
 
-conda-build -c conda-forge recipe
+conda-build -c conda-forge plumed
 conda-build -c conda-forge py-plumed
 
 ls -l $CONDA_HOME/conda-bld/
