@@ -20,6 +20,8 @@ requirements:
     - python
     - pip
     - cython
+  run:
+    - python
 
 test:
   requires:
