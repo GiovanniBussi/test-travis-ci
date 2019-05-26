@@ -99,13 +99,13 @@ protected:
 public:
 /// this constructor here is Value-aware
   GridBase(const std::string& funcl, const std::vector<Value*> & args, const std::vector<std::string> & gmin,
-       const std::vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline,
-       bool usederiv);
+           const std::vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline,
+           bool usederiv);
 /// this constructor here is not Value-aware
   GridBase(const std::string& funcl, const std::vector<std::string> &names, const std::vector<std::string> & gmin,
-       const std::vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline,
-       bool usederiv, const std::vector<bool> &isperiodic, const std::vector<std::string> &pmin,
-       const std::vector<std::string> &pmax );
+           const std::vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline,
+           bool usederiv, const std::vector<bool> &isperiodic, const std::vector<std::string> &pmin,
+           const std::vector<std::string> &pmax );
 /// this is the real initializator
   void Init(const std::string & funcl, const std::vector<std::string> &names, const std::vector<std::string> & gmin,
             const std::vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline, bool usederiv,
@@ -160,8 +160,8 @@ public:
   static std::unique_ptr<GridBase> create(const std::string&,const std::vector<Value*>&,IFile&,bool,bool,bool);
 /// read grid from file and check boundaries are what is expected from input
   static std::unique_ptr<GridBase> create(const std::string&,const std::vector<Value*>&, IFile&,
-                                      const std::vector<std::string>&,const std::vector<std::string>&,
-                                      const std::vector<unsigned>&,bool,bool,bool);
+                                          const std::vector<std::string>&,const std::vector<std::string>&,
+                                          const std::vector<unsigned>&,bool,bool,bool);
 /// get grid size
   virtual index_t getSize() const=0;
 /// get grid value
@@ -217,23 +217,23 @@ class Grid : public GridBase
   double contour_location=0.0;
 public:
   Grid(const std::string& funcl, const std::vector<Value*> & args, const std::vector<std::string> & gmin,
-             const std::vector<std::string> & gmax,
-             const std::vector<unsigned> & nbin, bool dospline, bool usederiv):
+       const std::vector<std::string> & gmax,
+       const std::vector<unsigned> & nbin, bool dospline, bool usederiv):
     GridBase(funcl,args,gmin,gmax,nbin,dospline,usederiv)
-    {
-      grid_.assign(maxsize_,0.0);
-      if(usederiv_) der_.assign(maxsize_*dimension_,0.0);
-    }
+  {
+    grid_.assign(maxsize_,0.0);
+    if(usederiv_) der_.assign(maxsize_*dimension_,0.0);
+  }
 /// this constructor here is not Value-aware
   Grid(const std::string& funcl, const std::vector<std::string> &names, const std::vector<std::string> & gmin,
        const std::vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline,
        bool usederiv, const std::vector<bool> &isperiodic, const std::vector<std::string> &pmin,
        const std::vector<std::string> &pmax ):
-   GridBase(funcl,names,gmin,gmax,nbin,dospline,usederiv,isperiodic,pmin,pmax)
-   {
-      grid_.assign(maxsize_,0.0);
-      if(usederiv_) der_.assign(maxsize_*dimension_,0.0);
-   }
+    GridBase(funcl,names,gmin,gmax,nbin,dospline,usederiv,isperiodic,pmin,pmax)
+  {
+    grid_.assign(maxsize_,0.0);
+    if(usederiv_) der_.assign(maxsize_*dimension_,0.0);
+  }
   index_t getSize() const override;
 /// this is to access to Grid:: version of these methods (allowing overloading of virtual methods)
   using GridBase::getValue;

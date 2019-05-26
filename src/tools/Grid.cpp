@@ -43,7 +43,7 @@ namespace PLMD {
 constexpr size_t GridBase::maxdim;
 
 GridBase::GridBase(const std::string& funcl, const std::vector<Value*> & args, const vector<std::string> & gmin,
-           const vector<std::string> & gmax, const vector<unsigned> & nbin, bool dospline, bool usederiv) {
+                   const vector<std::string> & gmax, const vector<unsigned> & nbin, bool dospline, bool usederiv) {
 // various checks
   plumed_assert(args.size()<=maxdim) << "grid dim cannot exceed "<<maxdim;
   plumed_massert(args.size()==gmin.size(),"grid min dimensions in input do not match number of arguments");
@@ -73,14 +73,14 @@ GridBase::GridBase(const std::string& funcl, const std::vector<Value*> & args, c
 }
 
 GridBase::GridBase(const std::string& funcl, const std::vector<string> &names, const std::vector<std::string> & gmin,
-           const vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline, bool usederiv, const std::vector<bool> &isperiodic, const std::vector<std::string> &pmin, const std::vector<std::string> &pmax ) {
+                   const vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline, bool usederiv, const std::vector<bool> &isperiodic, const std::vector<std::string> &pmin, const std::vector<std::string> &pmax ) {
 // this calls the initializator
   Init(funcl,names,gmin,gmax,nbin,dospline,usederiv,isperiodic,pmin,pmax);
 }
 
 void GridBase::Init(const std::string& funcl, const std::vector<std::string> &names, const vector<std::string> & gmin,
-                const std::vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline, bool usederiv, 
-                const std::vector<bool> &isperiodic, const std::vector<std::string> &pmin, const std::vector<std::string> &pmax ) {
+                    const std::vector<std::string> & gmax, const std::vector<unsigned> & nbin, bool dospline, bool usederiv,
+                    const std::vector<bool> &isperiodic, const std::vector<std::string> &pmin, const std::vector<std::string> &pmax ) {
   fmt_="%14.9f";
 // various checks
   plumed_assert(names.size()<=maxdim) << "grid size cannot exceed "<<maxdim;
@@ -545,8 +545,8 @@ void GridBase::writeCubeFile(OFile& ofile, const double& lunit) {
 }
 
 std::unique_ptr<GridBase> GridBase::create(const std::string& funcl, const std::vector<Value*> & args, IFile& ifile,
-                                   const vector<std::string> & gmin,const vector<std::string> & gmax,
-                                   const vector<unsigned> & nbin,bool dosparse, bool dospline, bool doder) {
+    const vector<std::string> & gmin,const vector<std::string> & gmax,
+    const vector<unsigned> & nbin,bool dosparse, bool dospline, bool doder) {
   std::unique_ptr<GridBase> grid=GridBase::create(funcl,args,ifile,dosparse,dospline,doder);
   std::vector<unsigned> cbin( grid->getNbin() );
   std::vector<std::string> cmin( grid->getMin() ), cmax( grid->getMax() );
