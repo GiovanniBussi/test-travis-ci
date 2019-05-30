@@ -88,7 +88,6 @@ matrix:
   - name: Conda build, linux
     os: linux
     if: branch =~ ^test- OR tag IS present OR type IN(pull_request)
-    dist: trusty
     sudo: required
     env: PLUMED_CONDA=yes
 # osx conda package
