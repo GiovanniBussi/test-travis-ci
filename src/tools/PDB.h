@@ -32,7 +32,7 @@
 
 namespace PLMD {
 
-class SetupMolInfo;
+class GenericMolInfo;
 class OFile;
 class Log;
 
@@ -131,7 +131,7 @@ public:
 /// Access to the position array
   Vector getPosition(AtomNumber a)const;
 /// Print out a PDB object
-  void print( const double& lunits, SetupMolInfo* mymoldat, OFile& ofile, const std::string& fmt );
+  void print( const double& lunits, GenericMolInfo* mymoldat, OFile& ofile, const std::string& fmt );
 /// Does the PDB have this flag
   bool hasFlag( const std::string& fname ) const ;
 /// Get the metric type

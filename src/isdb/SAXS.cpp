@@ -28,7 +28,7 @@
 #include "MetainferenceBase.h"
 #include "core/ActionRegister.h"
 #include "core/ActionSet.h"
-#include "core/SetupMolInfo.h"
+#include "core/GenericMolInfo.h"
 #include "tools/Communicator.h"
 #include "tools/Pbc.h"
 
@@ -820,7 +820,7 @@ void SAXS::cal_coeff() {
 
 void SAXS::getMartiniSFparam(const vector<AtomNumber> &atoms, vector<vector<long double> > &parameter)
 {
-  auto* moldat=plumed.getActionSet().selectLatest<SetupMolInfo*>(this);
+  auto* moldat=plumed.getActionSet().selectLatest<GenericMolInfo*>(this);
   if( moldat ) {
     log<<"  MOLINFO DATA found with label " <<moldat->getLabel()<<", using proper atom names\n";
     for(unsigned i=0; i<atoms.size(); ++i) {
@@ -2010,7 +2010,7 @@ double SAXS::calculateASF(const vector<AtomNumber> &atoms, vector<vector<long do
   param_a[S][3] = 1.58630; param_b[S][3] = 56.1720;
   param_a[S][4] = 0.0;     param_b[S][4] = 1.0;
 
-  auto* moldat=plumed.getActionSet().selectLatest<SetupMolInfo*>(this);
+  auto* moldat=plumed.getActionSet().selectLatest<GenericMolInfo*>(this);
 
   double Iq0=0.;
   if( moldat ) {
