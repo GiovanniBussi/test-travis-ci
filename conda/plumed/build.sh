@@ -8,6 +8,9 @@ if [[ $(uname) == "Linux" ]]; then
   export STATIC_LIBS=-Wl,-rpath-link,$PREFIX/lib
 # -lrt is required to link clock_gettime
   export LIBS="-lrt $LIBS"
+else
+  export CFLAGS="${CFLAGS} -i sysroot ${CONDA_BUILD_SYSROOT}"
+  export CXXFLAGS="${CXXFLAGS} -i sysroot ${CONDA_BUILD_SYSROOT}"
 fi
 
 # we also store path so that software linking libplumedWrapper.a knows where libplumedKernel can be found.

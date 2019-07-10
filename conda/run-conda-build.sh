@@ -17,6 +17,13 @@ fi
 wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-$csys-x86_64.sh -O /tmp/miniconda.sh
 bash /tmp/miniconda.sh -b -f -p $CONDA_HOME
 export PATH="$CONDA_HOME/bin:$PATH"
+
+if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+wget https://raw.githubusercontent.com/devernay/xcodelegacy/master/XcodeLegacy.sh
+chmod +x XcodeLegacy.sh
+sudo ./XcodeLegacy.sh -osx109 install 
+fi
+
 conda config --set always_yes yes --set changeps1 no
 conda config --set anaconda_upload no # not automatically at least
 conda update -q conda
