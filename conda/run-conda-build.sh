@@ -11,6 +11,7 @@ elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     csys=MacOSX
     wget https://raw.githubusercontent.com/devernay/xcodelegacy/master/XcodeLegacy.sh
     chmod +x XcodeLegacy.sh
+    ./XcodeLegacy.sh -osx109 buildpackages
     sudo ./XcodeLegacy.sh -osx109 install
 else
     echo "Unsupported system $TRAVIS_OS_NAME"
