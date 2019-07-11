@@ -8,6 +8,10 @@ if [[ $(uname) == "Linux" ]]; then
   export STATIC_LIBS=-Wl,-rpath-link,$PREFIX/lib
 # -lrt is required to link clock_gettime
   export LIBS="-lrt $LIBS"
+else
+  CXXFLAGS="-mmacosx-version-min=10.9 -isysroot /Developer/SDKs/MacOSX10.9.sdk $CXXFLAGS"
+  CFLAGS="-mmacosx-version-min=10.9 -isysroot /Developer/SDKs/MacOSX10.9.sdk $CFLAGS"
+  LDFLAGS="-mmacosx-version-min=10.9 -isysroot /Developer/SDKs/MacOSX10.9.sdk $LDFLAGS"
 fi
 
 # we also store path so that software linking libplumedWrapper.a knows where libplumedKernel can be found.
