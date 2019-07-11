@@ -10,7 +10,7 @@ if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
 elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     csys=MacOSX
     PREV=$(pwd)
-    cd $HOME
+    cd /var/tmp
     mkdir MacOSX-SDKs
     cd MacOSX-SDKs
     wget https://github.com/phracker/MacOSX-SDKs/releases/download/10.13/MacOSX10.9.sdk.tar.xz
