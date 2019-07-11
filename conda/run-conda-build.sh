@@ -9,10 +9,13 @@ if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     csys=Linux
 elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     csys=MacOSX
-    wget https://raw.githubusercontent.com/devernay/xcodelegacy/master/XcodeLegacy.sh
-    chmod +x XcodeLegacy.sh
-    ./XcodeLegacy.sh -osx109 buildpackages
-    sudo ./XcodeLegacy.sh -osx109 install
+    cd $HOME
+    mkdir MacOSX-SDKs
+    cd MacOSX-SDKs
+    wget https://github.com/phracker/MacOSX-SDKs/releases/download/10.13/MacOSX10.9.sdk.tar.xz
+    tar -xf ./MacOSX10.9.sdk.tar.xz
+    rm MacOSX10.9.sdk.tar.xz
+    cd $TRAVIS_BUILD_DIR
 else
     echo "Unsupported system $TRAVIS_OS_NAME"
     exit 1

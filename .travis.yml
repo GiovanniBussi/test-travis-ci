@@ -6,7 +6,7 @@ matrix:
   - name: Conda build, MacOS
     os: osx
     if: branch =~ ^test- OR tag IS present OR type IN(pull_request) OR type IN(cron)
-    osx_image: xcode8.3
+    osx_image: xcode9.2
     env: PLUMED_CONDA=yes
 install:
 script:
