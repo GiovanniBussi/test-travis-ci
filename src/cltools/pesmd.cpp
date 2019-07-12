@@ -284,7 +284,7 @@ public:
       lrand=sqrt((1.-lscale*lscale)*temp);
       for(int j=0; j<nat; ++j) {
         for(int k=0; k<3; ++k) {
-          if( 3*j+k>dim-1 ) break;
+          if( 3*j+k>dim-1) break;
           therm_eng=therm_eng+0.5*velocities[j][k]*velocities[j][k];
           velocities[j][k]=lscale*velocities[j][k]+lrand*random.Gaussian();
           therm_eng=therm_eng-0.5*velocities[j][k]*velocities[j][k];
