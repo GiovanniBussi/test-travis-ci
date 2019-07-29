@@ -108,6 +108,8 @@ matrix:
 #   VALGRIND=yes to make valgrind tests, only when log contains string [valgrind]
 install:
 # setup environment to allow install on the home directory
+  - pyenv install --list
+  - pyenv versions
   - export PATH="$HOME/opt/bin:$PATH"
   - export CPATH="$HOME/opt/include:$HOME/opt/arrayfire/include:$CPATH"
   - export INCLUDE="$HOME/opt/include:$HOME/opt/arrayfire/include:$INCLUDE"
