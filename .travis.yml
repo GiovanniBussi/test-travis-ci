@@ -65,7 +65,7 @@ matrix:
     os: osx
     if: branch =~ ^test- OR type IN(pull_request)
     osx_image: xcode7.3
-    env: PLUMED_MACPORTS="plumed" PLUMED_PYTHON="2.7 3.6 3.7"
+    env: PLUMED_MACPORTS="plumed" PLUMED_PYTHON="3.6 3.7"
     cache:
       directories:
       - $HOME/.macports-ci-ccache
@@ -73,14 +73,14 @@ matrix:
     os: osx
     if: branch =~ ^test- OR type IN(pull_request)
     osx_image: xcode7.3
-    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="2.7 3.6 3.7"
+    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="3.6 3.7"
     cache:
       directories:
       - $HOME/.macports-ci-ccache
   - name: MacPorts 8.3, all modules
     os: osx
     osx_image: xcode8.3
-    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="2.7 3.6 3.7"
+    env: PLUMED_MACPORTS="plumed +allmodules" PLUMED_PYTHON="3.6 3.7"
     cache:
       directories:
       - $HOME/.macports-ci-ccache
@@ -157,14 +157,14 @@ install:
 # only for linux and homebrew (no macports)
 # pandas: needed by mdtraj and by plumed
   - if test "$PLUMED_CXX" ; then
-      sudo pip install --upgrade pip ;
-      sudo pip install Cython ;
-      sudo pip install nose ;
-      sudo pip install numpy ;
-      sudo pip install six ;
-      sudo pip install pandas ;
-      sudo pip install mdtraj==1.9.2 ;
-      sudo pip install MDAnalysis ;
+      pyenv global 3.6.3 ;
+      pip install --user Cython ;
+      pip install --user nose ;
+      pip install --user numpy ;
+      pip install --user six ;
+      pip install --user pandas ;
+      pip install --user mdtraj ;
+      pip install --user MDAnalysis ;
       python -c "import MDAnalysis" ;
       python -c "import mdtraj" ;
     fi
