@@ -47,8 +47,8 @@ class ExtraCV : public Colvar {
 public:
   explicit ExtraCV(const ActionOptions&);
 // active methods:
-  void prepare();
-  virtual void calculate();
+  void prepare() override;
+  void calculate() override;
   unsigned getNumberOfDerivatives();
   static void registerKeywords( Keywords& keys );
 };
