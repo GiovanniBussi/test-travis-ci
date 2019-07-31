@@ -49,7 +49,7 @@ public:
 // active methods:
   void prepare() override;
   void calculate() override;
-  unsigned getNumberOfDerivatives();
+  unsigned getNumberOfDerivatives() override;
   static void registerKeywords( Keywords& keys );
 };
 
