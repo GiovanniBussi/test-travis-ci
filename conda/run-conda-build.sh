@@ -27,7 +27,7 @@ bash /tmp/miniconda.sh -b -f -p $CONDA_HOME
 export PATH="$CONDA_HOME/bin:$PATH"
 conda config --set always_yes yes --set changeps1 no
 conda config --set anaconda_upload no # not automatically at least
-# conda update -q conda
+conda update -q --force conda
 conda info -a
 conda install conda-build conda-verify anaconda-client
 
