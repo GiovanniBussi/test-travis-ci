@@ -45,7 +45,7 @@ for file in *PP.md automatic/*.txt ../CHANGES/*.md tutorials/*.txt tutorials/*.s
           }' > spelling/$fname.md
 
     # Check for spelling mistakes
-    tail -n +2 spelling/$fname.md | grep -v "*/" | aspell pipe -H --dont-suggest --personal=./spelling/allwords.dict | grep -v '*' | grep -v "International Ispell" | awk '{if(NF>0) print $0}' > spelling/$fname.err
+    tail -n +2 spelling/$fname.md | grep -v "*/" | aspell pipe -M --dont-suggest --personal=./spelling/allwords.dict | grep -v '*' | grep -v "International Ispell" | awk '{if(NF>0) print $0}' > spelling/$fname.err
     nerrors=`wc -l spelling/$fname.err | awk '{print $1}'`
     # Crash out if there are spelling mistakes
     if [ $nerrors -gt 0 ] ; then 
