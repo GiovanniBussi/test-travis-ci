@@ -201,7 +201,7 @@ PCARMSD::PCARMSD(const ActionOptions&ao):
     pca_names.push_back(name);
     addComponentWithDerivatives(name); componentIsNotPeriodic(name);
   }
-  turnOnDerivatives();
+  ActionWithValue::turnOnDerivatives();
 
 }
 

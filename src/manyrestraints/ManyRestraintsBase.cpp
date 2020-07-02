@@ -54,7 +54,7 @@ ManyRestraintsBase::ManyRestraintsBase(const ActionOptions& ao):
   // Add a task list in order to avoid problems
   for(unsigned i=0; i<aves->getFullNumberOfTasks(); ++i) addTaskToList( aves->getTaskCode(i) );
   // And turn on the derivatives (note problems here because of ActionWithValue)
-  turnOnDerivatives(); needsDerivatives();
+  ActionWithValue::turnOnDerivatives(); needsDerivatives();
 
   // Now create the vessel
   std::string fake_input="LABEL=bias";
