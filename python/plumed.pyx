@@ -701,7 +701,7 @@ class _at():
       for x in _at_residue:
             ldict={}
             exec("def " + x + "(self,residue,chain=\"\"):\n          return _format_at(self._builder(),\"" + x + "\",residue,chain)\n",{"_format_at":_format_at},ldict)
-            exec("self." + x + " = types.MethodType( ldict['" + x + "'],self)",locals(),globals())
+            exec("self." + x + " = types.MethodType( ldict['" + x + "'],self)",None,{"self":self, "types":types, "ldict":ldict})
     def __call__(self,name,residue,chain=""):
        return _format_at(self._builder(),name,residue,chain)
 
@@ -922,7 +922,7 @@ class InputBuilder:
                     print(self._functions[action])
                     raise
                 # create the object method
-                exec("self." + action + " = types.MethodType( ldict['" + action + "'],self)",locals(),globals())
+                exec("self." + action + " = types.MethodType( ldict['" + action + "'],self)",None,{"self":self, "types":types, "ldict":ldict})
             self._has_dict=True
 
         if enable_at:
