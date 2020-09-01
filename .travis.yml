@@ -133,7 +133,7 @@ install:
     fi
   - if test "$PLUMED_CXX" ; then ./.travis/install.xdrfile ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      ./.travis/install.ccache v3.5.1 ;
+      ./.travis/install.ccache v3.6 ;
     fi
 # cppcheck:
 # I use 1.71 since 1.72 seems to report a lot of false positive
