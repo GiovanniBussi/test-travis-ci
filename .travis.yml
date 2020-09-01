@@ -7,9 +7,9 @@ jobs:
 # this is the "master" one, it is going to update the manual every time
 # Variable PLUMED_ALL_TESTS=yes ensures that all the regtests can be run.
 # If some of them is not enabled, the whole suite will fail.
-  - name: Run all tests and build doc on ubuntu 18. All features enabled (system blas and lapack + asmjit)
+  - name: Run all tests and build doc on ubuntu 20. All features enabled (system blas and lapack + asmjit)
     os: linux
-    dist: bionic
+    dist: focal
     env: PLUMED_CC=mpicc PLUMED_CXX=mpic++ MAKEDOC=yes PLUMED_ALL_TESTS=yes LAPACK=yes ASMJIT=yes
   - name: Run all tests and scan coverage
     os: linux
@@ -118,7 +118,7 @@ install:
       brew install gawk ;
       export PLUMED_MPIRUN="mpirun --oversubscribe" ;
     fi
-  - if [[ "$TRAVIS_DIST" == xenial ]] || [[ "$TRAVIS_DIST" == bionic ]] ; then
+  - if [[ "$TRAVIS_DIST" == xenial ]] || [[ "$TRAVIS_DIST" == bionic ]] || [[ "$TRAVIS_DIST" == focal ]] ; then
       export PLUMED_MPIRUN="mpirun.openmpi" ;
     fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq ; fi
